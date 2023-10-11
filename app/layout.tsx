@@ -3,10 +3,10 @@ import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Providers } from "./providers";
-import { Link } from "@nextui-org/link";
+import Link from "next/link";
 import clsx from "clsx";
 import TabBar from "@/components/tabbar";
-import { GithubIcon } from "@/components/icons";
+import { GithubIcon, VercelLogo } from "@/components/icons";
 import { ThemeSwitch } from "@/components/theme-switch";
 
 export const metadata: Metadata = {
@@ -36,15 +36,22 @@ export default function RootLayout({
       <head />
       <body
         className={clsx(
-          "min-h-screen bg-background font-sans antialiased selection:bg-secondary-500",
+          "bg-background font-sans antialiased selection:bg-secondary-500 box-border",
           fontSans.variable
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex justify-center items-center flex-col h-screen">
-            <header className="flex justify-between items-center py-4 w-full max-w-4xl">
-              <span className="text-4xl">db</span>
-              <TabBar />
+          <div className="flex items-center flex-col h-screen">
+            <header className="flex justify-between items-center pt-6 pb-12 w-full max-w-4xl">
+              <Link
+                href="/"
+                className="text-4xl transition-opacity hover:opacity-80"
+              >
+                db
+              </Link>
+              <div className="sticky top-0">
+                <TabBar />
+              </div>
               {/* <a
                 className="hover:text-secondary-500 transition-colors duration-100"
                 href="https://github.com/barrosodavid/portfolio"
@@ -55,19 +62,26 @@ export default function RootLayout({
               </a> */}
               <ThemeSwitch />
             </header>
-            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
-              {children}
-            </main>
-            <footer className="w-full flex items-center justify-center py-3">
-              <Link
-                isExternal
-                className="flex items-center gap-1 text-current"
-                href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
-                title="nextui.org homepage"
-              >
-                <span className="text-default-600">Powered by</span>
-                <p className="text-primary">NextUI</p>
-              </Link>
+            <main className="max-w-4xl w-full flex-grow">{children}</main>
+            <footer className="w-full flex items-center justify-center flex-col py-3">
+              <div className="flex">
+                <span className="text-default-600">Powered by&nbsp;</span>
+                <Link
+                  className="text-primary hover:opacity-80 transition-opacity duration-100"
+                  href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
+                  title="nextui.org homepage"
+                >
+                  NextUI
+                </Link>
+                &nbsp;&&nbsp;
+                <Link
+                  className="text-primary hover:opacity-80 transition-opacity duration-100"
+                  href="https://nextjs.org"
+                  title="Next.js homepage"
+                >
+                  Next.js
+                </Link>
+              </div>
             </footer>
           </div>
         </Providers>

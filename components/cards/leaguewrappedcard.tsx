@@ -1,0 +1,149 @@
+"use client";
+
+import {
+  Button,
+  Card,
+  CardFooter,
+  CardHeader,
+  Image,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  Tooltip,
+  useDisclosure,
+  Chip,
+} from "@nextui-org/react";
+import { RightDownArrow } from "../icons";
+
+const LeagueWrappedCard = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  return (
+    <>
+      <Card isFooterBlurred isPressable onPress={() => onOpen()} shadow="sm">
+        <CardHeader className="absolute z-10 top-1 flex-col !items-start">
+          <p className="text-tiny text-white/60 uppercase font-bold">
+            Full Stack Web App
+          </p>
+          <h4 className="text-white font-medium text-large">League Wrapped</h4>
+        </CardHeader>
+        <Image
+          removeWrapper
+          alt="Card background"
+          className="z-0 w-full h-full object-cover"
+          src="/leaguewrapped_cover.png"
+        />
+        <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
+          <div className="flex flex-grow gap-2 items-center">
+            <div className="flex flex-col gap-1">
+              <p className="text-tiny text-white/60 text-left">Tech Stack</p>
+              <div className="flex flex-row gap-2">
+                <Tooltip content="Amazon Web Services" closeDelay={100}>
+                  <Chip
+                    color="warning"
+                    variant="dot"
+                    size="sm"
+                    classNames={{
+                      base: "text-white",
+                    }}
+                  >
+                    AWS
+                  </Chip>
+                </Tooltip>
+                <Chip
+                  color="default"
+                  variant="dot"
+                  size="sm"
+                  classNames={{
+                    base: "text-white",
+                  }}
+                >
+                  Next.js
+                </Chip>
+                <Chip
+                  color="secondary"
+                  variant="dot"
+                  size="sm"
+                  classNames={{
+                    base: "text-white",
+                  }}
+                >
+                  React
+                </Chip>
+                <Chip
+                  color="primary"
+                  variant="dot"
+                  size="sm"
+                  classNames={{
+                    base: "text-white",
+                  }}
+                >
+                  Remotion
+                </Chip>
+              </div>
+            </div>
+          </div>
+          <Tooltip content="See more" closeDelay={100}>
+            <Button
+              isIconOnly
+              color="default"
+              aria-label="Like"
+              radius="full"
+              size="sm"
+            >
+              <RightDownArrow />
+            </Button>
+          </Tooltip>
+        </CardFooter>
+      </Card>
+      <Modal
+        size="5xl"
+        isOpen={isOpen}
+        onClose={onClose}
+        classNames={{
+          base: "",
+        }}
+      >
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-1">
+                Modal Title
+              </ModalHeader>
+              <ModalBody>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Nullam pulvinar risus non risus hendrerit venenatis.
+                  Pellentesque sit amet hendrerit risus, sed porttitor quam.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Nullam pulvinar risus non risus hendrerit venenatis.
+                  Pellentesque sit amet hendrerit risus, sed porttitor quam.
+                </p>
+                <p>
+                  Magna exercitation reprehenderit magna aute tempor cupidatat
+                  consequat elit dolor adipisicing. Mollit dolor eiusmod sunt ex
+                  incididunt cillum quis. Velit duis sit officia eiusmod Lorem
+                  aliqua enim laboris do dolor eiusmod.
+                </p>
+              </ModalBody>
+              <ModalFooter>
+                <Button color="danger" variant="light" onPress={onClose}>
+                  Close
+                </Button>
+                <Button color="primary" onPress={onClose}>
+                  Action
+                </Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
+    </>
+  );
+};
+
+export default LeagueWrappedCard;
