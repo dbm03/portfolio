@@ -13,9 +13,13 @@ import ClockWidget from "@/components/widgets/clock";
 
 export default function Home() {
   return (
-    <section className="grid grid-cols-2 grid-rows-2 gap-2">
-      <SmallAboutCard />
-      <ClockWidget />
+    <section className="grid grid-cols-7 gap-2 grid-rows-5">
+      <div className="col-span-3 row-span-2">
+        <SmallAboutCard />
+      </div>
+      <div className="col-start-7 h-full aspect-square">
+        <ClockWidget timeZone="America/New_York" />
+      </div>
     </section>
   );
 }

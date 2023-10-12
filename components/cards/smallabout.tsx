@@ -24,7 +24,9 @@ const SmallAboutCard = () => {
         </div>
       </CardHeader>
       <CardBody>
-        <p></p>
+        <p>
+          I believe apps should be accessible no matter the technical expertise
+        </p>
       </CardBody>
       <CardFooter>
         <Link
