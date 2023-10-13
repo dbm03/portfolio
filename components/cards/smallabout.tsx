@@ -24,9 +24,7 @@ const SmallAboutCard = () => {
 
         <div className="flex flex-col">
           <p className="text-md">David Barroso</p>
-          <p className="text-small text-default-500">
-            Software Developer & Student
-          </p>
+          <p className="text-small text-default-500">Madrid, Spain</p>
         </div>
       </CardHeader>
       <CardBody>
@@ -34,6 +32,7 @@ const SmallAboutCard = () => {
           Frontend Developer and exchange student in the US. I strive to bring
           cultures together through seamless and user-centric design.
         </p>
+        <p>Feel free to explore my projects</p>
       </CardBody>
     </Card>
   );

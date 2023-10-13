@@ -1,15 +1,15 @@
 "use client";
 
 import { Card, CardBody, Link, Tooltip } from "@nextui-org/react";
-import { LinkedinIcon } from "../icons";
+import { GithubIcon } from "../icons";
 
-const LinkedinCard = () => {
+const GithubCard = () => {
   return (
-    <Tooltip content="LinkedIn" closeDelay={100}>
+    <Tooltip content="GitHub" closeDelay={100}>
       <Card
         shadow="sm"
         as={Link}
-        href="https://www.linkedin.com/in/davidbarrosomurcia/"
+        href="https://github.com/barrosodavid"
         target="_blank"
         className="hover:opacity-90"
         fullWidth
@@ -17,12 +17,12 @@ const LinkedinCard = () => {
           base: "h-full",
         }}
       >
-        <CardBody className="text-white bg-[#184ec4] flex justify-center items-center">
-          <LinkedinIcon size={64} />
+        <CardBody className="flex items-center justify-center">
+          <GithubIcon size={64} />
         </CardBody>
       </Card>
     </Tooltip>
   );
 };
 
-export default LinkedinCard;
+export default GithubCard;

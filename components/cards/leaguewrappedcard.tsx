@@ -14,6 +14,7 @@ import {
   Tooltip,
   useDisclosure,
   Chip,
+  Link,
 } from "@nextui-org/react";
 import { RightDownArrow } from "../icons";
 
@@ -22,23 +23,29 @@ const LeagueWrappedCard = () => {
 
   return (
     <>
-      <Card isFooterBlurred isPressable onPress={() => onOpen()} shadow="sm">
+      <Card
+        isFooterBlurred
+        isPressable
+        className="hover:opacity-90"
+        onPress={() => onOpen()}
+        shadow="sm"
+      >
         <CardHeader className="absolute z-10 top-1 flex-col !items-start">
-          <p className="text-tiny text-white/60 uppercase font-bold">
+          <p className="font-bold uppercase text-tiny text-white/60">
             Full Stack Web App
           </p>
-          <h4 className="text-white font-medium text-large">League Wrapped</h4>
+          <h4 className="font-medium text-white text-large">League Wrapped</h4>
         </CardHeader>
         <Image
           removeWrapper
           alt="Card background"
-          className="z-0 w-full h-full object-cover"
+          className="z-0 object-cover w-full h-full"
           src="/leaguewrapped_cover.png"
         />
-        <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
-          <div className="flex flex-grow gap-2 items-center">
+        <CardFooter className="absolute bottom-0 z-10 bg-black/40 border-t-1 border-default-600 dark:border-default-100">
+          <div className="flex items-center flex-grow gap-2">
             <div className="flex flex-col gap-1">
-              <p className="text-tiny text-white/60 text-left">Tech Stack</p>
+              <p className="text-left text-tiny text-white/60">Tech Stack</p>
               <div className="flex flex-row gap-2">
                 <Tooltip content="Amazon Web Services" closeDelay={100}>
                   <Chip
@@ -88,6 +95,9 @@ const LeagueWrappedCard = () => {
           <Tooltip content="See more" closeDelay={100}>
             <Button
               isIconOnly
+              as={Link}
+              href="https://dotesports.com/league-of-legends/news/fan-creates-league-of-legends-wrapped-summarizing-your-ranked-season"
+              target="_blank"
               color="default"
               aria-label="Like"
               radius="full"

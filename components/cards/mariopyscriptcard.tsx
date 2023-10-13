@@ -14,31 +14,39 @@ import {
   Tooltip,
   useDisclosure,
   Chip,
+  Link,
 } from "@nextui-org/react";
-import { RightDownArrow } from "../icons";
+import { GameController, GithubIcon, RightDownArrow } from "../icons";
+import { useRouter } from "next/navigation";
 
 const MarioPyScriptCard = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
   return (
     <>
-      <Card isFooterBlurred isPressable onPress={() => onOpen()} shadow="sm">
+      <Card
+        isFooterBlurred
+        isPressable
+        as={Link}
+        href={"https://barrosodavid.github.io/mariopyscript/"}
+        target="_blank"
+        className="hover:opacity-90"
+        shadow="sm"
+      >
         <CardHeader className="absolute z-10 top-1 flex-col !items-start">
-          <p className="text-tiny text-white/60 uppercase font-bold">
+          <p className="font-bold uppercase text-tiny text-white/60">
             Super Mario Bros. Clone
           </p>
-          <h4 className="text-white font-medium text-large">Mario PyScript</h4>
+          <h4 className="font-medium text-white text-large">Mario PyScript</h4>
         </CardHeader>
         <Image
           removeWrapper
           alt="Card background"
-          className="z-0 w-full h-full object-cover"
+          className="z-0 object-cover w-full h-full"
           src="/mariopyscript_card.png"
         />
-        <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
-          <div className="flex flex-grow gap-2 items-center">
+        <CardFooter className="absolute bottom-0 z-10 bg-black/40 border-t-1 border-default-600 dark:border-default-100">
+          <div className="flex items-center flex-grow gap-2">
             <div className="flex flex-col gap-1">
-              <p className="text-tiny text-white/60 text-left">Tech Stack</p>
+              <p className="text-left text-tiny text-white/60">Tech Stack</p>
               <div className="flex flex-row gap-2">
                 <Chip
                   color="primary"
@@ -73,63 +81,38 @@ const MarioPyScriptCard = () => {
               </div>
             </div>
           </div>
-          <Tooltip content="See more" closeDelay={100}>
-            <Button
-              isIconOnly
-              color="default"
-              aria-label="Like"
-              radius="full"
-              size="sm"
-            >
-              <RightDownArrow />
-            </Button>
-          </Tooltip>
+          <div className="flex gap-2">
+            <Tooltip content="See on GitHub" closeDelay={100}>
+              <Button
+                isIconOnly
+                href="https://github.com/barrosodavid/mariopyscript"
+                target="_blank"
+                as={Link}
+                color="default"
+                aria-label="Like"
+                radius="full"
+                size="sm"
+              >
+                <GithubIcon />
+              </Button>
+            </Tooltip>
+            <Tooltip content="Play now" closeDelay={100}>
+              <Button
+                isIconOnly
+                href="https://barrosodavid.github.io/mariopyscript/"
+                target="_blank"
+                as={Link}
+                color="default"
+                aria-label="Like"
+                radius="full"
+                size="sm"
+              >
+                <GameController />
+              </Button>
+            </Tooltip>
+          </div>
         </CardFooter>
       </Card>
-      <Modal
-        size="5xl"
-        isOpen={isOpen}
-        onClose={onClose}
-        classNames={{
-          base: "",
-        }}
-      >
-        <ModalContent>
-          {(onClose) => (
-            <>
-              <ModalHeader className="flex flex-col gap-1">
-                Modal Title
-              </ModalHeader>
-              <ModalBody>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non risus hendrerit venenatis.
-                  Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                </p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam pulvinar risus non risus hendrerit venenatis.
-                  Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                </p>
-                <p>
-                  Magna exercitation reprehenderit magna aute tempor cupidatat
-                  consequat elit dolor adipisicing. Mollit dolor eiusmod sunt ex
-                  incididunt cillum quis. Velit duis sit officia eiusmod Lorem
-                  aliqua enim laboris do dolor eiusmod.
-                </p>
-              </ModalBody>
-              <ModalFooter>
-                <Button color="danger" variant="light" onPress={onClose}>
-                  Close
-                </Button>
-                <Button color="primary" onPress={onClose}>
-                  Action
-                </Button>
-              </ModalFooter>
-            </>
-          )}
-        </ModalContent>
-      </Modal>
     </>
   );
 };

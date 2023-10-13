@@ -78,7 +78,7 @@ const ContactForm = () => {
     >
       <CardHeader className="flex gap-3">
         <div className="flex flex-col">
-          <p className="text-md">Contact me!</p>
+          <p className="text-md">Contact me</p>
           <p className="text-small text-default-500">Send me an email</p>
         </div>
       </CardHeader>

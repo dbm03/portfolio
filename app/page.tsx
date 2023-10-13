@@ -11,6 +11,7 @@ import Image from "next/image";
 import SmallAboutCard from "@/components/cards/smallabout";
 import RainBackground from "@/components/widgets/rainbackground";
 import dynamic from "next/dynamic";
+import ComingSoonCard from "@/components/cards/comingsooncard";
 
 const ClockWidget = dynamic(() => import("@/components/widgets/clock"), {
   ssr: false,
@@ -18,18 +19,21 @@ const ClockWidget = dynamic(() => import("@/components/widgets/clock"), {
 
 export default function Home() {
   return (
-    <section className="grid grid-cols-7 gap-2 grid-rows-5">
+    <section className="flex flex-col gap-6 md:grid md:grid-cols-7 md:grid-rows-5 md:gap-3">
       <div className="col-span-3 row-span-2">
         <SmallAboutCard />
       </div>
-      {/* <div className="col-start-5 col-span-2 row-span-2 h-full aspect-square">
+      {/* <div className="h-full col-span-2 col-start-5 row-span-2 aspect-square">
         <RainBackground />
       </div> */}
-      <div className="col-start-7 h-full aspect-square">
-        <ClockWidget timeZone="America/New_York" text={"Atlanta, GA"} />
+      <div className="col-span-2 row-span-2">
+        <ComingSoonCard />
       </div>
-      <div className="row-start-2 col-start-7 h-full aspect-square">
+      <div className="h-full col-start-6 aspect-square">
         <ClockWidget timeZone="Europe/Madrid" text={"Madrid"} />
+      </div>
+      <div className="h-full col-start-7 aspect-square">
+        <ClockWidget timeZone="America/New_York" text={"Atlanta, GA"} />
       </div>
     </section>
   );
