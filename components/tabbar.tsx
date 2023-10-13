@@ -3,7 +3,7 @@
 import { Tabs, Tab } from "@nextui-org/react";
 import { ThemeSwitch } from "./theme-switch";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const TabBar: React.FC<{}> = () => {
   const router = useRouter();
@@ -11,6 +11,10 @@ export const TabBar: React.FC<{}> = () => {
   const [selected, setSelected] = useState<string | number>(
     pathname === "/" ? "home" : pathname.replace("/", "")
   );
+
+  useEffect(() => {
+    setSelected(pathname === "/" ? "home" : pathname.replace("/", ""));
+  }, [pathname]);
 
   const selectTab = (key: string | number) => {
     setSelected(key);

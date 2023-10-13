@@ -12,9 +12,15 @@ import {
 
 const SmallAboutCard = () => {
   return (
-    <Card shadow="sm">
+    <Card
+      shadow="sm"
+      fullWidth
+      classNames={{
+        base: "h-full",
+      }}
+    >
       <CardHeader className="flex gap-3">
-        <Avatar isBordered src="profile.png" size="lg" />
+        <Avatar isBordered src="profile.webp" size="lg" />
 
         <div className="flex flex-col">
           <p className="text-md">David Barroso</p>
@@ -25,18 +31,10 @@ const SmallAboutCard = () => {
       </CardHeader>
       <CardBody>
         <p>
-          I believe apps should be accessible no matter the technical expertise
+          Frontend Developer and exchange student in the US. I strive to bring
+          cultures together through seamless and user-centric design.
         </p>
       </CardBody>
-      <CardFooter>
-        <Link
-          isExternal
-          showAnchorIcon
-          href="https://github.com/nextui-org/nextui"
-        >
-          Visit source code on GitHub.
-        </Link>
-      </CardFooter>
     </Card>
   );
 };

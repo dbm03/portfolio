@@ -8,6 +8,7 @@ import clsx from "clsx";
 import TabBar from "@/components/tabbar";
 import { GithubIcon, VercelLogo } from "@/components/icons";
 import { ThemeSwitch } from "@/components/theme-switch";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: {
@@ -40,34 +41,46 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="flex items-center flex-col h-screen">
-            <header className="flex justify-between items-center pt-6 pb-12 w-full max-w-4xl">
+        <Providers
+          themeProps={{
+            attribute: "class",
+            defaultTheme: "system",
+            enableSystem: true,
+          }}
+        >
+          <Toaster richColors /> {/* Component where toasts will be rendered */}
+          <div className="flex flex-col items-center h-screen">
+            <header className="flex items-center justify-center w-full max-w-4xl px-4 pt-6 pb-12 lg:px-0 md:justify-between">
               <Link
                 href="/"
-                className="text-4xl transition-opacity hover:opacity-80"
+                className="hidden w-16 text-4xl transition-opacity md:block hover:opacity-80"
               >
                 db
               </Link>
               <div className="sticky top-0">
                 <TabBar />
               </div>
-              {/* <a
-                className="hover:text-secondary-500 transition-colors duration-100"
-                href="https://github.com/barrosodavid/portfolio"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <GithubIcon />
-              </a> */}
-              <ThemeSwitch />
-            </header>
-            <main className="max-w-4xl w-full flex-grow">{children}</main>
-            <footer className="w-full flex items-center justify-center flex-col py-3">
-              <div className="flex">
-                <span className="text-default-600">Powered by&nbsp;</span>
+              <div className="items-center justify-end hidden w-16 gap-3 md:flex">
                 <Link
-                  className="text-primary hover:opacity-80 transition-opacity duration-100"
+                  className="transition-opacity duration-100 text-default-500 hover:opacity-80"
+                  href="https://github.com/barrosodavid/portfolio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <GithubIcon />
+                </Link>
+                <ThemeSwitch />
+              </div>
+            </header>
+            <main className="flex-grow w-full max-w-4xl px-4 lg:px-0">
+              {children}
+            </main>
+            <footer className="flex flex-col items-center justify-center w-full py-3">
+              <div className="flex">
+                <span className="text-default-600">🚧Under construction🚧</span>
+                {/* <span className="text-default-600">Powered by&nbsp;</span>
+                <Link
+                  className="transition-opacity duration-100 text-primary hover:opacity-80"
                   href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
                   title="nextui.org homepage"
                 >
@@ -75,12 +88,12 @@ export default function RootLayout({
                 </Link>
                 &nbsp;&&nbsp;
                 <Link
-                  className="text-primary hover:opacity-80 transition-opacity duration-100"
+                  className="transition-opacity duration-100 text-primary hover:opacity-80"
                   href="https://nextjs.org"
                   title="Next.js homepage"
                 >
                   Next.js
-                </Link>
+                </Link> */}
               </div>
             </footer>
           </div>

@@ -7,7 +7,7 @@ import "react-clock/dist/Clock.css";
 
 // Timezone string from https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 const getUTCDateForTimezone = (timeZone: string | undefined): Date => {
-  const format = new Intl.DateTimeFormat("en-CA", {
+  const format = new Intl.DateTimeFormat("sv-se", {
     timeZone,
     year: "numeric",
     month: "numeric",
@@ -26,13 +26,19 @@ const getUTCDateForTimezone = (timeZone: string | undefined): Date => {
   return result;
 };
 
-const ClockWidget = ({ timeZone }: { timeZone?: string }) => {
+const ClockWidget = ({
+  timeZone,
+  text,
+}: {
+  timeZone?: string;
+  text?: string;
+}) => {
   const [value, setValue] = useState(getUTCDateForTimezone(timeZone));
 
   useEffect(() => {
     const interval = setInterval(
       () => setValue(getUTCDateForTimezone(timeZone)),
-      1000
+      1000 // 100
     );
 
     return () => {
@@ -53,8 +59,9 @@ const ClockWidget = ({ timeZone }: { timeZone?: string }) => {
         renderMinuteMarks={false}
         renderHourMarks={false}
         size={80}
+        // useMillisecondPrecision
       />
-      <p>Atlanta, GA</p>
+      <p>{text}</p>
     </Card>
   );
 };
