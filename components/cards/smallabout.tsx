@@ -32,7 +32,7 @@ const SmallAboutCard = () => {
           Frontend Developer and exchange student in the US. I strive to bring
           cultures together through seamless and user-centric design.
         </p>
-        <p>Feel free to explore my projects</p>
+        <p>Feel free to explore my projects and get in touch!</p>
       </CardBody>
     </Card>
   );

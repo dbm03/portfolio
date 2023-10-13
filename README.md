@@ -13,6 +13,7 @@ This is my portfolio website built with Next.js and NextUI.
 - [next-themes](https://github.com/pacocoursey/next-themes)
 - [sonner](https://sonner.emilkowal.ski/)
 - [boxicons](https://boxicons.com/)
+- [shots (mockup generator)](https://shots.so/)
 
 - [NextUI Next.js Template](https://github.com/nextui-org/next-app-template)
 
