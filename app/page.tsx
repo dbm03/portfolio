@@ -1,9 +1,5 @@
 import NextLink from "next/link";
 import { Link } from "@nextui-org/link";
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code";
-import { button as buttonStyles } from "@nextui-org/theme";
-import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import { GithubIcon } from "@/components/icons";
 import { Card } from "@nextui-org/react";
@@ -12,10 +8,7 @@ import SmallAboutCard from "@/components/cards/smallabout";
 import RainBackground from "@/components/widgets/rainbackground";
 import dynamic from "next/dynamic";
 import ComingSoonCard from "@/components/cards/comingsooncard";
-
-const ClockWidget = dynamic(() => import("@/components/widgets/clock"), {
-  ssr: false,
-});
+import TimezoneCard from "@/components/cards/timezonecard";
 
 export default function Home() {
   return (
@@ -29,11 +22,8 @@ export default function Home() {
       <div className="col-span-2 row-span-2">
         <ComingSoonCard />
       </div>
-      <div className="h-full col-start-6 aspect-square">
-        <ClockWidget timeZone="Europe/Madrid" text={"Madrid"} />
-      </div>
-      <div className="h-full col-start-7 aspect-square">
-        <ClockWidget timeZone="America/New_York" text={"Atlanta, GA"} />
+      <div className="col-span-2 col-start-6 row-span-2">
+        <TimezoneCard />
       </div>
     </section>
   );
