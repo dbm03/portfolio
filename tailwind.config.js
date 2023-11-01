@@ -18,6 +18,7 @@ module.exports = {
       },
       animation: {
         "thunderstrike": "thunderstrike 7s ease-out 2s infinite",
+        "skeleton-loader": "pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
       keyframes: {
           thunderstrike: {
