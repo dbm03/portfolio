@@ -1,5 +1,5 @@
 import NextLink from "next/link";
-import { Link } from "@nextui-org/link";
+import { Link } from "@nextui-org/react";
 import { title, subtitle } from "@/components/primitives";
 import { GithubIcon } from "@/components/icons";
 import { Card } from "@nextui-org/react";

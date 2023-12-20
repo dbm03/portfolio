@@ -1,44 +1,36 @@
 "use client";
 
 import { Tabs, Tab } from "@nextui-org/react";
-import { ThemeSwitch } from "./theme-switch";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export const TabBar: React.FC<{}> = () => {
-  const router = useRouter();
   const pathname = usePathname();
   const [selected, setSelected] = useState<string | number>(
     pathname === "/" ? "home" : pathname.replace("/", "")
   );
 
   useEffect(() => {
-    setSelected(pathname === "/" ? "home" : pathname.replace("/", ""));
+     setSelected(pathname === "/" ? "home" : pathname.replace("/", ""));
   }, [pathname]);
-
-  const selectTab = (key: string | number) => {
-    setSelected(key);
-    if (key === "home") return router.push("/");
-
-    router.push(`/${key}`);
-  };
 
   return (
     <Tabs
+      as={"nav"}
       aria-label="Navbar"
       classNames={{
         base: "",
         tabList: "shadow-sm p-2 flex items-center justify-center sticky",
       }}
       selectedKey={selected}
-      onSelectionChange={selectTab}
       radius="full"
       size="lg"
     >
-      <Tab key="home" title="Home" />
-      <Tab key="about" title="About" />
-      <Tab key="projects" title="Projects" />
-      <Tab key="contact" title="Contact" />
+      <Tab as={Link} key="home" title="Home" href={'/'} />
+      <Tab as={Link} key="about" title="About" href={'/about'} />
+      <Tab as={Link} key="projects" title="Projects" href='/projects' />
+      <Tab as={Link} key="contact" title="Contact" href='/contact' />
     </Tabs>
   );
 };
