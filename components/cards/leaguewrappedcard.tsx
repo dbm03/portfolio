@@ -37,7 +37,8 @@ const LeagueWrappedCard = () => {
           <h4 className="font-medium text-white text-large">League Wrapped</h4>
         </CardHeader>
         <Image
-          removeWrapper
+          width={442}
+          height={331}
           alt="Card background"
           className="z-0 object-cover w-full h-full"
           src="/leaguewrapped_cover.png"
