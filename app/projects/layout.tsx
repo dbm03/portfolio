@@ -4,7 +4,7 @@ export default function ProjectsLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className="grid md:grid-cols-2 md:grid-rows-2 gap-6 md:gap-3">
+    <section className="grid xs:grid-cols-2 xs:grid-rows-2 gap-6 xs:gap-3">
       {children}
     </section>
   );
