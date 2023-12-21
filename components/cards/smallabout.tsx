@@ -29,7 +29,7 @@ const SmallAboutCard = () => {
       </CardHeader>
       <CardBody>
         <p>
-          Frontend Developer and exchange student in the US. I strive to bring
+          Frontend Developer and exchange student in the US at Georgia Tech. I strive to bring
           cultures together through seamless and user-centric design.
         </p>
         <p>Feel free to explore my projects and get in touch!</p>

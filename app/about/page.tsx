@@ -2,6 +2,7 @@ import ComingSoonCard from "@/components/cards/comingsooncard";
 import MinimalComingSoonCard from "@/components/cards/mincomingsooncard";
 import StripeCard from "@/components/cards/stripecard";
 import { title } from "@/components/primitives";
+import { Tabs, Tab } from "@nextui-org/react";
 
 export default function AboutPage() {
   return (

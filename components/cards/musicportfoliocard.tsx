@@ -39,8 +39,9 @@ const MusicPortfolioCard = () => {
           </h4>
         </CardHeader>
         <Image
-          removeWrapper
           alt="Card background"
+          width={442}
+          height={331}
           className="z-0 object-cover w-full h-full"
           src="/musicportfolio_card.png"
         />
@@ -72,7 +73,7 @@ const MusicPortfolioCard = () => {
               </div>
             </div>
           </div>
-          <Tooltip content="See more" closeDelay={100}>
+          <Tooltip content="View Live" closeDelay={100}>
             <Button
               isIconOnly
               as={Link}
@@ -83,7 +84,7 @@ const MusicPortfolioCard = () => {
               radius="full"
               size="sm"
             >
-              <ExternalIcon />
+              <EyeIcon />
             </Button>
           </Tooltip>
         </CardFooter>

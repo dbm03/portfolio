@@ -10,16 +10,19 @@ import { GithubIcon, VercelLogo } from "@/components/icons";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { Toaster } from "sonner";
 
+export const viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ]
+}
+
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
@@ -54,22 +57,24 @@ export default function RootLayout({
               <Link
                 href="/"
                 className="hidden w-16 text-4xl transition-opacity md:block hover:opacity-80"
+                tabIndex={1}
               >
                 db
               </Link>
-              <div className="sticky top-0">
+              <nav className="sticky top-0">
                 <TabBar />
-              </div>
+              </nav>
               <div className="items-center justify-end hidden w-16 gap-3 md:flex">
                 <Link
                   className="transition-opacity duration-100 text-default-500 hover:opacity-80"
                   href="https://github.com/barrosodavid/portfolio"
                   target="_blank"
                   rel="noopener noreferrer"
+                  tabIndex={6}
                 >
                   <GithubIcon />
                 </Link>
-                <ThemeSwitch />
+                <ThemeSwitch/>
               </div>
             </header>
             <main className="flex-grow w-full max-w-4xl px-4 lg:px-0">
