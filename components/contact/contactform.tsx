@@ -9,6 +9,8 @@ import {
   Input,
   Spinner,
   Textarea,
+  Snippet,
+  CardFooter,
 } from "@nextui-org/react";
 import { useMemo, useState } from "react";
 import { MailLogo } from "../icons";
@@ -76,14 +78,15 @@ const ContactForm = () => {
         base: "h-full",
       }}
     >
-      <CardHeader className="flex gap-3">
+      <CardHeader className="flex gap-3 justify-between p-4">
         <div className="flex flex-col">
           <p className="text-md">Contact me</p>
-          <p className="text-small text-default-500">Send me an email</p>
+          <p className="text-small text-default-500">Fill out this form...</p>
         </div>
+          
       </CardHeader>
       <Divider />
-      <CardBody>
+      <CardBody className="p-4">
         <form className="flex flex-col gap-4">
           <Input
             isRequired
@@ -108,8 +111,8 @@ const ContactForm = () => {
           <Textarea
             label="Message"
             placeholder="Enter your message"
-            rows={3}
-            maxRows={3}
+            minRows={7}
+            maxRows={7}
             isRequired
             value={message}
             onChange={(e) => setMessage(e.target.value)}
@@ -131,8 +134,25 @@ const ContactForm = () => {
               Send
             </Button>
           </div>
+        <Divider />
+        <div>
+          <p className="text-small text-default-500">... or you can email me directly at 
+          </p>
+          <Snippet hideSymbol variant="bordered" color="default" size="md" 
+              classNames={{
+                base: "border-0 pl-0",
+              }}
+          ><a href="mailto:contact@davidbarroso.dev">contact@davidbarroso.dev</a>
+          </Snippet>
+        </div>
         </form>
+        
       </CardBody>
+      
+      {/* <CardFooter className="flex flex-col flex-start items-start">
+       
+       
+      </CardFooter>  */}
     </Card>
   );
 };

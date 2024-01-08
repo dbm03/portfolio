@@ -51,7 +51,7 @@ export default function RootLayout({
             enableSystem: true,
           }}
         >
-          <Toaster richColors /> {/* Component where toasts will be rendered */}
+          <Toaster richColors theme={"system"} /> {/* Component where toasts will be rendered */}
           <div className="flex flex-col items-center h-screen">
             <header className="flex items-center justify-center w-full max-w-4xl px-4 pt-6 pb-12 lg:px-0 md:justify-between">
               <Link
