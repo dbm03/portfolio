@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardBody, Link, Tooltip } from "@nextui-org/react";
+import { Card, CardBody, CardFooter, Link, Tooltip } from "@nextui-org/react";
 import { LinkedinIcon } from "../icons";
 
 const LinkedinCard = () => {
@@ -17,9 +17,12 @@ const LinkedinCard = () => {
           base: "h-full",
         }}
       >
-        <CardBody className="text-white bg-[#184ec4] flex justify-center items-center">
+        <CardBody className="text-white bg-[#184ec4] flex justify-center pb-0 items-center">
           <LinkedinIcon size={64} />
         </CardBody>
+        <CardFooter className="text-white bg-[#184ec4] flex justify-center">
+          <p className="text-small">David B. M.</p>
+        </CardFooter>
       </Card>
     </Tooltip>
   );

@@ -18,3 +18,14 @@
     background: #111;
   }
 }
+
+:root {
+  --size: 50vmin;
+  --white: #fff;
+  --blue: #3051f1;
+  --purple: #c92bb7;
+  --red: #f73344;
+  --orange: #fa8e37;
+  --yellow: #fcdf8f;
+  --yellow_to: #fbd377;
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardBody, Link, Tooltip } from "@nextui-org/react";
+import { Card, CardBody, CardFooter, Link, Tooltip } from "@nextui-org/react";
 import { GithubIcon } from "../icons";
 
 const GithubCard = () => {
@@ -17,9 +17,12 @@ const GithubCard = () => {
           base: "h-full",
         }}
       >
-        <CardBody className="flex items-center justify-center">
+        <CardBody className="flex items-center justify-center pb-0">
           <GithubIcon size={64} />
         </CardBody>
+        <CardFooter className="flex justify-center">
+          <p className="text-small">@barrosodavid</p>
+        </CardFooter>
       </Card>
     </Tooltip>
   );
