@@ -11,16 +11,16 @@ const GithubCard = () => {
         as={Link}
         href="https://github.com/barrosodavid"
         target="_blank"
-        className="hover:opacity-90"
+        className="hover:opacity-90 bg-zinc-800"
         fullWidth
         classNames={{
           base: "h-full",
         }}
       >
-        <CardBody className="flex text-white bg-zinc-800 items-center justify-center pb-0">
+        <CardBody className="flex text-white items-center justify-center pb-0">
           <GithubIcon size={64} />
         </CardBody>
-        <CardFooter className="flex text-white bg-zinc-800 justify-center">
+        <CardFooter className="text-white bg-black/20 border-t border-zinc-500/50 z-10 flex justify-center">
           <p className="text-small">@barrosodavid</p>
         </CardFooter>
       </Card>

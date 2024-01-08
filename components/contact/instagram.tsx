@@ -20,7 +20,7 @@ const InstagramCard = () => {
         <CardBody className="text-white flex justify-center pb-0 items-center">
             <InstagramIcon size={64} />
         </CardBody>
-        <CardFooter className="text-white bg-black/20 bottom-0 border-zinc-100/50 z-10 justify-between">
+        <CardFooter className="text-white bg-black/20 border-t-1 border-zinc-100/50 z-10 flex justify-center">
             <p className="text-small">@barrosodavid23</p>
         </CardFooter>
       </Card>

@@ -11,16 +11,16 @@ const ResumeCard = () => {
         as={Link}
         href="/David_s_ResumeWeb.pdf"
         target="_blank"
-        className="hover:opacity-90"
+        className="hover:opacity-90 bg-[#f20f00]"
         fullWidth
         classNames={{
           base: "h-full",
         }}
       >
-        <CardBody className="text-white bg-[#f20f00] flex justify-center items-center pb-0">
+        <CardBody className="text-white flex justify-center items-center pb-0">
           <DocumentIcon size={64} />
         </CardBody>
-        <CardFooter className="text-white bg-[#f20f00] flex justify-center">
+        <CardFooter className="text-white bg-black/20 border-t-1 bottom-0 border-zinc-100/50 z-10 flex justify-center">
           <p className="text-small">Resume</p>
         </CardFooter>
       </Card>
