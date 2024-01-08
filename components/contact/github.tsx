@@ -17,10 +17,10 @@ const GithubCard = () => {
           base: "h-full",
         }}
       >
-        <CardBody className="flex items-center justify-center pb-0">
+        <CardBody className="flex text-white bg-zinc-800 items-center justify-center pb-0">
           <GithubIcon size={64} />
         </CardBody>
-        <CardFooter className="flex justify-center">
+        <CardFooter className="flex text-white bg-zinc-800 justify-center">
           <p className="text-small">@barrosodavid</p>
         </CardFooter>
       </Card>
