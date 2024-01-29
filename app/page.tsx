@@ -3,6 +3,7 @@ import RainBackground from "@/components/widgets/rainbackground";
 import dynamic from "next/dynamic";
 import ComingSoonCard from "@/components/cards/comingsooncard";
 import TimezoneCard from "@/components/cards/timezonecard";
+import ContributionGraphWidget from "@/components/cards/contributiongraph";
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
           <TimezoneCard />
         </div>
         <div className="">
-
+          <ContributionGraphWidget />
         </div>
       </section>
   );
