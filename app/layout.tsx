@@ -31,13 +31,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://barrosodavid.dev",
+    url: "https://davidbarroso.dev",
     siteName: siteConfig.name,
     title: siteConfig.name,
     description: siteConfig.description,
     images: [
       {
-        url: "https://barrosodavid.dev/og-image.png",
+        url: "https://davidbarroso.dev/og-image.png",
         width: 1200,
         height: 630,
       }
