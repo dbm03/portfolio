@@ -14,7 +14,7 @@ const TimezoneCard = () => {
       shadow="sm"
       fullWidth
       classNames={{
-        base: "flex flex-row justify-evenly items-center p-2",
+        base: "flex flex-row justify-evenly items-center h-full",
       }}
     >
       <ClockWidget clockTimezone="Europe/Madrid" text={"Madrid"} />

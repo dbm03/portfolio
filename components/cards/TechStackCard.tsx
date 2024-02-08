@@ -1,0 +1,133 @@
+import { Card, CardBody, CardHeader, Chip } from "@nextui-org/react";
+
+const TechStackCard = () => {
+    return (
+        <Card
+            shadow="sm"
+            fullWidth
+            classNames={{
+                base: "h-full p-2",
+            }}
+        >
+            <CardHeader>
+                <h1 className="text-xl pt-1">
+                    Tech Stack
+                </h1>
+            </CardHeader>
+
+            <CardBody className="flex gap-4 pt-0">
+                <div>
+                    <h2 className="leading-loose">Programming languages</h2>
+                    <div className="flex flex-wrap gap-1">
+                        <Chip
+                            color="primary"
+                            variant="dot"
+                            size="sm"
+                            classNames={{
+                                dot: "bg-typescript"
+                            }}
+                        >
+                            TypeScript
+                        </Chip>
+                        <Chip
+                            color="warning"
+                            variant="dot"
+                            size="sm"
+                            classNames={{
+                                dot: "bg-javascript"
+                            }}
+                        >
+                            JavaScript
+                        </Chip>
+                        <Chip
+                            color="danger"
+                            variant="dot"
+                            size="sm"
+                            classNames={{
+                                dot: "bg-python"
+                            }}
+                        >
+                            Python
+                        </Chip>
+                    </div>
+                </div>
+                <div>
+                    <h2 className="leading-loose">Front-end</h2>
+                    <div className="flex flex-wrap gap-1">
+                        <Chip
+                            variant="dot"
+                            size="sm"
+                            classNames={{
+                                dot: "bg-reactjs"
+                            }}
+                        >
+                            React
+                        </Chip>
+                        <Chip
+                            variant="dot"
+                            size="sm"
+                            classNames={{
+                                dot: "bg-reactjs"
+                            }}
+                        >
+                            React Native
+                        </Chip>
+                        <Chip
+                            variant="dot"
+                            size="sm"
+                            classNames={{
+                                dot: "bg-black dark:bg-white"
+                            }}
+                        >
+                            Next.js
+                        </Chip>
+                    </div>
+                </div>
+                <div>
+                    <h2 className="leading-loose">Back-end</h2>
+                    <div className="flex flex-wrap gap-1">
+                        <Chip
+                            variant="dot"
+                            size="sm"
+                            classNames={{
+                                dot: "bg-nodejs"
+                            }}
+                        >
+                            Node.js
+                        </Chip>
+                        <Chip
+
+                            variant="dot"
+                            size="sm"
+                            classNames={{
+                                dot: "bg-supabase"
+                            }}
+                        >
+                            Supabase
+                        </Chip>
+                        <Chip
+                            variant="dot"
+                            size="sm"
+                            classNames={{
+                                dot: "bg-firebase"
+                            }}
+                        >
+                            Firebase
+                        </Chip>
+                        <Chip
+                            variant="dot"
+                            size="sm"
+                            classNames={{
+                                dot: "bg-aws"
+                            }}
+                        >
+                            AWS
+                        </Chip>
+                    </div>
+                </div>
+            </CardBody>
+        </Card>
+    );
+};
+
+export default TechStackCard;

@@ -50,11 +50,11 @@ const MarioPyScriptCard = () => {
               <p className="text-left text-tiny text-white/60">Tech Stack</p>
               <div className="flex flex-row gap-2">
                 <Chip
-                  color="primary"
                   variant="dot"
                   size="sm"
                   classNames={{
                     base: "text-white",
+                    dot: "bg-python",
                   }}
                 >
                   Python
@@ -65,6 +65,7 @@ const MarioPyScriptCard = () => {
                   size="sm"
                   classNames={{
                     base: "text-white",
+                    dot: "bg-javascript",
                   }}
                 >
                   JavaScript

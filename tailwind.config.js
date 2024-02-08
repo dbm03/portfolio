@@ -15,6 +15,18 @@ module.exports = {
       ...defaultTheme.screens,
     },
     extend: {
+      colors: {
+        reactjs: '#61dbfb',
+        nextjs: '#000000',
+        aws: '#ff9900',
+        python: '#306998',
+        typescript: '#007acc',
+        javascript: '#f7df1e',
+        css: '#1572b6',
+        supabase: '#3ecf8e',
+        nodejs: '#417e38',
+        firebase: '#ffca28',
+      },
       background: {
         'striped': "linear-gradient(45deg, #f3f3f3 25%, transparent 25%, transparent 75%, #f3f3f3 75%, #f3f3f3), linear-gradient(45deg, #f3f3f3 25%, transparent 25%, transparent 75%, #f3f3f3 75%, #f3f3f3)",
       },

@@ -28,6 +28,21 @@ export const metadata: Metadata = {
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://barrosodavid.dev",
+    siteName: siteConfig.name,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [
+      {
+        url: "https://barrosodavid.dev/og-image.png",
+        width: 1200,
+        height: 630,
+      }
+    ],
+  },
 };
 
 export default function RootLayout({

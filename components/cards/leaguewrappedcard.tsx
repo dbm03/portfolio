@@ -13,8 +13,8 @@ import {
   ModalFooter,
   Tooltip,
   useDisclosure,
-  Chip,
   Link,
+  Chip,
 } from "@nextui-org/react";
 import { RightDownArrow } from "../icons";
 
@@ -24,6 +24,7 @@ const LeagueWrappedCard = () => {
   return (
     <>
       <Card
+        as={Link}
         isFooterBlurred
         isPressable
         className="hover:opacity-90"
@@ -50,22 +51,22 @@ const LeagueWrappedCard = () => {
               <div className="flex flex-row gap-2">
                 <Tooltip content="Amazon Web Services" closeDelay={100}>
                   <Chip
-                    color="warning"
                     variant="dot"
                     size="sm"
                     classNames={{
                       base: "text-white",
+                      dot: "bg-aws"
                     }}
                   >
                     AWS
                   </Chip>
                 </Tooltip>
                 <Chip
-                  color="default"
                   variant="dot"
                   size="sm"
                   classNames={{
                     base: "text-white",
+                    dot: "bg-white"
                   }}
                 >
                   Next.js
@@ -76,6 +77,7 @@ const LeagueWrappedCard = () => {
                   size="sm"
                   classNames={{
                     base: "text-white",
+                    dot: "bg-reactjs"
                   }}
                 >
                   React

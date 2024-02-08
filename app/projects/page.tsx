@@ -1,3 +1,5 @@
+import GreenJournalCard from "@/components/cards/GreenJournalCard";
+import ImmerseGTCard from "@/components/cards/ImmerseGTCard";
 import dynamic from "next/dynamic";
 
 const LeagueWrappedCard = dynamic(
@@ -23,7 +25,9 @@ const ComingSoonCard = dynamic(
 export default function ProjectsPage() {
   return (
     <>
+      <ImmerseGTCard />
       <LeagueWrappedCard />
+      <GreenJournalCard />
       <MusicPortfolioCard />
       <MarioPyScriptCard />
       <ComingSoonCard />
