@@ -1,4 +1,4 @@
-import { Card, CardBody, CardHeader, Chip } from "@nextui-org/react";
+import { Card, CardBody, CardHeader, Chip } from "@nextui-org/react"
 
 const TechStackCard = () => {
     return (
@@ -10,9 +10,7 @@ const TechStackCard = () => {
             }}
         >
             <CardHeader>
-                <h1 className="text-xl pt-1">
-                    Tech Stack
-                </h1>
+                <h1 className="text-xl pt-1">Tech Stack</h1>
             </CardHeader>
 
             <CardBody className="flex gap-4 pt-0">
@@ -23,7 +21,7 @@ const TechStackCard = () => {
                             variant="dot"
                             size="sm"
                             classNames={{
-                                dot: "bg-typescript"
+                                dot: "bg-typescript",
                             }}
                         >
                             TypeScript
@@ -32,7 +30,7 @@ const TechStackCard = () => {
                             variant="dot"
                             size="sm"
                             classNames={{
-                                dot: "bg-javascript"
+                                dot: "bg-javascript",
                             }}
                         >
                             JavaScript
@@ -41,7 +39,7 @@ const TechStackCard = () => {
                             variant="dot"
                             size="sm"
                             classNames={{
-                                dot: "bg-python"
+                                dot: "bg-python",
                             }}
                         >
                             Python
@@ -50,7 +48,7 @@ const TechStackCard = () => {
                             variant="dot"
                             size="sm"
                             classNames={{
-                                dot: "bg-java"
+                                dot: "bg-java",
                             }}
                         >
                             Java
@@ -75,7 +73,7 @@ const TechStackCard = () => {
                             variant="dot"
                             size="sm"
                             classNames={{
-                                dot: "bg-reactjs"
+                                dot: "bg-reactjs",
                             }}
                         >
                             React
@@ -84,7 +82,7 @@ const TechStackCard = () => {
                             variant="dot"
                             size="sm"
                             classNames={{
-                                dot: "bg-reactjs"
+                                dot: "bg-reactjs",
                             }}
                         >
                             React Native
@@ -93,7 +91,7 @@ const TechStackCard = () => {
                             variant="dot"
                             size="sm"
                             classNames={{
-                                dot: "bg-black dark:bg-white"
+                                dot: "bg-black dark:bg-white",
                             }}
                         >
                             Next.js
@@ -102,7 +100,7 @@ const TechStackCard = () => {
                             variant="dot"
                             size="sm"
                             classNames={{
-                                dot: "bg-html"
+                                dot: "bg-html",
                             }}
                         >
                             HTML
@@ -111,7 +109,7 @@ const TechStackCard = () => {
                             variant="dot"
                             size="sm"
                             classNames={{
-                                dot: "bg-css"
+                                dot: "bg-css",
                             }}
                         >
                             CSS
@@ -125,17 +123,16 @@ const TechStackCard = () => {
                             variant="dot"
                             size="sm"
                             classNames={{
-                                dot: "bg-nodejs"
+                                dot: "bg-nodejs",
                             }}
                         >
                             Node.js
                         </Chip>
                         <Chip
-
                             variant="dot"
                             size="sm"
                             classNames={{
-                                dot: "bg-supabase"
+                                dot: "bg-supabase",
                             }}
                         >
                             Supabase
@@ -144,16 +141,16 @@ const TechStackCard = () => {
                             variant="dot"
                             size="sm"
                             classNames={{
-                                dot: "bg-firebase"
+                                dot: "bg-firebase",
                             }}
                         >
-                            SQL 
+                            SQL
                         </Chip>
                         <Chip
                             variant="dot"
                             size="sm"
                             classNames={{
-                                dot: "bg-aws"
+                                dot: "bg-aws",
                             }}
                         >
                             AWS
@@ -162,7 +159,7 @@ const TechStackCard = () => {
                 </div>
             </CardBody>
         </Card>
-    );
-};
+    )
+}
 
-export default TechStackCard;
+export default TechStackCard

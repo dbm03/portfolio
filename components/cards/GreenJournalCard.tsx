@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import {
     Button,
@@ -15,8 +15,8 @@ import {
     useDisclosure,
     Chip,
     Link,
-} from "@nextui-org/react";
-import { ExternalIcon, EyeIcon, GithubIcon, RightDownArrow } from "../icons";
+} from "@nextui-org/react"
+import { ExternalIcon, EyeIcon, GithubIcon, RightDownArrow } from "../icons"
 
 const GreenJournalCard = () => {
     return (
@@ -29,7 +29,7 @@ const GreenJournalCard = () => {
                 className="hover:opacity-90"
                 shadow="sm"
                 classNames={{
-                base: "bg-black/70",
+                    base: "bg-black/70",
                 }}
             >
                 <CardHeader className="absolute z-10 top-1 flex-col !items-start">
@@ -50,7 +50,9 @@ const GreenJournalCard = () => {
                 <CardFooter className="absolute bottom-0 z-10 bg-black/70 border-t-1 border-default-600 dark:border-default-100">
                     <div className="flex items-center flex-grow gap-2">
                         <div className="flex flex-col gap-1">
-                            <p className="text-left text-tiny text-white/60">Tech Stack</p>
+                            <p className="text-left text-tiny text-white/60">
+                                Tech Stack
+                            </p>
                             <div className="flex flex-row gap-2">
                                 <Chip
                                     variant="dot"
@@ -118,7 +120,7 @@ const GreenJournalCard = () => {
                 </CardFooter>
             </Card>
         </>
-    );
-};
+    )
+}
 
-export default GreenJournalCard;
+export default GreenJournalCard

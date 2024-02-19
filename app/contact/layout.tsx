@@ -1,11 +1,7 @@
 export default function ContactLayout({
-  children,
+    children,
 }: {
-  children: React.ReactNode;
+    children: React.ReactNode
 }) {
-  return (
-    <section className="flex justify-center">
-      {children}
-    </section>
-  );
+    return <section className="flex justify-center">{children}</section>
 }
