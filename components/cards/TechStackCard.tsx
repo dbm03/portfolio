@@ -20,7 +20,6 @@ const TechStackCard = () => {
                     <h2 className="leading-loose">Programming languages</h2>
                     <div className="flex flex-wrap gap-1">
                         <Chip
-                            color="primary"
                             variant="dot"
                             size="sm"
                             classNames={{
@@ -30,7 +29,6 @@ const TechStackCard = () => {
                             TypeScript
                         </Chip>
                         <Chip
-                            color="warning"
                             variant="dot"
                             size="sm"
                             classNames={{
@@ -40,7 +38,6 @@ const TechStackCard = () => {
                             JavaScript
                         </Chip>
                         <Chip
-                            color="danger"
                             variant="dot"
                             size="sm"
                             classNames={{
@@ -48,6 +45,15 @@ const TechStackCard = () => {
                             }}
                         >
                             Python
+                        </Chip>
+                        <Chip
+                            variant="dot"
+                            size="sm"
+                            classNames={{
+                                dot: "bg-java"
+                            }}
+                        >
+                            Java
                         </Chip>
                     </div>
                 </div>
@@ -81,6 +87,24 @@ const TechStackCard = () => {
                         >
                             Next.js
                         </Chip>
+                        <Chip
+                            variant="dot"
+                            size="sm"
+                            classNames={{
+                                dot: "bg-html"
+                            }}
+                        >
+                            HTML
+                        </Chip>
+                        <Chip
+                            variant="dot"
+                            size="sm"
+                            classNames={{
+                                dot: "bg-css"
+                            }}
+                        >
+                            CSS
+                        </Chip>
                     </div>
                 </div>
                 <div>
@@ -112,7 +136,7 @@ const TechStackCard = () => {
                                 dot: "bg-firebase"
                             }}
                         >
-                            Firebase
+                            SQL 
                         </Chip>
                         <Chip
                             variant="dot"

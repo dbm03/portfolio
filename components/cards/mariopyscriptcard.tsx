@@ -30,6 +30,9 @@ const MarioPyScriptCard = () => {
         target="_blank"
         className="hover:opacity-90"
         shadow="sm"
+        classNames={{
+          base: "bg-black/70",
+        }}
       >
         <CardHeader className="absolute z-10 top-1 flex-col !items-start">
           <p className="font-bold uppercase text-tiny text-white/60">
@@ -38,8 +41,8 @@ const MarioPyScriptCard = () => {
           <h4 className="font-medium text-white text-large">Mario PyScript</h4>
         </CardHeader>
         <Image
-          width={442}
-          height={331}
+          width={506}
+          height={380}
           alt="Card background"
           className="z-0 object-cover w-full h-full"
           src="/mariopyscript_card.png"

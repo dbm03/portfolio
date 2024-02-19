@@ -54,6 +54,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const currentYear = new Date().getFullYear();
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
@@ -102,7 +104,7 @@ export default function RootLayout({
             </main>
             <footer className="flex flex-col items-center justify-center w-full py-3">
               <div className="flex">
-                <span className="text-default-600">🚧Under construction🚧</span>
+                <span className="text-default-600">David, {currentYear}, made with&nbsp;</span>
                 {/* <span className="text-default-600">Powered by&nbsp;</span>
                 <Link
                   className="transition-opacity duration-100 text-primary hover:opacity-80"
@@ -112,13 +114,15 @@ export default function RootLayout({
                   NextUI
                 </Link>
                 &nbsp;&&nbsp;
+        */}
                 <Link
-                  className="transition-opacity duration-100 text-primary hover:opacity-80"
+                  className="transition-opacity duration-100 text-secondary hover:opacity-80"
                   href="https://nextjs.org"
+                  target="_blank"
                   title="Next.js homepage"
                 >
                   Next.js
-                </Link> */}
+                </Link>
               </div>
             </footer>
           </div>

@@ -29,6 +29,9 @@ const ImmerseGTCard = () => {
         isPressable
         className="hover:opacity-90"
         shadow="sm"
+        classNames={{
+          base: "bg-black/70",
+        }}
       >
         <CardHeader className="absolute z-10 top-1 flex-col !items-start">
           <p className="font-bold uppercase text-tiny text-white/60">
@@ -44,8 +47,8 @@ const ImmerseGTCard = () => {
         </CardHeader>
         <Image
           alt="Card background"
-          width={442}
-          height={331}
+          width={506}
+          height={380}
           className="z-0 object-cover w-full h-full"
           src="/immersegt_card.png"
         />

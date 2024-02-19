@@ -26,6 +26,10 @@ module.exports = {
         supabase: '#3ecf8e',
         nodejs: '#417e38',
         firebase: '#ffca28',
+        java: '#ed2025',
+        c: '#5d6cbf',
+        css: '#214ce5',
+        html: '#e44d26',
       },
       background: {
         'striped': "linear-gradient(45deg, #f3f3f3 25%, transparent 25%, transparent 75%, #f3f3f3 75%, #f3f3f3), linear-gradient(45deg, #f3f3f3 25%, transparent 25%, transparent 75%, #f3f3f3 75%, #f3f3f3)",
