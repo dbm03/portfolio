@@ -29,3 +29,7 @@
   --yellow: #fcdf8f;
   --yellow_to: #fbd377;
 }
+
+* {
+  box-sizing: border-box;
+}

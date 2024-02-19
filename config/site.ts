@@ -1,7 +1,7 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "David Barroso",
+  name: "David Barroso - Portfolio",
   description:
-    "Frontend Developer and exchange student in the US. I strive to bring cultures together through seamless and user-centric design. Feel free to explore my projects and get in touch!",
+    "Full-stack developer and exchange student in the US at Georgia Tech. Passionate about front-end engineering, videogames, and traveling. Feel free to explore my projects and get in touch!",
 };

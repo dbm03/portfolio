@@ -89,7 +89,7 @@ const ClockWidget = ({ clockTimezone, text }: ClockWidgetProps) => {
   }, [clockTimezone]);
 
   return (
-    <div className="flex flex-col items-center h-full p-2 justify-evenly">
+    <div className="flex flex-col items-center h-full p-2 justify-center gap-3">
       <Clock
         value={value}
         renderMinuteMarks={false}
@@ -97,7 +97,7 @@ const ClockWidget = ({ clockTimezone, text }: ClockWidgetProps) => {
         size={80}
         // useMillisecondPrecision
       />
-      <div className="flex flex-col pt-2 leading-tight text-center">
+      <div className="flex flex-col pt-2 leading-tight text-center gap-1">
         <p>{text}</p>
         <p className="text-default-400">{dayText}</p>
         <p className="text-default-400">{diffHours}</p>

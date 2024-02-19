@@ -18,12 +18,12 @@ import {
 } from "@nextui-org/react";
 import { ExternalIcon, EyeIcon, RightDownArrow } from "../icons";
 
-const MusicPortfolioCard = () => {
+const ImmerseGTCard = () => {
   return (
     <>
       <Card
         as={Link}
-        href="https://luisbarrososaxofonista.com/"
+        href="https://immersegt.io/"
         target="_blank"
         isFooterBlurred
         isPressable
@@ -32,18 +32,22 @@ const MusicPortfolioCard = () => {
       >
         <CardHeader className="absolute z-10 top-1 flex-col !items-start">
           <p className="font-bold uppercase text-tiny text-white/60">
-            Business website
+            Virtual Event Platform
           </p>
           <h4 className="font-medium text-white text-large">
-            Musician portfolio
+            ImmerseGT 2024 Event Platform
           </h4>
+          <div className="flex items-center gap-2 animate-pulse">
+            <div className="w-2 h-2 rounded-full bg-danger" />
+            <span className="text-white text-sm">WIP</span>
+          </div>
         </CardHeader>
         <Image
           alt="Card background"
           width={442}
           height={331}
           className="z-0 object-cover w-full h-full"
-          src="/musicportfolio_card.png"
+          src="/immersegt_card.png"
         />
         <CardFooter className="absolute bottom-0 z-10 bg-black/40 border-t-1 border-default-600 dark:border-default-100">
           <div className="flex items-center flex-grow gap-2">
@@ -55,20 +59,20 @@ const MusicPortfolioCard = () => {
                   size="sm"
                   classNames={{
                     base: "text-white",
-                    dot: "bg-white",
+                    dot: "bg-white"
                   }}
                 >
                   Next.js
                 </Chip>
                 <Chip
-                  color="primary"
                   variant="dot"
                   size="sm"
                   classNames={{
                     base: "text-white",
+                    dot: "bg-supabase"
                   }}
                 >
-                  Tailwind CSS
+                  Supabase
                 </Chip>
               </div>
             </div>
@@ -77,7 +81,7 @@ const MusicPortfolioCard = () => {
             <Button
               isIconOnly
               as={Link}
-              href="https://luisbarrososaxofonista.com/"
+              href="https://immersegt.io/"
               target="_blank"
               color="default"
               aria-label="See more"
@@ -93,4 +97,4 @@ const MusicPortfolioCard = () => {
   );
 };
 
-export default MusicPortfolioCard;
+export default ImmerseGTCard;
