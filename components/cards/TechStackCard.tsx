@@ -55,6 +55,17 @@ const TechStackCard = () => {
                         >
                             Java
                         </Chip>
+                        <Chip
+                            variant="dot"
+                            size="sm"
+                            classNames={{
+                                base: "w-auto h-auto px-1",
+                                dot: "bg-c",
+                                content: "px-1",
+                            }}
+                        >
+                            C
+                        </Chip>
                     </div>
                 </div>
                 <div>
