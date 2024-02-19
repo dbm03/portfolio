@@ -361,7 +361,7 @@ export const DocumentIcon: React.FC<IconSvgProps> = ({
   ...props
 }) => (
   <svg fill="none"
-    shape-rendering="geometricPrecision"
+    shapeRendering="geometricPrecision"
     stroke="currentColor" strokeLinecap="round"
     strokeLinejoin="round" strokeWidth="1.5"
     viewBox="0 0 24 24" width={size || width}
