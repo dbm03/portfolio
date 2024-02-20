@@ -23,8 +23,7 @@ const ImmerseGTCard = () => {
         <>
             <Card
                 as={Link}
-                href="https://immersegt.io/"
-                target="_blank"
+                href="/projects/immersegt"
                 isFooterBlurred
                 isPressable
                 className="hover:opacity-90"

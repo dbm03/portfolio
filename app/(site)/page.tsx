@@ -6,6 +6,8 @@ import TimezoneCard from "@/components/cards/timezonecard"
 import TechStackCard from "@/components/cards/TechStackCard"
 import UniCard from "@/components/cards/UniCard"
 import ContributionGraphWidget from "@/components/cards/contributiongraph"
+import UC3MPicture from "@/public/uc3m.jpg"
+import GTPicture from "@/public/gt.jpg"
 
 export default function Home() {
     return (
@@ -46,14 +48,12 @@ export default function Home() {
         </div> */}
             <div className="row-start-4 col-start-1 col-span-6 row-span-3">
                 <UniCard
-                    backgroundImage="/gt.jpg"
+                    backgroundImage={GTPicture}
                     backgroundImageAlt="Georgia Tech campus image"
                     timestamp="08/2023 - Present"
                     title="Study Abroad at"
                     name="Georgia Institute of Technology"
                     studies="Computer Science"
-                    imageWidth={1096}
-                    imageHeight={495}
                 />
             </div>
             <div className="row-start-4 col-start-7 col-span-5 row-span-3">
@@ -61,14 +61,12 @@ export default function Home() {
             </div>
             <div className="row-start-7 col-span-6 col-start-1 row-span-3">
                 <UniCard
-                    backgroundImage="/uc3m.jpg"
+                    backgroundImage={UC3MPicture}
                     backgroundImageAlt="UC3M campus image"
                     timestamp="09/2021 - Present"
                     title="Bachelor's degree at"
                     name="Universidad Carlos III de Madrid"
                     studies="Computer Science and Engineering"
-                    imageWidth={1000}
-                    imageHeight={398}
                 />
             </div>
             <div className="row-start-7 col-span-5 col-start-7 row-span-3">
