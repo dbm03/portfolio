@@ -8,7 +8,7 @@ import ImmerseGTPhoto from "@/public/immersegt_card.png"
 const ImmerseGT = () => {
     return (
         <>
-            <nav className="md:hidden mb-6">
+            <nav className="lg:hidden mb-6">
                 <ul className="flex flex-col">
                     <li>
                         <Link className="flex text-lg hover:opacity-80 transition-opacity text-default-500 items-center gap-1 px-2 py-1 max-w-fit" href="/projects">
@@ -18,7 +18,7 @@ const ImmerseGT = () => {
                     </li>
                 </ul>
             </nav>
-            <nav className="hidden md:block w-40 pr-8 fixed top-0 translate-x-[-430px] translate-y-32">
+            <nav className="hidden lg:block w-40 pr-8 fixed top-0 translate-x-[-430px] translate-y-32">
                 <ul className="flex flex-col gap-1">
                     <li>
                         <Link className="text-default-500 hover:opacity-80 transition-opacity underline flex items-center gap-1" href="/projects">
@@ -53,8 +53,8 @@ const ImmerseGT = () => {
                 </header>
                 <figure>
                     <Image
-                        className="rounded-s"
-                        alt="Screenshot of ImmerseGT event platform"
+                        className="rounded-md"
+                        alt="Screenshot of the ImmerseGT event platform"
                         src={ImmerseGTPhoto}
                         placeholder="blur"
                     />
