@@ -32,13 +32,13 @@ const ComingSoonCard = dynamic(
 
 export default function ProjectsPage() {
     return (
-        <section className="grid md:grid-cols-2 md:grid-rows-3 gap-6 md:gap-3">
+        <>
             <ImmerseGTCard />
             <LeagueWrappedCard />
             <GreenJournalCard />
             <MusicPortfolioCard />
             <MarioPyScriptCard />
             <ComingSoonCard />
-        </section>
+        </>
     )
 }
