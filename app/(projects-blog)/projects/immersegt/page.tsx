@@ -43,12 +43,12 @@ const ImmerseGT = () => {
             </nav>
             <section className="max-w-[80ch] flex flex-col gap-4 px-2">
                 <header id="immersegt">
-                    <h1 className="text-xl font-semibold text-white">
+                    <h1 className="text-xl font-semibold text-foreground">
                         ImmerseGT 2024 Event Platform
                     </h1>
-                    <div className="flex items-center gap-2 animate-pulse">
-                        <div className="w-2 h-2 rounded-full bg-danger" />
-                        <span className="text-white text-sm">WIP</span>
+                    <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full animate-pulse bg-danger" />
+                        <span className="text-foreground text-sm">WIP</span>
                     </div>
                 </header>
                 <figure>
