@@ -1,11 +1,11 @@
 import SmallAboutCard from "@/components/cards/smallabout"
 import RainBackground from "@/components/widgets/rainbackground"
 import dynamic from "next/dynamic"
-import ComingSoonCard from "@/components/cards/comingsooncard"
+import ComingSoonCard from "@/components/cards/projects/comingsooncard"
 import TimezoneCard from "@/components/cards/timezonecard"
 import TechStackCard from "@/components/cards/TechStackCard"
 import UniCard from "@/components/cards/UniCard"
-import ContributionGraphWidget from "@/components/cards/contributiongraph"
+import ContributionGraphWidget from "@/components/cards/projects/contributiongraph"
 import UC3MPicture from "@/public/uc3m.jpg"
 import GTPicture from "@/public/gt.jpg"
 

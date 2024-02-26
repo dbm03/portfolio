@@ -33,12 +33,17 @@ const SmallAboutCard = () => {
                     Georgia Tech.
                 </p>
                 <p className="text-pretty">
-                    Passionate about front-end engineering, videogames, and
-                    traveling.
+                    Passionate about front-end engineering, AI, user-experience, and <span><Link className="text-foreground underline" href="/photos">photography</Link></span>.
                 </p>
+                {/*
                 <p className="text-pretty">
-                    Feel free to explore my projects and get in touch!
+                    In my free time, I enjoy playing videogames and capturing moments through <span><Link className="text-foreground underline" href="/gallery">photography</Link></span> while traveling.
                 </p>
+                */}
+                <p className="text-pretty">
+                    Feel free to explore <span><Link className="text-foreground underline" href="/projects">my projects</Link></span> and <span><Link className="text-forground underline" href="/contact">get in touch!</Link></span>
+                </p>
+
             </CardBody>
         </Card>
     )

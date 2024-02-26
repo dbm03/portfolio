@@ -28,13 +28,12 @@ export const TabBar: React.FC<{}> = () => {
             radius="full"
             size="lg"
         >
-            <Tab as={Link} key="home" title="Home" href={"/"} tabIndex={2} />
+            <Tab as={Link} key="home" title="Home" href={"/"} />
             <Tab
                 as={Link}
-                key="about"
-                title="About"
-                href={"/about"}
-                tabIndex={3}
+                key="photos"
+                title="Photos"
+                href={"/photos"}
             />
             <Tab
                 as={Link}
@@ -48,14 +47,12 @@ export const TabBar: React.FC<{}> = () => {
                     </div>
                 }
                 href="/projects"
-                tabIndex={4}
             />
             <Tab
                 as={Link}
                 key="contact"
                 title="Contact"
                 href="/contact"
-                tabIndex={5}
             />
         </Tabs>
     )
