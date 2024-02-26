@@ -79,7 +79,6 @@ export default function RootLayout({
                             <Link
                                 href="/"
                                 className="hidden w-16 text-4xl transition-opacity md:block hover:opacity-80"
-                                tabIndex={1}
                             >
                                 db
                             </Link>
@@ -90,7 +89,6 @@ export default function RootLayout({
                                     href="https://github.com/barrosodavid/portfolio"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    tabIndex={6}
                                 >
                                     <GithubIcon />
                                 </Link>

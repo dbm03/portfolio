@@ -5,7 +5,7 @@ import { fontSans } from "@/config/fonts"
 import { Providers } from "../providers"
 import Link from "next/link"
 import clsx from "clsx"
-import TabBar from "@/components/tabbar"
+import NavBar from "@/components/NavBar"
 import { GithubIcon, VercelLogo } from "@/components/icons"
 import { ThemeSwitch } from "@/components/theme-switch"
 import { Toaster } from "sonner"
@@ -80,12 +80,11 @@ export default function RootLayout({
                             <Link
                                 href="/"
                                 className="hidden w-16 text-4xl transition-opacity md:block hover:opacity-80"
-                                tabIndex={1}
                             >
                                 db
                             </Link>
                             <nav className="sticky top-0">
-                                <TabBar />
+                                <NavBar />
                             </nav>
                             <div className="items-center justify-end hidden w-16 gap-3 md:flex">
                                 <Link
@@ -93,7 +92,6 @@ export default function RootLayout({
                                     href="https://github.com/barrosodavid/portfolio"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    tabIndex={6}
                                 >
                                     <GithubIcon />
                                 </Link>
