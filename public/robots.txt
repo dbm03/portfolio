@@ -1,0 +1,3 @@
+# Block all crawlers for resume 
+User-agent: *
+Disallow: /David_s_ResumeWeb.pdf
