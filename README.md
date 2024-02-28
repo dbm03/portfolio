@@ -1,5 +1,7 @@
 # Portfolio Website
 
+<img src="/.github/mock.png" />
+
 This is my portfolio website built with Next.js and NextUI.
 
 ## Technologies Used
