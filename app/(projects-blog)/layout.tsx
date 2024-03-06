@@ -1,5 +1,6 @@
 import "@/styles/globals.css"
 import { Metadata } from "next"
+import { Analytics } from "@vercel/analytics/react"
 import { siteConfig } from "@/config/site"
 import { fontSans } from "@/config/fonts"
 import { Providers } from "../providers"
@@ -107,6 +108,7 @@ export default function RootLayout({
                         </footer>
                     </div>
                 </Providers>
+                <Analytics />
             </body>
         </html>
     )
