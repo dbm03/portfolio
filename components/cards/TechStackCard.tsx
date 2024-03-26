@@ -62,7 +62,7 @@ const TechStackCard = () => {
                                 content: "px-1",
                             }}
                         >
-                            C
+                            C/C++
                         </Chip>
                     </div>
                 </div>
