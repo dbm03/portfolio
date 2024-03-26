@@ -11,22 +11,22 @@ const GreenJournalCard = dynamic(
 )
 
 const LeagueWrappedCard = dynamic(
-    () => import("@/components/cards/projects/leaguewrappedcard"),
+    () => import("@/components/cards/projects/LeagueWrappedCard"),
     { ssr: false }
 )
 
 const MusicPortfolioCard = dynamic(
-    () => import("@/components/cards/projects/musicportfoliocard"),
+    () => import("@/components/cards/projects/MusicPortfolioCard"),
     { ssr: false }
 )
 
 const MarioPyScriptCard = dynamic(
-    () => import("@/components/cards/projects/mariopyscriptcard"),
+    () => import("@/components/cards/projects/MarioPyScriptCard"),
     { ssr: false }
 )
 
 const ComingSoonCard = dynamic(
-    () => import("@/components/cards/projects/comingsooncard"),
+    () => import("@/components/cards/projects/ComingSoonCard"),
     { ssr: false }
 )
 

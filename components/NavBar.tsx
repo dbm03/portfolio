@@ -29,12 +29,7 @@ export const NavBar: React.FC<{}> = () => {
             size="lg"
         >
             <Tab as={Link} key="home" title="Home" href={"/"} />
-            <Tab
-                as={Link}
-                key="photos"
-                title="Photos"
-                href={"/photos"}
-            />
+            <Tab as={Link} key="photos" title="Photos" href={"/photos"} />
             <Tab
                 as={Link}
                 key="projects"
@@ -48,14 +43,9 @@ export const NavBar: React.FC<{}> = () => {
                 }
                 href="/projects"
             />
-            <Tab
-                as={Link}
-                key="contact"
-                title="Contact"
-                href="/contact"
-            />
+            <Tab as={Link} key="contact" title="Contact" href="/contact" />
         </Tabs>
     )
 }
 
-export default NavBar 
+export default NavBar

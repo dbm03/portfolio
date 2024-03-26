@@ -1,8 +1,8 @@
-import ContactForm from "@/components/contact/contactform"
-import GithubCard from "@/components/contact/github"
-import InstagramCard from "@/components/contact/instagram"
-import LinkedinCard from "@/components/contact/linkedin"
-import ResumeCard from "@/components/contact/resume"
+import ContactForm from "@/components/contact/ContactForm"
+import GithubCard from "@/components/contact/GitHub"
+import InstagramCard from "@/components/contact/Instagram"
+import LinkedinCard from "@/components/contact/LinkedIn"
+import ResumeCard from "@/components/contact/Resume"
 
 export default function ContactPage() {
     return (
