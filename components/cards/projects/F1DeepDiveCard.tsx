@@ -69,7 +69,7 @@ const F1DeepDiveCard = () => {
                                     size="sm"
                                     classNames={{
                                         base: "text-white",
-                                        dot: "bg-reactjs"
+                                        dot: "bg-reactjs",
                                     }}
                                 >
                                     React
@@ -80,10 +80,10 @@ const F1DeepDiveCard = () => {
                                     size="sm"
                                     classNames={{
                                         base: "text-white",
-                                        dot: "bg-firebase"
+                                        dot: "bg-firebase",
                                     }}
                                 >
-                                   Scikit-learn 
+                                    Scikit-learn
                                 </Chip>
                             </div>
                         </div>
@@ -110,4 +110,4 @@ const F1DeepDiveCard = () => {
     )
 }
 
-export default F1DeepDiveCard 
+export default F1DeepDiveCard

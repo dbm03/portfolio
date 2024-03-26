@@ -7,7 +7,7 @@ import type {
 } from "@/types"
 import type { ThemeInput, Activity } from "react-activity-calendar"
 import { dateDiffInDays } from "@/utils"
-import { GithubIcon } from "../../icons"
+import { GithubIcon } from "../icons"
 import dynamic from "next/dynamic"
 
 const ClientContributionGraph = dynamic(

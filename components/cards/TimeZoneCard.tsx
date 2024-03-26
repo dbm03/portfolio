@@ -3,11 +3,11 @@
 import { Card } from "@nextui-org/react"
 import "react-clock/dist/Clock.css"
 import dynamic from "next/dynamic"
-const ClockWidget = dynamic(() => import("@/components/widgets/clock"), {
+const ClockWidget = dynamic(() => import("@/components/widgets/Clock"), {
     ssr: false,
 })
 
-const TimezoneCard = () => {
+const TimeZoneCard = () => {
     return (
         <Card
             shadow="sm"
@@ -25,4 +25,4 @@ const TimezoneCard = () => {
     )
 }
 
-export default TimezoneCard
+export default TimeZoneCard

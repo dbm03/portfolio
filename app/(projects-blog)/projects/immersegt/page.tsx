@@ -11,7 +11,10 @@ const ImmerseGT = () => {
             <nav className="lg:hidden mb-6">
                 <ul className="flex flex-col">
                     <li>
-                        <Link className="flex text-lg hover:opacity-80 transition-opacity text-default-500 items-center gap-1 px-2 py-1 max-w-fit" href="/projects">
+                        <Link
+                            className="flex text-lg hover:opacity-80 transition-opacity text-default-500 items-center gap-1 px-2 py-1 max-w-fit"
+                            href="/projects"
+                        >
                             <IconArrowReturnLeft size={24} />
                             <span>Projects</span>
                         </Link>
@@ -21,21 +24,29 @@ const ImmerseGT = () => {
             <nav className="hidden lg:block w-40 pr-8 fixed top-0 translate-x-[-430px] translate-y-32">
                 <ul className="flex flex-col gap-1">
                     <li>
-                        <Link className="text-default-500 hover:opacity-80 transition-opacity underline flex items-center gap-1" href="/projects">
+                        <Link
+                            className="text-default-500 hover:opacity-80 transition-opacity underline flex items-center gap-1"
+                            href="/projects"
+                        >
                             <span>Projects</span>
                             <IconArrowReturnLeft size={16} />
                         </Link>
-
                     </li>
                     <div className="h-6"></div>
 
                     <li>
-                        <Link className="text-default-500 hover:opacity-80 transition-opacity" href="#immersegt">
+                        <Link
+                            className="text-default-500 hover:opacity-80 transition-opacity"
+                            href="#immersegt"
+                        >
                             ImmerseGT
                         </Link>
                     </li>
                     <li>
-                        <Link className="text-default-500 hover:opacity-80 transition-opacity" href="#about">
+                        <Link
+                            className="text-default-500 hover:opacity-80 transition-opacity"
+                            href="#about"
+                        >
                             About
                         </Link>
                     </li>
@@ -63,21 +74,33 @@ const ImmerseGT = () => {
                     </figcaption>
                 </figure>
                 <article id="about" className="flex flex-col gap-2">
-                    <h2 className="text-xl"
-                    >
-                        About</h2>
+                    <h2 className="text-xl">About</h2>
                     <p className="text-medium text-pretty">
-                        This project is currently in progress with an estimated completion date of March 1st. The 2024 ImmerseGT hackathon will be held in April.
+                        This project is currently in progress with an estimated
+                        completion date of March 1st. The 2024 ImmerseGT
+                        hackathon will be held in April.
                     </p>
                     <p className="text-medium text-pretty">
-                        ImmerseGT is a hackathon hosted by the GTXR club and Startup Exchange at Georgia Tech. Participants can enter into various XR / virtual reality-based categories for a chance to win up to $20,000 in prizes.
+                        ImmerseGT is a hackathon hosted by the GTXR club and
+                        Startup Exchange at Georgia Tech. Participants can enter
+                        into various XR / virtual reality-based categories for a
+                        chance to win up to $20,000 in prizes.
                     </p>
                     <p className="text-medium text-pretty">
-                        The hackathon was first held in 2023, and the organizers were looking to have a virtual platform developed to better run the hackathon in 2024. The goal was for the new platform to help participants register for the hackathon, form teams, see the event schedule, submit projects, and more as a one stop shop for the hackathon.
+                        The hackathon was first held in 2023, and the organizers
+                        were looking to have a virtual platform developed to
+                        better run the hackathon in 2024. The goal was for the
+                        new platform to help participants register for the
+                        hackathon, form teams, see the event schedule, submit
+                        projects, and more as a one stop shop for the hackathon.
                     </p>
                 </article>
                 <footer>
-                    <a href="https://immersegt.io/" target="_blank" rel="noopener noreferrer">
+                    <a
+                        href="https://immersegt.io/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         <span>View Live</span>
                     </a>
                 </footer>
