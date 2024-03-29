@@ -82,7 +82,7 @@ const GreenJournalCard = () => {
                                         base: "text-white",
                                     }}
                                 >
-                                    Lightweight Charts
+                                    OpenAI API
                                 </Chip>
                             </div>
                         </div>
