@@ -60,7 +60,7 @@ const getData = async (): Promise<Activity[] | null> => {
 
 const ContributionGraphWidget = async () => {
     const data: Activity[] | null = await getData()
-    const weekStart: WeekDay = ((new Date().getDay() + 2) % 6) as WeekDay // Adjust week start so that contribution graph is square-shaped
+    // const weekStart: WeekDay = ((new Date().getDay() + 1) % 6) as WeekDay // Adjust week start so that contribution graph is square-shaped
 
     return (
         <Card
@@ -104,7 +104,7 @@ const ContributionGraphWidget = async () => {
                     <ClientContributionGraph
                         data={data}
                         theme={DEFAULT_THEME}
-                        weekStart={weekStart}
+                        weekStart={1}
                     />
                 </div>
             </div>
