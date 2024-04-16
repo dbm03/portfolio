@@ -25,6 +25,7 @@ module.exports = {
                 css: "#1572b6",
                 supabase: "#3ecf8e",
                 nodejs: "#417e38",
+                docker: "#1d63ed",
                 firebase: "#ffca28",
                 java: "#ed2025",
                 c: "#5d6cbf",

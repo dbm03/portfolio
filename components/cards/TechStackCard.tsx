@@ -132,10 +132,10 @@ const TechStackCard = () => {
                             variant="dot"
                             size="sm"
                             classNames={{
-                                dot: "bg-supabase",
+                                dot: "bg-docker",
                             }}
                         >
-                            Supabase
+                            Docker
                         </Chip>
                         <Chip
                             variant="dot"
