@@ -47,19 +47,21 @@ const GreenJournalCard = () => {
                     className="z-0 object-cover w-full h-full"
                     src="/greenjournal_card.png"
                 />
-                <CardFooter className="absolute bottom-0 z-10 bg-black/70 border-t-1 border-default-600 dark:border-default-100">
-                    <div className="flex items-center flex-grow gap-2">
-                        <div className="flex flex-col gap-1">
-                            <p className="text-left text-tiny text-white/60">
-                                Tech Stack
-                            </p>
-                            <div className="flex flex-row gap-2">
+                <CardFooter className="absolute flex flex-col bottom-0 z-10 bg-black/70 border-t-1 border-default-600 dark:border-default-100">
+                    <div className="w-full">
+                        <p className="text-left text-tiny text-white/60">
+                            Tech Stack
+                        </p>
+                    </div>
+                    <div className="flex flex-1 w-full h-full">
+                        <div className="flex max-w-full w-full overflow-x-scroll scrollbar-hide">
+                            <div className="flex gap-2 items-end h-full">
                                 <Chip
                                     variant="dot"
                                     size="sm"
                                     classNames={{
-                                        base: "text-white",
-                                        dot: "bg-white",
+                                        base: "text-white whitespace-nowrap",
+                                        content: "overflow-ellipsis overflow-hidden"
                                     }}
                                 >
                                     Next.js
@@ -69,7 +71,8 @@ const GreenJournalCard = () => {
                                     variant="dot"
                                     size="sm"
                                     classNames={{
-                                        base: "text-white",
+                                        base: "text-white whitespace-nowrap",
+                                        content: "overflow-ellipsis overflow-hidden"
                                     }}
                                 >
                                     Three.js
@@ -79,44 +82,96 @@ const GreenJournalCard = () => {
                                     variant="dot"
                                     size="sm"
                                     classNames={{
-                                        base: "text-white",
+                                        base: "text-white whitespace-nowrap",
+                                        content: "overflow-ellipsis overflow-hidden"
                                     }}
                                 >
                                     OpenAI API
                                 </Chip>
                             </div>
                         </div>
+                        <div className="flex justify-end pl-2 gap-2">
+                            <Tooltip content="See on GitHub" closeDelay={100}>
+                                <Button
+                                    isIconOnly
+                                    href="https://github.com/barrosodavid/greenjournal"
+                                    target="_blank"
+                                    as={Link}
+                                    color="default"
+                                    aria-label="Like"
+                                    radius="full"
+                                    size="sm"
+                                >
+                                    <GithubIcon />
+                                </Button>
+                            </Tooltip>
+                            <Tooltip content="View Live" closeDelay={100}>
+                                <Button
+                                    isIconOnly
+                                    as={Link}
+                                    href="https://greenjournal.tech/"
+                                    target="_blank"
+                                    color="default"
+                                    aria-label="See more"
+                                    radius="full"
+                                    size="sm"
+                                >
+                                    <EyeIcon />
+                                </Button>
+                            </Tooltip>
+                        </div>
                     </div>
-                    <div className="flex gap-2">
-                        <Tooltip content="See on GitHub" closeDelay={100}>
-                            <Button
-                                isIconOnly
-                                href="https://github.com/barrosodavid/greenjournal"
-                                target="_blank"
-                                as={Link}
-                                color="default"
-                                aria-label="Like"
-                                radius="full"
-                                size="sm"
-                            >
-                                <GithubIcon />
-                            </Button>
-                        </Tooltip>
-                        <Tooltip content="View Live" closeDelay={100}>
-                            <Button
-                                isIconOnly
-                                as={Link}
-                                href="https://greenjournal.tech/"
-                                target="_blank"
-                                color="default"
-                                aria-label="See more"
-                                radius="full"
-                                size="sm"
-                            >
-                                <EyeIcon />
-                            </Button>
-                        </Tooltip>
-                    </div>
+                    {/* <div className="py-3 px-1 outline-none pt-0">
+                        <div className="relative overflow-y-hidden flex items-center border border-default-200 dark:border-default-100 px-2 py-4 rounded-lg overflow-hidden">
+                        </div>
+                    </div> */}
+                    {/* <div className="flex items-center flex-row gap-2">
+                        <div className="overflow-x-scroll max-w-full ">
+                            <div className="flex gap-2">
+                                <Chip
+                                    color="primary"
+                                    variant="dot"
+                                    size="sm"
+                                    classNames={{
+                                        base: "text-white flex flex-shrink whitespace-nowrap",
+                                        content: "overflow-ellipsis overflow-hidden"
+
+                                    }}
+                                >
+                                    OpenAI APIADSASHDUISAHDIUSADHIUSAHDIUSAHDUISAHDIUHSADIUSAHDIUASHDIU
+                                </Chip>
+                            </div>
+                        </div>
+                        <div className="flex flex-1 flex-grow justify-end flex-shrink-0 basis-20 gap-2">
+                            <Tooltip content="See on GitHub" closeDelay={100}>
+                                <Button
+                                    isIconOnly
+                                    href="https://github.com/barrosodavid/greenjournal"
+                                    target="_blank"
+                                    as={Link}
+                                    color="default"
+                                    aria-label="Like"
+                                    radius="full"
+                                    size="sm"
+                                >
+                                    <GithubIcon />
+                                </Button>
+                            </Tooltip>
+                            <Tooltip content="View Live" closeDelay={100}>
+                                <Button
+                                    isIconOnly
+                                    as={Link}
+                                    href="https://greenjournal.tech/"
+                                    target="_blank"
+                                    color="default"
+                                    aria-label="See more"
+                                    radius="full"
+                                    size="sm"
+                                >
+                                    <EyeIcon />
+                                </Button>
+                            </Tooltip>
+                        </div> */}
                 </CardFooter>
             </Card>
         </>
