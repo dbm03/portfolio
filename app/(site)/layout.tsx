@@ -90,7 +90,7 @@ export default function RootLayout({
                             <div className="items-center justify-end hidden w-16 gap-3 md:flex">
                                 <Link
                                     className="transition-opacity duration-100 text-default-800 dark:text-default-500 hover:opacity-80"
-                                    href="https://github.com/barrosodavid/portfolio"
+                                    href="https://github.com/dbm03/portfolio"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >

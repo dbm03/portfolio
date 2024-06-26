@@ -9,7 +9,7 @@ const GithubCard = () => {
             <Card
                 shadow="sm"
                 as={Link}
-                href="https://github.com/barrosodavid"
+                href="https://github.com/dbm03"
                 target="_blank"
                 className="hover:opacity-90 bg-zinc-800"
                 fullWidth

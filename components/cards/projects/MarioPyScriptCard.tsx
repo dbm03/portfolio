@@ -95,7 +95,7 @@ const MarioPyScriptCard = () => {
                             <Tooltip content="See on GitHub" closeDelay={100}>
                                 <Button
                                     isIconOnly
-                                    href="https://github.com/barrosodavid/mariopyscript"
+                                    href="https://github.com/dbm03/mariopyscript"
                                     target="_blank"
                                     as={Link}
                                     color="default"

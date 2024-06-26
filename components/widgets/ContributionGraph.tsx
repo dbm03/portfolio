@@ -76,7 +76,7 @@ const ContributionGraphWidget = async () => {
                     <div className="flex flex-col gap-4">
                         <h2 className="text-xl">Contribution Graph</h2>
                         <a
-                            href="https://github.com/barrosodavid"
+                            href="https://github.com/dbm03"
                             target="_blank"
                             className="hover:opacity-80 
                     transition-opacity flex justify-center items-center w-12 h-12 rounded-md dark:bg-black text-white
@@ -90,7 +90,7 @@ const ContributionGraphWidget = async () => {
                         <Button
                             className="m-0"
                             as={Link}
-                            href="https://github.com/barrosodavid"
+                            href="https://github.com/dbm03"
                             showAnchorIcon
                             target="_blank"
                             color="default"
