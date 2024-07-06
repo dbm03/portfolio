@@ -21,7 +21,7 @@ const GithubCard = () => {
                     <GithubIcon size={64} />
                 </CardBody>
                 <CardFooter className="text-white bg-black/20 border-t border-zinc-500/50 z-10 flex justify-center">
-                    <p className="text-small">@barrosodavid</p>
+                    <p className="text-small">@dbm03</p>
                 </CardFooter>
             </Card>
         </Tooltip>

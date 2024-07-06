@@ -26,7 +26,7 @@ const MarioPyScriptCard = () => {
                 isFooterBlurred
                 isPressable
                 as={Link}
-                href={"https://barrosodavid.github.io/mariopyscript/"}
+                href={"https://dbm03.github.io/mariopyscript/"}
                 target="_blank"
                 className="hover:opacity-90"
                 shadow="sm"
@@ -109,7 +109,7 @@ const MarioPyScriptCard = () => {
                             <Tooltip content="Play now" closeDelay={100}>
                                 <Button
                                     isIconOnly
-                                    href="https://barrosodavid.github.io/mariopyscript/"
+                                    href="https://dbm03.github.io/mariopyscript/"
                                     target="_blank"
                                     as={Link}
                                     color="default"

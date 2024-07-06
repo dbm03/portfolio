@@ -45,7 +45,7 @@ async function fetchGitHubCalendarData(
 
 const getData = async (): Promise<Activity[] | null> => {
     try {
-        const data = await fetchGitHubCalendarData("barrosodavid", "last")
+        const data = await fetchGitHubCalendarData("dbm03", "last")
 
         const filteredData = data?.contributions?.filter((item) => {
             const dateDiff = dateDiffInDays(new Date(item.date), new Date())
