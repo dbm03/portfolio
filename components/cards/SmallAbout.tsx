@@ -24,13 +24,23 @@ const SmallAboutCard = () => {
 
                 <div className="flex flex-col">
                     <p className="text-xl">David Barroso</p>
-                    <p className="text-small text-default-500">Madrid, Spain</p>
+                    <p className="text-small text-default-500">
+                        Frontend Developer Intern @{" "}
+                        <Link
+                            href="https://nhost.io"
+                            className="text-default-500 text-small underline"
+                            referrerPolicy="no-referrer"
+                            target="_blank"
+                        >
+                            Nhost
+                        </Link>
+                    </p>
                 </div>
             </CardHeader>
             <CardBody className="flex gap-2">
                 <p className="text-pretty">
-                    Full-stack developer and exchange student in the US at
-                    Georgia Tech.
+                    Software developer and exchange student in the US at Georgia
+                    Tech.
                 </p>
                 <p className="text-pretty">
                     Passionate about front-end engineering, AI, user-experience,
@@ -45,11 +55,6 @@ const SmallAboutCard = () => {
                     </span>
                     .
                 </p>
-                {/*
-                <p className="text-pretty">
-                    In my free time, I enjoy playing videogames and capturing moments through <span><Link className="text-foreground underline" href="/gallery">photography</Link></span> while traveling.
-                </p>
-                */}
                 <p className="text-pretty">
                     Feel free to explore{" "}
                     <span>
