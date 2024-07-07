@@ -84,7 +84,7 @@ export default function RootLayout({
                             >
                                 db
                             </Link>
-                            <nav className="sticky top-0">
+                            <nav className="z-50 left-1/2 -translate-x-1/2 fixed top-4">
                                 <NavBar />
                             </nav>
                             <div className="items-center justify-end hidden w-16 gap-3 md:flex">
@@ -99,7 +99,7 @@ export default function RootLayout({
                                 <ThemeSwitch />
                             </div>
                         </header>
-                        <main className="flex-grow w-full max-w-5xl px-4 lg:px-0">
+                        <main className="mt-4 flex-grow w-full max-w-5xl px-4 lg:px-0">
                             {children}
                         </main>
                         <footer className="flex flex-col items-center justify-center w-full py-3">

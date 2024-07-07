@@ -22,7 +22,7 @@ export const NavBar: React.FC<{}> = () => {
             classNames={{
                 base: "",
                 tabList:
-                    "shadow-sm p-2 flex items-center justify-center sticky",
+                    "shadow-sm p-2 bg-opacity-75 backdrop-blur-sm flex items-center justify-center sticky",
             }}
             selectedKey={selected}
             radius="full"
