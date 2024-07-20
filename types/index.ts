@@ -1,21 +1,21 @@
-import { SVGProps } from "react"
+import { SVGProps } from "react";
 
-import type { Activity } from "react-activity-calendar"
+import type { Activity } from "react-activity-calendar";
 
 export type IconSvgProps = SVGProps<SVGSVGElement> & {
-    size?: number
-}
+  size?: number;
+};
 
-export type Year = number | "last"
+export type Year = number | "last";
 
 export interface GitHubCalendarApiResponse {
-    total: {
-        [year: number]: number
-        [year: string]: number // 'lastYear;
-    }
-    contributions: Array<Activity>
+  total: {
+    [year: number]: number;
+    [year: string]: number; // 'lastYear;
+  };
+  contributions: Array<Activity>;
 }
 
 export interface GitHubCalendarApiErrorResponse {
-    error: string
+  error: string;
 }

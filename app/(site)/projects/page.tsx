@@ -1,49 +1,49 @@
-import dynamic from "next/dynamic"
+import dynamic from "next/dynamic";
 
 const ImmerseGTCard = dynamic(
-    () => import("@/components/cards/projects/ImmerseGTCard"),
-    { ssr: false }
-)
+  () => import("@/components/cards/projects/ImmerseGTCard"),
+  { ssr: false },
+);
 
 const GreenJournalCard = dynamic(
-    () => import("@/components/cards/projects/GreenJournalCard"),
-    { ssr: false }
-)
+  () => import("@/components/cards/projects/GreenJournalCard"),
+  { ssr: false },
+);
 
 const LeagueWrappedCard = dynamic(
-    () => import("@/components/cards/projects/LeagueWrappedCard"),
-    { ssr: false }
-)
+  () => import("@/components/cards/projects/LeagueWrappedCard"),
+  { ssr: false },
+);
 
 const MusicPortfolioCard = dynamic(
-    () => import("@/components/cards/projects/MusicPortfolioCard"),
-    { ssr: false }
-)
+  () => import("@/components/cards/projects/MusicPortfolioCard"),
+  { ssr: false },
+);
 
 const MarioPyScriptCard = dynamic(
-    () => import("@/components/cards/projects/MarioPyScriptCard"),
-    { ssr: false }
-)
+  () => import("@/components/cards/projects/MarioPyScriptCard"),
+  { ssr: false },
+);
 
 const ComingSoonCard = dynamic(
-    () => import("@/components/cards/projects/ComingSoonCard"),
-    { ssr: false }
-)
+  () => import("@/components/cards/projects/ComingSoonCard"),
+  { ssr: false },
+);
 
 const F1DeepDiveCard = dynamic(
-    () => import("@/components/cards/projects/F1DeepDiveCard"),
-    { ssr: false }
-)
+  () => import("@/components/cards/projects/F1DeepDiveCard"),
+  { ssr: false },
+);
 
 export default function ProjectsPage() {
-    return (
-        <>
-            <ImmerseGTCard />
-            <F1DeepDiveCard />
-            <LeagueWrappedCard />
-            <GreenJournalCard />
-            <MusicPortfolioCard />
-            <MarioPyScriptCard />
-        </>
-    )
+  return (
+    <>
+      <ImmerseGTCard />
+      <F1DeepDiveCard />
+      <LeagueWrappedCard />
+      <GreenJournalCard />
+      <MusicPortfolioCard />
+      <MarioPyScriptCard />
+    </>
+  );
 }

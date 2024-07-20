@@ -3,33 +3,33 @@
 @tailwind utilities;
 
 .react-clock__face {
-    /* border: 2px solid #ccc !important; */
-    border: none !important;
-    background-color: #1f1f1f !important;
+  /* border: 2px solid #ccc !important; */
+  border: none !important;
+  background-color: #1f1f1f !important;
 }
 
 .react-clock__hand__body {
-    border-radius: 20%;
-    background-color: #ccc !important;
+  border-radius: 20%;
+  background-color: #ccc !important;
 }
 
 @media (prefers-color-scheme: dark) {
-    .react-clock__face {
-        background: #111;
-    }
+  .react-clock__face {
+    background: #111;
+  }
 }
 
 :root {
-    --size: 50vmin;
-    --white: #fff;
-    --blue: #3051f1;
-    --purple: #c92bb7;
-    --red: #f73344;
-    --orange: #fa8e37;
-    --yellow: #fcdf8f;
-    --yellow_to: #fbd377;
+  --size: 50vmin;
+  --white: #fff;
+  --blue: #3051f1;
+  --purple: #c92bb7;
+  --red: #f73344;
+  --orange: #fa8e37;
+  --yellow: #fcdf8f;
+  --yellow_to: #fbd377;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }

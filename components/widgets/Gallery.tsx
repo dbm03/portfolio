@@ -1,3 +1,3 @@
-"use client"
+"use client";
 
-const GalleryWidget = () => {}
+const GalleryWidget = () => {};
