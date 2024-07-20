@@ -102,29 +102,41 @@ export default function RootLayout({
                         <main className="mt-4 flex-grow w-full max-w-5xl px-4 lg:px-0">
                             {children}
                         </main>
-                        <footer className="flex flex-col items-center justify-center w-full py-3">
+                        <footer className="flex flex-col items-center justify-center w-full pt-5 pb-3">
+                            {/* <div className="grid-cols-2 grid gap-y-unit-md">
+                                <div className="flex flex-col">
+                                    <h3 className="text-lg font-semibold text-content1-foreground">
+                                        Navigation
+                                    </h3>
+                                    <Link href="/">Home</Link>
+                                    <Link href="/projects">Projects</Link>
+                                    <Link href="/photography">Photography</Link>
+                                    <Link href="/contact">Contact</Link>
+                                </div>
+                            </div> */}
                             <div className="flex">
                                 <span className="text-default-600">
                                     David, {currentYear}
                                 </span>
-                                {/* <span className="text-default-600">Powered by&nbsp;</span>
-                <Link
-                  className="transition-opacity duration-100 text-primary hover:opacity-80"
-                  href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
-                  title="nextui.org homepage"
-                >
-                  NextUI
-                </Link>
-                &nbsp;&&nbsp;
-        */}
-                                {/* <Link
-                  className="transition-opacity duration-100 text-secondary hover:opacity-80"
-                  href="https://nextjs.org"
-                  target="_blank"
-                  title="Next.js homepage"
-                >
-                  Next.js
-                </Link> */}
+                                <span className="text-default-600">
+                                    Powered by&nbsp;
+                                </span>
+                                <Link
+                                    className="transition-opacity duration-100 text-primary hover:opacity-80"
+                                    href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
+                                    title="nextui.org homepage"
+                                >
+                                    NextUI
+                                </Link>
+                                &nbsp;&&nbsp;
+                                <Link
+                                    className="transition-opacity duration-100 text-secondary hover:opacity-80"
+                                    href="https://nextjs.org"
+                                    target="_blank"
+                                    title="Next.js homepage"
+                                >
+                                    Next.js
+                                </Link>
                             </div>
                         </footer>
                     </div>

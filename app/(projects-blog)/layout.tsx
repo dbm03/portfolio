@@ -4,11 +4,12 @@ import { Analytics } from "@vercel/analytics/react"
 import { siteConfig } from "@/config/site"
 import { fontSans } from "@/config/fonts"
 import { Providers } from "../providers"
-import Link from "next/link"
 import clsx from "clsx"
 import { GithubIcon, VercelLogo } from "@/components/icons"
 import { ThemeSwitch } from "@/components/theme-switch"
 import { Toaster } from "sonner"
+import { Footer } from "@/components/Footer"
+import Link from "next/link"
 
 export const viewport = {
     themeColor: [
@@ -99,13 +100,7 @@ export default function RootLayout({
                         <main className="flex-grow w-full max-w-5xl px-4 lg:px-0">
                             {children}
                         </main>
-                        <footer className="flex flex-col items-center justify-center w-full py-3">
-                            <div className="flex">
-                                <span className="text-default-600">
-                                    David, {currentYear}
-                                </span>
-                            </div>
-                        </footer>
+                        <Footer />
                     </div>
                 </Providers>
                 <Analytics />
