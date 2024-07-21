@@ -66,7 +66,7 @@ export const Footer: React.FC<{}> = () => {
             <ul className="gap-2 flex flex-col">
               <li>
                 <Link
-                  href="linkedin.com/in/david-barroso-murcia"
+                  href="https://linkedin.com/in/davidbarrosomurcia/"
                   className="text-default-500 gap-x-1"
                   rel="noopener noreferrer"
                   target="_blank"
