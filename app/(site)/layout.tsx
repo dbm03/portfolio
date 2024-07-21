@@ -77,7 +77,7 @@ export default function RootLayout({
           <Toaster richColors theme={"system"} />{" "}
           {/* Component where toasts will be rendered */}
           <div className="absolute top-0 z-[-2] h-screen w-screen max-w-full overflow-hidden bg-white dark:bg-black bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
-          <div className="flex flex-col items-center h-screen">
+          <div className="flex flex-col items-center min-h-screen">
             <header className="flex items-center justify-center w-full max-w-5xl px-4 pt-6 pb-12 lg:px-0 md:justify-between">
               <Link
                 href="/"
