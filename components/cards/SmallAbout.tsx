@@ -25,7 +25,7 @@ const SmallAboutCard = () => {
         <div className="flex flex-col">
           <p className="text-xl">David Barroso</p>
           <p className="text-small text-default-500">
-            Frontend Developer Intern @{" "}
+            Frotend Software Engineer @{" "}
             <Link
               href="https://nhost.io"
               className="text-default-500 text-small underline"
@@ -39,7 +39,7 @@ const SmallAboutCard = () => {
       </CardHeader>
       <CardBody className="flex gap-2">
         <p className="text-pretty">
-          Software developer and exchange student in the US at Georgia Tech.
+          Software developer and exchange student in Canada at University of Waterloo.
         </p>
         <p className="text-pretty">
           Passionate about front-end engineering, AI, user-experience, and{" "}

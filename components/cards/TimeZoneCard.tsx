@@ -17,7 +17,7 @@ const TimeZoneCard = () => {
       }}
     >
       <ClockWidget clockTimezone="Europe/Madrid" text={"Madrid"} />
-      <ClockWidget clockTimezone="America/New_York" text={"Atlanta, GA"} />
+      <ClockWidget clockTimezone="America/Toronto" text={"Waterloo, ON"} />
     </Card>
   );
 };
