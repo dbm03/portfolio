@@ -17,7 +17,7 @@ const ClientContributionGraph = dynamic(
   },
 ); // Avoid SSR to prevent issues with the chosen color scheme
 
-const API_URL = "https://github-contributions-api.jogruber.de/v4/";
+const API_URL = "/github-contributions/";
 
 const DEFAULT_THEME: ThemeInput = {
   light: ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"],
