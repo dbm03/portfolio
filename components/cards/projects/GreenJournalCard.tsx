@@ -17,7 +17,7 @@ const GreenJournalCard = () => {
     <>
       <Card
         as={Link}
-        href="https://greenjournal.tech/"
+        href="https://hackgt-sustainability.vercel.app/"
         target="_blank"
         isPressable
         className="hover:opacity-90"
@@ -99,7 +99,7 @@ const GreenJournalCard = () => {
                 <Button
                   isIconOnly
                   as={Link}
-                  href="https://greenjournal.tech/"
+                  href="https://hackgt-sustainability.vercel.app/"
                   target="_blank"
                   color="default"
                   aria-label="See more"
