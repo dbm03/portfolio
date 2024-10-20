@@ -71,6 +71,7 @@ export default function RootLayout({
             attribute: "class",
             defaultTheme: "system",
             enableSystem: true,
+            children,
           }}
         >
           <Toaster richColors theme={"system"} />{" "}

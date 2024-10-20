@@ -1,6 +1,3 @@
-import { IconArrowReturnLeft } from "@/components/icons";
-import Link from "next/link";
-
 export default function ImmerseGTLayout({
   children,
 }: {
