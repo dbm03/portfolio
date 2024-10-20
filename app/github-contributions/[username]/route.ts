@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import cache from "memory-cache";
-import { scrapeGitHubContributions, UserNotFoundError } from "@/utils/scrape";
+import {
+  ParsedQuery,
+  scrapeGitHubContributions,
+  UserNotFoundError,
+} from "@/utils/scrape";
 
 export async function GET(
   req: NextRequest,
@@ -12,16 +16,21 @@ export async function GET(
   const y = searchParams.getAll("y");
 
   const years =
-    y?.length > 0 ? y.map((year) => parseInt(year)).filter(isFinite) : [];
-  if (years.some((year) => !/^\d+$/.test(year.toString()))) {
+    y?.length > 0
+      ? y.filter((year) => year === "last" || /^\d+$/.test(year))
+      : [];
+  if (years.some((year) => year !== "last" && isNaN(parseInt(year)))) {
     return NextResponse.json(
-      { error: "Query parameter 'y' must be an integer" },
+      { error: "Query parameter 'y' must be an integer or 'last'" },
       { status: 400 },
     );
   }
 
-  const query = {
-    years,
+  const query: ParsedQuery = {
+    years: years
+      .filter((year) => year !== "last")
+      .map((year) => parseInt(year)),
+    lastYear: years.includes("last"),
   };
 
   const key = `${username}-${JSON.stringify(query)}`;

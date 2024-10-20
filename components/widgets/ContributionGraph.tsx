@@ -14,11 +14,11 @@ import type {
   Year,
 } from "@/types";
 import type { ThemeInput, Activity } from "react-activity-calendar";
-import { dateDiffInDays } from "@/utils";
+import { dateDiffInDays } from "@/utils/date";
 import { GithubIcon } from "../icons";
 import ActivityCalendar from "react-activity-calendar";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const API_URL = "/github-contributions/";
 
@@ -45,18 +45,29 @@ async function fetchGitHubCalendarData(
 
   return data as GitHubCalendarApiResponse;
 }
+const skeletonMockData: Activity[] = [];
+let previousDate = new Date();
+for (let i = 0; i < 56; i++) {
+  const newDate = new Date(previousDate.setDate(previousDate.getDate() + 1));
+  previousDate = newDate;
+  const day = newDate.getDate();
+  const month = newDate.getMonth() + 1;
+  const year = newDate.getFullYear();
+  skeletonMockData.push({
+    date: `${year}-${month.toString().padStart(2, "0")}-${day.toString().padStart(2, "0")}`,
+    count: 0,
+    level: 0,
+  });
+}
 
 const getData = async (): Promise<Activity[] | null> => {
   try {
-    const currentYear = new Date().getFullYear();
-    const data = await fetchGitHubCalendarData("dbm03", currentYear);
+    const data = await fetchGitHubCalendarData("dbm03", "last");
 
     const filteredData = data?.contributions?.filter((item) => {
-      console.log(item.date);
       const dateDiff = dateDiffInDays(new Date(item.date), new Date());
-      return Math.abs(dateDiff) <= 55;
+      return dateDiff <= 55;
     });
-    console.log(filteredData.length);
     return filteredData;
   } catch (error) {
     console.error(error);
@@ -66,17 +77,24 @@ const getData = async (): Promise<Activity[] | null> => {
 
 const ContributionGraphWidget = () => {
   const [data, setData] = useState<Activity[] | null>(null);
-
-  console.log("Data:", data);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getData();
-      setData(data);
+      setLoading(true);
+      try {
+        const data = await getData();
+        setData(data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
     };
     fetchData();
   }, []);
   const userTheme = useTheme().theme === "dark" ? "dark" : "light";
+
   // const weekStart: WeekDay = ((new Date().getDay() + 1) % 6) as WeekDay // Adjust week start so that contribution graph is square-shaped
 
   return (
@@ -121,7 +139,7 @@ const ContributionGraphWidget = () => {
           <ActivityCalendar
             blockSize={20}
             blockMargin={8}
-            data={data ?? []}
+            data={loading ? skeletonMockData : (data ?? [])}
             hideColorLegend
             hideMonthLabels
             hideTotalCount

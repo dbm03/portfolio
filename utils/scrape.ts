@@ -4,10 +4,11 @@ import { Element, isText } from "domhandler";
 
 export interface ParsedQuery {
   years: Array<number>;
+  lastYear: boolean;
 }
 
 type Level = 0 | 1 | 2 | 3 | 4;
-type Year = number;
+type Year = number | "lastYear";
 
 interface Contribution {
   date: string;
@@ -72,7 +73,10 @@ async function scrapeContributionsForYear(
   year: Year,
   username: string,
 ): Promise<Response | NestedResponse> {
-  const url = `https://github.com/users/${username}/contributions?tab=overview&from=${year}-12-01&to=${year}-12-31`;
+  const url =
+    year === "lastYear"
+      ? `https://github.com/users/${username}/contributions`
+      : `https://github.com/users/${username}/contributions?tab=overview&from=${year}-12-01&to=${year}-12-31`;
 
   const $ = await fromURL(url, { requestOptions: requestOptions(username) });
 
@@ -178,6 +182,10 @@ export async function scrapeGitHubContributions(
   const contributionsForYear = yearLinks.map((link) =>
     scrapeContributionsForYear(link.year, username),
   );
+
+  if (query.lastYear) {
+    contributionsForYear.push(scrapeContributionsForYear("lastYear", username));
+  }
 
   return Promise.all(contributionsForYear).then((contributions) => {
     return (contributions as Array<Response>).reduce(
