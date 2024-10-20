@@ -1,14 +1,6 @@
 "use client";
 
-import {
-  Card,
-  Image,
-  CardHeader,
-  CardBody,
-  Link,
-  CardFooter,
-  Avatar,
-} from "@nextui-org/react";
+import { Card, CardHeader, CardBody, Link, Avatar } from "@nextui-org/react";
 
 const SmallAboutCard = () => {
   return (
@@ -39,7 +31,8 @@ const SmallAboutCard = () => {
       </CardHeader>
       <CardBody className="flex gap-2">
         <p className="text-pretty">
-          Software developer and exchange student in Canada at University of Waterloo.
+          Software developer and exchange student in Canada at University of
+          Waterloo.
         </p>
         <p className="text-pretty">
           Passionate about front-end engineering, AI, user-experience, and{" "}

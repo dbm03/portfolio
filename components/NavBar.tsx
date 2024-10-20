@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-export const NavBar: React.FC<{}> = () => {
+export const NavBar: React.FC = () => {
   const pathname = usePathname();
   const [selected, setSelected] = useState<string | number>(
     pathname === "/" ? "home" : pathname.replace("/", ""),
