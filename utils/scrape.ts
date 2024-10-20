@@ -61,7 +61,7 @@ async function scrapeYearLinks(username: string, query: ParsedQuery) {
       .filter(
         (link) => query.years.length === 0 || query.years.includes(link.year),
       );
-  } catch (error) {
+  } catch {
     throw new UserNotFoundError(username);
   }
 }

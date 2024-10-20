@@ -25,11 +25,6 @@ const MarioPyScriptCard = dynamic(
   { ssr: false },
 );
 
-const ComingSoonCard = dynamic(
-  () => import("@/components/cards/projects/ComingSoonCard"),
-  { ssr: false },
-);
-
 const F1DeepDiveCard = dynamic(
   () => import("@/components/cards/projects/F1DeepDiveCard"),
   { ssr: false },

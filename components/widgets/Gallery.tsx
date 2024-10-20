@@ -1,3 +1,0 @@
-"use client";
-
-const GalleryWidget = () => {};

@@ -10,7 +10,6 @@ import {
   Spinner,
   Textarea,
   Snippet,
-  CardFooter,
 } from "@nextui-org/react";
 import { useMemo, useState } from "react";
 import { MailLogo } from "../icons";
@@ -33,7 +32,7 @@ const ContactForm = () => {
 
   const isEmailInvalid = useMemo(() => validateEmail(email), [email]);
 
-  const [, cancel] = useDebounce(
+  useDebounce(
     () => {
       setDebouncedEmailInvalid(isEmailInvalid);
     },
@@ -45,7 +44,7 @@ const ContactForm = () => {
     // send email details to next.js endpoint /api/submit-form
     setSending(true);
     try {
-      const res = await fetch("/api/submit-form", {
+      await fetch("/api/submit-form", {
         method: "POST",
         body: JSON.stringify({
           email,
@@ -60,7 +59,7 @@ const ContactForm = () => {
       setSubject("");
       setMessage("");
       toast.success("Email sent successfully");
-    } catch (e) {
+    } catch {
       toast.error("Error sending email");
     } finally {
       setSending(false);

@@ -6,18 +6,11 @@ import {
   CardFooter,
   CardHeader,
   Image,
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
   Tooltip,
-  useDisclosure,
   Chip,
   Link,
 } from "@nextui-org/react";
-import { GameController, GithubIcon, RightDownArrow } from "../../icons";
-import { useRouter } from "next/navigation";
+import { GameController, GithubIcon } from "../../icons";
 
 const MarioPyScriptCard = () => {
   return (

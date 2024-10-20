@@ -1,13 +1,5 @@
 "use client";
-import type { Day as WeekDay } from "date-fns";
-import {
-  Link,
-  Button,
-  Card,
-  CardBody,
-  CardHeader,
-  Skeleton,
-} from "@nextui-org/react";
+import { Link, Button, Card } from "@nextui-org/react";
 import type {
   GitHubCalendarApiErrorResponse,
   GitHubCalendarApiResponse,
@@ -18,7 +10,7 @@ import { dateDiffInDays } from "@/utils/date";
 import { GithubIcon } from "../icons";
 import ActivityCalendar from "react-activity-calendar";
 import { useTheme } from "next-themes";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 
 const API_URL = "/github-contributions/";
 

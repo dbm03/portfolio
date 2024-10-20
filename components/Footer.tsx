@@ -2,7 +2,7 @@
 import { Card, Link } from "@nextui-org/react";
 import { GithubIcon, InstagramIcon, LinkedinIcon } from "./icons";
 
-export const Footer: React.FC<{}> = () => {
+export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (

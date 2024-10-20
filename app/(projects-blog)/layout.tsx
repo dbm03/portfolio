@@ -5,7 +5,7 @@ import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Providers } from "../providers";
 import clsx from "clsx";
-import { GithubIcon, VercelLogo } from "@/components/icons";
+import { GithubIcon } from "@/components/icons";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { Toaster } from "sonner";
 import { Footer } from "@/components/Footer";
@@ -55,8 +55,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const currentYear = new Date().getFullYear();
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head />

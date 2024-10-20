@@ -7,7 +7,7 @@ import { Providers } from "../providers";
 import Link from "next/link";
 import clsx from "clsx";
 import NavBar from "@/components/NavBar";
-import { GithubIcon, VercelLogo } from "@/components/icons";
+import { GithubIcon } from "@/components/icons";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { Toaster } from "sonner";
 import { Footer } from "@/components/Footer";

@@ -6,13 +6,7 @@ import {
   CardFooter,
   CardHeader,
   Image,
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
   Tooltip,
-  useDisclosure,
   Link,
   Chip,
 } from "@nextui-org/react";

@@ -6,17 +6,11 @@ import {
   CardFooter,
   CardHeader,
   Image,
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
   Tooltip,
-  useDisclosure,
   Chip,
   Link,
 } from "@nextui-org/react";
-import { ExternalIcon, EyeIcon, RightDownArrow } from "../../icons";
+import { EyeIcon } from "../../icons";
 
 const ImmerseGTCard = () => {
   return (

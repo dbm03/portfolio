@@ -1,5 +1,4 @@
 import SmallAboutCard from "@/components/cards/SmallAbout";
-import dynamic from "next/dynamic";
 import ComingSoonCard from "@/components/cards/projects/ComingSoonCard";
 import TimezoneCard from "@/components/cards/TimeZoneCard";
 import TechStackCard from "@/components/cards/TechStackCard";

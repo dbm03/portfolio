@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
 
 import * as postmark from "postmark";
 
@@ -19,7 +18,7 @@ export async function POST(request: Request) {
   const { email, subject, message } = json;
 
   try {
-    var client = new postmark.ServerClient(serverToken);
+    const client = new postmark.ServerClient(serverToken);
 
     await client.sendEmail({
       From: "dmurcia6@gatech.edu",

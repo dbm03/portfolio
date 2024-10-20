@@ -6,17 +6,11 @@ import {
   CardFooter,
   CardHeader,
   Image,
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
   Tooltip,
-  useDisclosure,
   Chip,
   Link,
 } from "@nextui-org/react";
-import { ExternalIcon, EyeIcon, GithubIcon, RightDownArrow } from "../../icons";
+import { EyeIcon } from "../../icons";
 
 const F1DeepDiveCard = () => {
   return (
