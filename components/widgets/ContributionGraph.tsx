@@ -1,5 +1,13 @@
+"use client";
 import type { Day as WeekDay } from "date-fns";
-import { Link, Button, Card, CardBody, CardHeader } from "@nextui-org/react";
+import {
+  Link,
+  Button,
+  Card,
+  CardBody,
+  CardHeader,
+  Skeleton,
+} from "@nextui-org/react";
 import type {
   GitHubCalendarApiErrorResponse,
   GitHubCalendarApiResponse,
@@ -8,14 +16,9 @@ import type {
 import type { ThemeInput, Activity } from "react-activity-calendar";
 import { dateDiffInDays } from "@/utils";
 import { GithubIcon } from "../icons";
-import dynamic from "next/dynamic";
-
-const ClientContributionGraph = dynamic(
-  () => import("@/components/widgets/ClientContributionGraph"),
-  {
-    ssr: false,
-  },
-); // Avoid SSR to prevent issues with the chosen color scheme
+import ActivityCalendar from "react-activity-calendar";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 const API_URL = "/github-contributions/";
 
@@ -45,12 +48,15 @@ async function fetchGitHubCalendarData(
 
 const getData = async (): Promise<Activity[] | null> => {
   try {
-    const data = await fetchGitHubCalendarData("dbm03", "last");
+    const currentYear = new Date().getFullYear();
+    const data = await fetchGitHubCalendarData("dbm03", currentYear);
 
     const filteredData = data?.contributions?.filter((item) => {
+      console.log(item.date);
       const dateDiff = dateDiffInDays(new Date(item.date), new Date());
-      return dateDiff <= 55;
+      return Math.abs(dateDiff) <= 55;
     });
+    console.log(filteredData.length);
     return filteredData;
   } catch (error) {
     console.error(error);
@@ -58,8 +64,19 @@ const getData = async (): Promise<Activity[] | null> => {
   }
 };
 
-const ContributionGraphWidget = async () => {
-  const data: Activity[] | null = await getData();
+const ContributionGraphWidget = () => {
+  const [data, setData] = useState<Activity[] | null>(null);
+
+  console.log("Data:", data);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getData();
+      setData(data);
+    };
+    fetchData();
+  }, []);
+  const userTheme = useTheme().theme === "dark" ? "dark" : "light";
   // const weekStart: WeekDay = ((new Date().getDay() + 1) % 6) as WeekDay // Adjust week start so that contribution graph is square-shaped
 
   return (
@@ -101,10 +118,16 @@ const ContributionGraphWidget = async () => {
           </div>
         </div>
         <div className="flex justify-center items-center">
-          <ClientContributionGraph
-            data={data}
+          <ActivityCalendar
+            blockSize={20}
+            blockMargin={8}
+            data={data ?? []}
+            hideColorLegend
+            hideMonthLabels
+            hideTotalCount
             theme={DEFAULT_THEME}
             weekStart={1}
+            colorScheme={userTheme}
           />
         </div>
       </div>
