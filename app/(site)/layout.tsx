@@ -56,8 +56,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const currentYear = new Date().getFullYear();
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
