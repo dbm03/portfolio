@@ -69,6 +69,7 @@ export default function RootLayout({
           themeProps={{
             attribute: "class",
             defaultTheme: "system",
+            themes: ["light", "dark"],
             enableSystem: true,
             children,
           }}
