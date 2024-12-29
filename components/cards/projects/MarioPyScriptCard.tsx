@@ -18,9 +18,9 @@ const MarioPyScriptCard = () => {
       <Card
         isFooterBlurred
         isPressable
-        as={Link}
-        href={"https://dbm03.github.io/mariopyscript/"}
-        target="_blank"
+        onPress={() =>
+          window.open("https://dbm03.github.io/mariopyscript/", "_blank")
+        }
         className="hover:opacity-90"
         shadow="sm"
         classNames={{

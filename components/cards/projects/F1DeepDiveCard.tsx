@@ -16,10 +16,10 @@ const F1DeepDiveCard = () => {
   return (
     <>
       <Card
-        as={Link}
-        href="https://ml-final-project.streamlit.app/"
-        target="_blank"
         isPressable
+        onPress={() =>
+          window.open("https://ml-final-project.streamlit.app/", "_blank")
+        }
         className="hover:opacity-90"
         shadow="sm"
         classNames={{

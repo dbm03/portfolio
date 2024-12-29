@@ -16,11 +16,11 @@ const MusicPortfolioCard = () => {
   return (
     <>
       <Card
-        as={Link}
-        href="https://luisbarrososaxofonista.com/"
-        target="_blank"
-        isFooterBlurred
         isPressable
+        onPress={() =>
+          window.open("https://luisbarrososaxofonista.com/", "_blank")
+        }
+        isFooterBlurred
         className="hover:opacity-90"
         shadow="sm"
         classNames={{

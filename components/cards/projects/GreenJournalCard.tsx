@@ -11,15 +11,16 @@ import {
   Link,
 } from "@nextui-org/react";
 import { EyeIcon, GithubIcon } from "../../icons";
+import { useRouter } from "next/navigation";
 
 const GreenJournalCard = () => {
   return (
     <>
       <Card
-        as={Link}
-        href="https://hackgt-sustainability.vercel.app/"
-        target="_blank"
         isPressable
+        onPress={() =>
+          window.open("https://hackgt-sustainability.vercel.app/", "_blank")
+        }
         className="hover:opacity-90"
         shadow="sm"
         classNames={{

@@ -8,20 +8,6 @@ import Temple from "@/public/temple.jpg";
 
 export default function PhotosPage() {
   return (
-    // <>
-    //     <div className="col-span-4 h-48">
-    //         <ComingSoonCard />
-    //     </div>
-    //     <div className="col-span-2 h-48">
-    //         <MinimalComingSoonCard />
-    //     </div>
-    //     <div className="">
-    //         <MinimalComingSoonCard />
-    //     </div>
-    //     <div className="">
-    //         <MinimalComingSoonCard />
-    //     </div>
-    // </>
     <>
       <div className="">
         <PhotoCard

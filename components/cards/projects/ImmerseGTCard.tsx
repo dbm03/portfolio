@@ -11,13 +11,14 @@ import {
   Link,
 } from "@nextui-org/react";
 import { EyeIcon } from "../../icons";
+import { useRouter } from "next/navigation";
 
 const ImmerseGTCard = () => {
+  const router = useRouter();
   return (
     <>
       <Card
-        as={Link}
-        href="/projects/immersegt"
+        onPress={() => router.push("/projects/immersegt")}
         isFooterBlurred
         isPressable
         className="hover:opacity-90"

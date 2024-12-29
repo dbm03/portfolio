@@ -10,7 +10,7 @@ export async function GET(
   req: NextRequest,
   { params }: { params: { username: string } },
 ) {
-  const { username } = params;
+  const { username } = await params;
   const { searchParams } = new URL(req.url);
 
   const y = searchParams.getAll("y");

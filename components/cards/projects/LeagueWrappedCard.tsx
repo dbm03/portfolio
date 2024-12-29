@@ -11,13 +11,14 @@ import {
   Chip,
 } from "@nextui-org/react";
 import { RightDownArrow } from "../../icons";
+import { useRouter } from "next/navigation";
 
 const LeagueWrappedCard = () => {
+  const router = useRouter();
   return (
     <>
       <Card
-        as={Link}
-        href="/projects/league-wrapped"
+        onPress={() => router.push("/projects/league-wrapped")}
         isFooterBlurred
         isPressable
         className="hover:opacity-90"
