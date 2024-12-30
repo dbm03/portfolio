@@ -38,22 +38,22 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="gap-2 flex flex-col">
               <li>
-                <Link href="/" className="text-default-500">
+                <Link href="/" className="text-default-500 underline">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/photos" className="text-default-500">
+                <Link href="/photos" className="text-default-500 underline">
                   Photos
                 </Link>
               </li>
               <li>
-                <Link href="/projects" className="text-default-500">
+                <Link href="/projects" className="text-default-500 underline">
                   Projects
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-default-500">
+                <Link href="/contact" className="text-default-500 underline">
                   Contact
                 </Link>
               </li>
@@ -67,7 +67,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="https://linkedin.com/in/davidbarrosomurcia/"
-                  className="text-default-500 gap-x-1"
+                  className="text-default-500 gap-x-1 underline"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -78,7 +78,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="https://github.com/dbm03"
-                  className="text-default-500 gap-x-1"
+                  className="text-default-500 gap-x-1 underline"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -88,7 +88,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="https://instagram.com/barrosodavid23"
-                  className="text-default-500 gap-x-1"
+                  className="text-default-500 gap-x-1 underline"
                   rel="noopener noreferrer"
                   target="_blank"
                 >

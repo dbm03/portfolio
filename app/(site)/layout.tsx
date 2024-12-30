@@ -91,8 +91,9 @@ export default function RootLayout({
                   href="https://github.com/dbm03/portfolio"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="View source code on GitHub"
                 >
-                  <GithubIcon />
+                  <GithubIcon aria-hidden="true" />
                 </Link>
                 <ThemeSwitch />
               </div>
