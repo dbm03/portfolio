@@ -3,7 +3,7 @@
 import { Card } from "@nextui-org/react";
 import "react-clock/dist/Clock.css";
 import dynamic from "next/dynamic";
-const ClockWidget = dynamic(() => import("@/components/widgets/Clock"), {
+const ClockWidget = dynamic(() => import("@/components/widgets/ClockWidget"), {
   ssr: false,
 });
 

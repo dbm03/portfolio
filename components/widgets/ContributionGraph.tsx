@@ -109,6 +109,7 @@ const ContributionGraphWidget = () => {
                     transition-opacity flex justify-center items-center w-12 h-12 rounded-md dark:bg-black text-white
                     bg-default-800
                     "
+              aria-label="My GitHub profile"
             >
               <GithubIcon size={32} />
             </a>
