@@ -6,11 +6,13 @@ import {
   UserNotFoundError,
 } from "@/utils/scrape";
 
+export const dynamic = "force-static";
+
 export async function GET(
   req: NextRequest,
-  { params }: { params: { username: string } },
+  { params }: { params: Promise<{ username: string }> },
 ) {
-  const { username } = await params;
+  const username = (await params).username;
   const { searchParams } = new URL(req.url);
 
   const y = searchParams.getAll("y");
