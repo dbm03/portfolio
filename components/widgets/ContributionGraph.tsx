@@ -5,7 +5,7 @@ import type {
   GitHubCalendarApiResponse,
   Year,
 } from "@/types";
-import type { ThemeInput, Activity } from "react-activity-calendar";
+import type { ThemeInput, Activity, DayIndex } from "react-activity-calendar";
 import { dateDiffInDays } from "@/utils/date";
 import { GithubIcon } from "../icons";
 import ActivityCalendar from "react-activity-calendar";
@@ -58,8 +58,9 @@ const getData = async (): Promise<Activity[] | null> => {
 
     const filteredData = data?.contributions?.filter((item) => {
       const dateDiff = dateDiffInDays(new Date(item.date), new Date());
-      return dateDiff <= 55;
+      return dateDiff <= 54;
     });
+    console.log(filteredData.length);
     return filteredData;
   } catch (error) {
     console.error(error);
@@ -87,7 +88,7 @@ const ContributionGraphWidget = () => {
   }, []);
   const userTheme = useTheme().theme === "dark" ? "dark" : "light";
 
-  // const weekStart: WeekDay = ((new Date().getDay() + 1) % 6) as WeekDay // Adjust week start so that contribution graph is square-shaped
+  const weekStart: DayIndex = 3 as DayIndex; // Adjust week start so that contribution graph is square-shaped
 
   return (
     <Card
@@ -137,7 +138,7 @@ const ContributionGraphWidget = () => {
             hideMonthLabels
             hideTotalCount
             theme={DEFAULT_THEME}
-            weekStart={1}
+            weekStart={weekStart}
             colorScheme={userTheme}
           />
         </div>
