@@ -1,32 +1,25 @@
-"use client";
+'use client';
 
-import {
-  Card,
-  CardFooter,
-  CardHeader,
-  Image,
-  Link,
-  CardBody,
-} from "@nextui-org/react";
-import { NhostLogo } from "../icons";
+import { Card, CardBody, CardHeader, Image, Link } from '@nextui-org/react';
+import { NhostLogo } from '../icons';
 
-export default function NhostCard() {
+export default function WorkExperienceCard() {
   return (
     <>
       <Card
         shadow="sm"
         fullWidth
         classNames={{
-          base: "max-h-full h-full p-2",
+          base: 'max-h-full h-full p-2',
         }}
       >
-        <CardHeader className="flex flex-col gap-3 items-start">
-          <h1 className="text-xl pt-1">Work Experience</h1>
+        <CardHeader className="flex flex-col items-start gap-3">
+          <h1 className="pt-1 text-xl">Work Experience</h1>
         </CardHeader>
-        <CardBody className="flex flex-col lg:flex-row gap-4 justify-between">
+        <CardBody className="flex flex-col justify-between gap-4 lg:flex-row">
           <div className="flex flex-col justify-between">
-            <div className="flex gap-2 items-center">
-              <div className="bg-nhost rounded-full w-8 h-8 flex justify-center items-center">
+            <div className="flex items-center gap-2">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-nhost">
                 <NhostLogo size={18} />
               </div>
               <p>
@@ -40,7 +33,7 @@ export default function NhostCard() {
                 </Link>
               </p>
             </div>
-            <div className="flex flex-col flex-1 gap-3">
+            <div className="flex flex-1 flex-col gap-3">
               <div>
                 <p className="text-lg lg:whitespace-nowrap">
                   Frontend Software Engineer
@@ -51,7 +44,7 @@ export default function NhostCard() {
               </div>
               <div>
                 <p className="text-lg lg:whitespace-nowrap">
-                  Frontend Development Intern{" "}
+                  Frontend Development Intern{' '}
                 </p>
                 <p className="text-small text-default-500">
                   (05/2024 - 09/2024)
@@ -61,7 +54,7 @@ export default function NhostCard() {
             <div>
               <Link
                 href="https://nhost.io"
-                className="text-default-500 text-small underline"
+                className="text-small text-default-500 underline"
                 referrerPolicy="no-referrer"
                 target="_blank"
               >
@@ -69,7 +62,7 @@ export default function NhostCard() {
               </Link>
             </div>
           </div>
-          <div className="flex justify-center rounded-md max-w-lg min-w-full md:min-w-0">
+          <div className="flex min-w-full max-w-lg justify-center rounded-md md:min-w-0">
             <Image
               alt="Nhost Landing page Screenshot"
               src="/nhost-screenshot.png"
