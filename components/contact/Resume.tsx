@@ -11,7 +11,6 @@ const ResumeCard = () => {
     const detectRegion = () => {
       const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-      console.log(timeZone);
       if (timeZone.startsWith("America") || timeZone.startsWith("Canada")) {
         setIsNA(true);
       } else {

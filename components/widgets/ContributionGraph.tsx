@@ -60,7 +60,6 @@ const getData = async (): Promise<Activity[] | null> => {
       const dateDiff = dateDiffInDays(new Date(item.date), new Date());
       return dateDiff <= 54;
     });
-    console.log(filteredData.length);
     return filteredData;
   } catch (error) {
     console.error(error);
