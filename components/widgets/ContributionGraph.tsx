@@ -1,6 +1,7 @@
 'use client';
 import { Button, Card, Link } from '@nextui-org/react';
-import type { ThemeInput } from 'react-activity-calendar';
+import { useTheme } from 'next-themes';
+import { type ThemeInput } from 'react-activity-calendar';
 import GitHubCalendar from 'react-github-calendar';
 import { GithubIcon } from '../icons';
 
@@ -10,6 +11,7 @@ const DEFAULT_THEME: ThemeInput = {
 };
 
 const ContributionGraphWidget = () => {
+  const userTheme = useTheme().theme === 'dark' ? 'dark' : 'light';
   return (
     <Card
       as={'article'}
@@ -53,6 +55,7 @@ const ContributionGraphWidget = () => {
               overflow: 'hidden',
             }}
             theme={DEFAULT_THEME}
+            colorScheme={userTheme}
             blockSize={20}
             blockMargin={8}
             hideMonthLabels
