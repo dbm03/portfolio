@@ -11,7 +11,6 @@ import {
   Link,
 } from "@nextui-org/react";
 import { EyeIcon, GithubIcon } from "../../icons";
-import { useRouter } from "next/navigation";
 
 const GreenJournalCard = () => {
   return (
