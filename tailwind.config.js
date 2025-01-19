@@ -16,6 +16,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        nhost: "#0052cc",
         reactjs: "#61dbfb",
         nextjs: "#000000",
         aws: "#ff9900",
@@ -76,6 +77,7 @@ module.exports = {
         dark: {
           colors: {
             content1: "#18181b99",
+            nhost: "#000",
           },
         },
       },

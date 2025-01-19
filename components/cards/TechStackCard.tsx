@@ -71,19 +71,19 @@ const TechStackCard = () => {
               variant="dot"
               size="sm"
               classNames={{
-                dot: "bg-reactjs",
+                dot: "bg-black dark:bg-white",
               }}
             >
-              React Native
+              Next.js
             </Chip>
             <Chip
               variant="dot"
               size="sm"
               classNames={{
-                dot: "bg-black dark:bg-white",
+                dot: "bg-reactjs",
               }}
             >
-              Next.js
+              React Native
             </Chip>
             <Chip
               variant="dot"

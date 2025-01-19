@@ -57,7 +57,10 @@ const getData = async (): Promise<Activity[] | null> => {
     const data = await fetchGitHubCalendarData("dbm03", "last");
 
     const filteredData = data?.contributions?.filter((item) => {
-      const dateDiff = dateDiffInDays(new Date(item.date), new Date());
+      const dateDiff = dateDiffInDays(
+        new Date(item.date),
+        new Date("2024-01-01"),
+      );
       return dateDiff <= 54;
     });
     return filteredData;
@@ -98,10 +101,10 @@ const ContributionGraphWidget = () => {
         base: "h-full",
       }}
     >
-      <div className="flex flex-col lg:flex-row h-full justify-between gap-2 p-5">
+      <h2 className="pt-5 px-5 text-xl">Contribution Graph</h2>
+      <div className="flex flex-col lg:flex-row h-full justify-between gap-4 p-5">
         <div className="flex flex-col justify-between gap-4">
           <div className="flex flex-col gap-4">
-            <h2 className="text-xl">Contribution Graph</h2>
             <a
               href="https://github.com/dbm03"
               target="_blank"

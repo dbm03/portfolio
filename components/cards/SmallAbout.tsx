@@ -31,8 +31,8 @@ const SmallAboutCard = () => {
       </CardHeader>
       <CardBody className="flex gap-2">
         <p className="text-pretty">
-          Software developer and exchange student in Canada at University of
-          Waterloo.
+          Software developer and senior CS student at UC3M. Previously exchange
+          student in Canada at UWaterloo and in the US at Georgia Tech.
         </p>
         <p className="text-pretty">
           Passionate about front-end engineering, AI, user-experience, and{" "}
