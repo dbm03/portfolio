@@ -1,6 +1,13 @@
 'use client';
 
-import { Card, CardBody, CardHeader, Image, Link } from '@nextui-org/react';
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  Divider,
+  Image,
+  Link,
+} from '@nextui-org/react';
 import { NhostLogo } from '../icons';
 
 export default function WorkExperienceCard() {
@@ -17,7 +24,7 @@ export default function WorkExperienceCard() {
           <h1 className="pt-1 text-xl">Work Experience</h1>
         </CardHeader>
         <CardBody className="flex flex-col justify-between gap-4 lg:flex-row">
-          <div className="flex flex-col justify-between">
+          <div className="flex flex-col justify-between gap-2">
             <div className="flex items-center gap-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-nhost">
                 <NhostLogo size={18} />
@@ -42,6 +49,7 @@ export default function WorkExperienceCard() {
                   (10/2024 - Present)
                 </p>
               </div>
+              <Divider />
               <div>
                 <p className="text-lg lg:whitespace-nowrap">
                   Frontend Development Intern{' '}

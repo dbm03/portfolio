@@ -1,5 +1,5 @@
 'use client';
-import { Button, Card, Link } from '@nextui-org/react';
+import { Button, Link } from '@nextui-org/react';
 import { useTheme } from 'next-themes';
 import { type ThemeInput } from 'react-activity-calendar';
 import GitHubCalendar from 'react-github-calendar';
@@ -11,16 +11,9 @@ const DEFAULT_THEME: ThemeInput = {
 };
 
 const ContributionGraphWidget = () => {
-  const userTheme = useTheme().theme === 'dark' ? 'dark' : 'light';
+  const userTheme = useTheme().theme === 'light' ? 'light' : 'dark';
   return (
-    <Card
-      as={'article'}
-      shadow="sm"
-      fullWidth
-      classNames={{
-        base: 'h-full',
-      }}
-    >
+    <>
       <h2 className="px-5 pt-5 text-xl">Open Source Contributions</h2>
       <div className="flex h-full flex-col justify-between gap-4 p-5 lg:flex-row">
         <div className="flex flex-col justify-between gap-4">
@@ -65,7 +58,7 @@ const ContributionGraphWidget = () => {
           />
         </div>
       </div>
-    </Card>
+    </>
   );
 };
 

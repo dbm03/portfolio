@@ -1,10 +1,10 @@
+import ContributionGraphCard from '@/components/cards/ContributionGraphCard';
 import ComingSoonCard from '@/components/cards/projects/ComingSoonCard';
 import SmallAboutCard from '@/components/cards/SmallAbout';
 import TechStackCard from '@/components/cards/TechStackCard';
 import TimezoneCard from '@/components/cards/TimeZoneCard';
 import UniCard from '@/components/cards/UniCard';
 import WorkExperienceCard from '@/components/cards/WorkExperienceCard';
-import ContributionGraphWidget from '@/components/widgets/ContributionGraph';
 import GTPicture from '@/public/gt.jpg';
 import UC3MPicture from '@/public/uc3m.jpg';
 import UWaterlooPicture from '@/public/uwaterloo.png';
@@ -35,7 +35,7 @@ export default function Home() {
         />
       </div>
       <div className="col-span-6 col-start-1 row-span-3 row-start-7">
-        <ContributionGraphWidget />
+        <ContributionGraphCard />
       </div>
       <div className="col-span-5 col-start-7 row-span-3 row-start-7">
         <UniCard
