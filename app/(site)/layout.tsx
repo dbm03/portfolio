@@ -1,21 +1,21 @@
-import "@/styles/globals.css";
-import { Analytics } from "@vercel/analytics/react";
-import { Metadata } from "next";
-import { siteConfig } from "@/config/site";
-import { fontSans } from "@/config/fonts";
-import { Providers } from "../providers";
-import Link from "next/link";
-import clsx from "clsx";
-import NavBar from "@/components/NavBar";
-import { GithubIcon } from "@/components/icons";
-import { ThemeSwitch } from "@/components/theme-switch";
-import { Toaster } from "sonner";
-import { Footer } from "@/components/Footer";
+import { Footer } from '@/components/Footer';
+import NavBar from '@/components/NavBar';
+import { GithubIcon } from '@/components/icons';
+import { ThemeSwitch } from '@/components/theme-switch';
+import { fontSans } from '@/config/fonts';
+import { siteConfig } from '@/config/site';
+import '@/styles/globals.css';
+import { Analytics } from '@vercel/analytics/react';
+import clsx from 'clsx';
+import { Metadata } from 'next';
+import Link from 'next/link';
+import { Toaster } from 'sonner';
+import { Providers } from '../providers';
 
 export const viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],
 };
 
@@ -26,22 +26,22 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   icons: {
-    icon: "/favicon.ico",
+    icon: '/favicon.ico',
   },
-  metadataBase: new URL("https://davidbarroso.dev"),
+  metadataBase: new URL('https://davidbarroso.dev'),
   alternates: {
-    canonical: "/",
+    canonical: '/',
   },
   openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://davidbarroso.dev",
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://davidbarroso.dev',
     siteName: siteConfig.name,
     title: siteConfig.name,
     description: siteConfig.description,
     images: [
       {
-        url: "https://davidbarroso.dev/og-image.png",
+        url: 'https://davidbarroso.dev/og-image.png',
         width: 1200,
         height: 630,
       },
@@ -59,35 +59,34 @@ export default function RootLayout({
       <head />
       <body
         className={clsx(
-          "bg-transparent font-sans antialiased selection:bg-secondary-300 box-border",
+          'box-border bg-transparent font-sans antialiased selection:bg-secondary-300',
           fontSans.variable,
         )}
       >
         <Providers
           themeProps={{
-            attribute: "class",
-            defaultTheme: "system",
-            enableSystem: true,
+            attribute: 'class',
+            defaultTheme: 'dark',
             children,
           }}
         >
-          <Toaster richColors theme={"system"} />{" "}
+          <Toaster richColors theme={'system'} />{' '}
           {/* Component where toasts will be rendered */}
-          <div className="absolute top-0 z-[-2] h-screen w-screen max-w-full overflow-hidden bg-white dark:bg-black bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
-          <div className="flex flex-col items-center min-h-screen">
-            <header className="flex items-center justify-center w-full max-w-5xl px-4 pt-6 pb-12 lg:px-0 md:justify-between">
+          <div className="absolute top-0 z-[-2] h-screen w-screen max-w-full overflow-hidden bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] dark:bg-black dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+          <div className="flex min-h-screen flex-col items-center">
+            <header className="flex w-full max-w-5xl items-center justify-center px-4 pb-12 pt-6 md:justify-between lg:px-0">
               <Link
                 href="/"
-                className="hidden w-16 text-4xl transition-opacity md:block hover:opacity-80"
+                className="hidden w-16 text-4xl transition-opacity hover:opacity-80 md:block"
               >
                 db
               </Link>
-              <nav className="z-50 left-1/2 -translate-x-1/2 fixed top-4">
+              <nav className="fixed left-1/2 top-4 z-50 -translate-x-1/2">
                 <NavBar />
               </nav>
-              <div className="items-center justify-end hidden w-16 gap-3 md:flex">
+              <div className="hidden w-16 items-center justify-end gap-3 md:flex">
                 <Link
-                  className="transition-opacity duration-100 text-default-800 dark:text-default-500 hover:opacity-80"
+                  className="text-default-800 transition-opacity duration-100 hover:opacity-80 dark:text-default-500"
                   href="https://github.com/dbm03/portfolio"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -98,7 +97,7 @@ export default function RootLayout({
                 <ThemeSwitch />
               </div>
             </header>
-            <main className="mt-4 flex-grow w-full max-w-5xl px-4 lg:px-0">
+            <main className="mt-4 w-full max-w-5xl flex-grow px-4 lg:px-0">
               {children}
             </main>
             <Footer />
