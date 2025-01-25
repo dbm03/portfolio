@@ -89,7 +89,7 @@ const ClockWidget = ({ clockTimezone, text }: ClockWidgetProps) => {
     return () => {
       clearInterval(interval);
     };
-  }, [clockTimezone]);
+  }, [clockTimezone, value]);
 
   return (
     <div
