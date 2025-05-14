@@ -97,7 +97,7 @@ const ImmerseGT = () => {
         </article>
         <footer>
           <a
-            href="https://immersegt.io/"
+            href="https://immersegt.org/"
             target="_blank"
             rel="noopener noreferrer"
           >

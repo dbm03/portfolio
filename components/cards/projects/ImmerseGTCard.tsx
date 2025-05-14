@@ -79,7 +79,7 @@ const ImmerseGTCard = () => {
               <Button
                 isIconOnly
                 as={Link}
-                href="https://immersegt.io/"
+                href="https://immersegt.org/"
                 target="_blank"
                 color="default"
                 aria-label="See more"
