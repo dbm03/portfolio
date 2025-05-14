@@ -18,7 +18,7 @@ const F1DeepDiveCard = () => {
       <Card
         isPressable
         onPress={() =>
-          window.open("https://ml-final-project.streamlit.app/", "_blank")
+          window.open("https://f1deepdive.streamlit.app/", "_blank")
         }
         className="hover:opacity-90"
         shadow="sm"
@@ -84,7 +84,7 @@ const F1DeepDiveCard = () => {
                 <Button
                   isIconOnly
                   as={Link}
-                  href="https://ml-final-project.streamlit.app/"
+                  href="https://f1deepdive.streamlit.app/"
                   target="_blank"
                   color="default"
                   aria-label="See more"
