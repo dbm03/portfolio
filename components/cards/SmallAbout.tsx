@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { Card, CardHeader, CardBody, Link, Avatar } from "@heroui/react";
+import { Avatar, Card, CardBody, CardHeader, Link } from '@heroui/react';
 
 const SmallAboutCard = () => {
   return (
@@ -8,7 +8,7 @@ const SmallAboutCard = () => {
       shadow="sm"
       fullWidth
       classNames={{
-        base: "h-full p-2",
+        base: 'h-full p-2',
       }}
     >
       <CardHeader className="flex gap-3">
@@ -16,11 +16,11 @@ const SmallAboutCard = () => {
 
         <div className="flex flex-col">
           <p className="text-xl">David Barroso</p>
-          <p className="text-small text-default-500">
-            Frotend Software Engineer @{" "}
+          <p className="text-default-500 text-small">
+            Frotend Software Engineer @{' '}
             <Link
               href="https://nhost.io"
-              className="text-default-500 text-small underline"
+              className="text-default-500 underline text-small"
               referrerPolicy="no-referrer"
               target="_blank"
             >
@@ -31,11 +31,11 @@ const SmallAboutCard = () => {
       </CardHeader>
       <CardBody className="flex gap-2">
         <p className="text-pretty">
-          Software developer and senior CS student at UC3M. Previously exchange
-          student in Canada at UWaterloo and in the US at Georgia Tech.
+          Software engineer and Computer Science graduate from UC3M. Previously
+          exchange student in Canada at UWaterloo and in the US at Georgia Tech.
         </p>
         <p className="text-pretty">
-          Passionate about front-end engineering, AI, user-experience, and{" "}
+          Passionate about front-end engineering, AI, user-experience, and{' '}
           <span>
             <Link className="text-foreground underline" href="/photos">
               photography
@@ -44,13 +44,13 @@ const SmallAboutCard = () => {
           .
         </p>
         <p className="text-pretty">
-          Feel free to explore{" "}
+          Feel free to explore{' '}
           <span>
             <Link className="text-foreground underline" href="/projects">
               my projects
             </Link>
-          </span>{" "}
-          and{" "}
+          </span>{' '}
+          and{' '}
           <span>
             <Link className="text-forground underline" href="/contact">
               get in touch!

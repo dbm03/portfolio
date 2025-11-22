@@ -51,7 +51,7 @@ export default function Home() {
         <UniCard
           backgroundImage={UC3MPicture}
           backgroundImageAlt="UC3M campus image"
-          timestamp="09/2021 - Present"
+          timestamp="09/2021 - 05/2025"
           title="Bachelor's degree at"
           name="Universidad Carlos III de Madrid"
           studies="Computer Science and Engineering"
