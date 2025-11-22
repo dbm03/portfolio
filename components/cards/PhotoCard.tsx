@@ -1,4 +1,4 @@
-import { Card, CardFooter } from "@nextui-org/react";
+import { Card, CardFooter } from "@heroui/react";
 import type {
   StaticImport,
   StaticImageData,

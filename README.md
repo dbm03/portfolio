@@ -2,12 +2,12 @@
 
 <img src="/.github/mock.png" />
 
-This is my portfolio website built with Next.js and NextUI.
+This is my portfolio website built with Next.js and HeroUI.
 
 ## Technologies Used
 
-- [Next.js 14 (app router)](https://nextjs.org/docs/getting-started)
-- [NextUI v2](https://nextui.org/)
+- [Next.js 16 (app router)](https://nextjs.org/docs/getting-started)
+- [HeroUI](https://www.heroui.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Tailwind Variants](https://tailwind-variants.org)
 - [TypeScript](https://www.typescriptlang.org/)
@@ -18,7 +18,7 @@ This is my portfolio website built with Next.js and NextUI.
 - [boxicons](https://boxicons.com/)
 - [shots (mockup generator)](https://shots.so/)
 
-- [NextUI Next.js Template](https://github.com/nextui-org/next-app-template)
+- [HeroUI Next.js Template](https://github.com/heroui-inc/next-app-template)
 
 ## How to Run locally
 

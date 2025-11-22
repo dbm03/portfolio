@@ -1,5 +1,5 @@
 'use client';
-import { Button, Link } from '@nextui-org/react';
+import { Button, Link } from "@heroui/react";
 import { useTheme } from 'next-themes';
 import { type ThemeInput } from 'react-activity-calendar';
 import GitHubCalendar from 'react-github-calendar';

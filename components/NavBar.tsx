@@ -1,41 +1,33 @@
-"use client";
+'use client';
 
-import { Tabs, Tab } from "@nextui-org/react";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import Link from "next/link";
+import { Tab, Tabs } from '@heroui/react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export const NavBar: React.FC = () => {
   const pathname = usePathname();
-  const [selected, setSelected] = useState<string | number>(
-    pathname === "/" ? "home" : pathname.replace("/", ""),
-  );
-
-  useEffect(() => {
-    setSelected(pathname === "/" ? "home" : pathname.replace("/", ""));
-  }, [pathname]);
+  const selected = pathname === '/' ? 'home' : pathname.replace('/', '');
 
   return (
     <Tabs
-      as={"ul"}
       aria-label="Navbar"
       classNames={{
-        base: "",
+        base: '',
         tabList:
-          "shadow-sm p-2 bg-opacity-75 backdrop-blur-sm flex items-center justify-center sticky",
+          'shadow-sm p-2 bg-default-100/75 backdrop-blur-sm flex items-center justify-center sticky',
       }}
       selectedKey={selected}
       radius="full"
       size="lg"
     >
-      <Tab as={Link} key="home" title="Home" href={"/"} />
-      <Tab as={Link} key="photos" title="Photos" href={"/photos"} />
+      <Tab as={Link} key="home" title="Home" href={'/'} />
+      <Tab as={Link} key="photos" title="Photos" href={'/photos'} />
       <Tab
         as={Link}
         key="projects"
         title={
           <div className="flex items-center gap-2">
-            <div className={`hidden md:block w-2 h-2 rounded-full bg-danger`} />
+            <div className={`hidden h-2 w-2 rounded-full bg-danger md:block`} />
             <span>Projects</span>
           </div>
         }

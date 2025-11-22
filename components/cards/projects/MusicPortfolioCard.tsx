@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
 import {
   Button,
   Card,
   CardFooter,
   CardHeader,
-  Image,
-  Tooltip,
   Chip,
+  Image,
   Link,
-} from "@nextui-org/react";
-import { EyeIcon } from "../../icons";
+  Tooltip,
+} from '@heroui/react';
+import { EyeIcon } from '../../icons';
 
 const MusicPortfolioCard = () => {
   return (
@@ -18,17 +18,17 @@ const MusicPortfolioCard = () => {
       <Card
         isPressable
         onPress={() =>
-          window.open("https://luisbarrososaxofonista.com/", "_blank")
+          window.open('https://luisbarrososaxofonista.netlify.app/', '_blank')
         }
         isFooterBlurred
         className="hover:opacity-90"
         shadow="sm"
         classNames={{
-          base: "bg-black/70",
+          base: 'bg-black/70',
         }}
       >
-        <CardHeader className="absolute z-10 top-1 flex-col !items-start">
-          <p className="font-bold uppercase text-tiny text-white/60">
+        <CardHeader className="absolute top-1 z-10 flex-col !items-start">
+          <p className="font-bold uppercase text-white/60 text-tiny">
             Business website
           </p>
           <h4 className="font-medium text-white text-large">
@@ -39,22 +39,22 @@ const MusicPortfolioCard = () => {
           alt="Card background"
           width={506}
           height={380}
-          className="z-0 object-cover w-full h-full"
+          className="z-0 h-full w-full object-cover"
           src="/musicportfolio_card.png"
         />
-        <CardFooter className="absolute flex flex-col bottom-0 z-10 bg-black/70 border-t-1 border-default-600 dark:border-default-100">
+        <CardFooter className="absolute bottom-0 z-10 flex flex-col border-t-1 border-default-600 bg-black/70 dark:border-default-100">
           <div className="w-full">
-            <p className="text-left text-tiny text-white/60">Tech Stack</p>
+            <p className="text-left text-white/60 text-tiny">Tech Stack</p>
           </div>
-          <div className="flex flex-1 w-full h-full">
-            <div className="flex max-w-full w-full overflow-x-scroll scrollbar-hide">
-              <div className="flex gap-2 items-end h-full">
+          <div className="flex h-full w-full flex-1">
+            <div className="flex w-full max-w-full overflow-x-scroll scrollbar-hide">
+              <div className="flex h-full items-end gap-2">
                 <Chip
                   variant="dot"
                   size="sm"
                   classNames={{
-                    base: "text-white",
-                    dot: "bg-white",
+                    base: 'text-white',
+                    dot: 'bg-white',
                   }}
                 >
                   Next.js
@@ -64,7 +64,7 @@ const MusicPortfolioCard = () => {
                   variant="dot"
                   size="sm"
                   classNames={{
-                    base: "text-white",
+                    base: 'text-white',
                   }}
                 >
                   Tailwind CSS
@@ -75,7 +75,7 @@ const MusicPortfolioCard = () => {
               <Button
                 isIconOnly
                 as={Link}
-                href="https://luisbarrososaxofonista.com/"
+                href="https://luisbarrososaxofonista.netlify.app/"
                 target="_blank"
                 color="default"
                 aria-label="See more"

@@ -10,7 +10,7 @@ import {
   Spinner,
   Textarea,
   Snippet,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { useMemo, useState } from "react";
 import { MailLogo } from "../icons";
 import useDebounce from "@/hooks/useDebounce";

@@ -1,6 +1,6 @@
 "use client";
 
-import { Card } from "@nextui-org/react";
+import { Card } from "@heroui/react";
 import "react-clock/dist/Clock.css";
 import dynamic from "next/dynamic";
 const ClockWidget = dynamic(() => import("@/components/widgets/ClockWidget"), {

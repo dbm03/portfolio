@@ -1,6 +1,6 @@
 // https://github.com/streamich/react-use/blob/master/src/useTimeoutFn.ts
 
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from 'react';
 
 export type UseTimeoutFnReturn = [() => boolean | null, () => void, () => void];
 
@@ -9,7 +9,7 @@ export default function useTimeoutFn(
   ms: number = 0,
 ): UseTimeoutFnReturn {
   const ready = useRef<boolean | null>(false);
-  const timeout = useRef<ReturnType<typeof setTimeout>>();
+  const timeout = useRef<ReturnType<typeof setTimeout>>(null);
   const callback = useRef(fn);
 
   const isReady = useCallback(() => ready.current, []);

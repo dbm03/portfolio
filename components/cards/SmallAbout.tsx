@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardHeader, CardBody, Link, Avatar } from "@nextui-org/react";
+import { Card, CardHeader, CardBody, Link, Avatar } from "@heroui/react";
 
 const SmallAboutCard = () => {
   return (

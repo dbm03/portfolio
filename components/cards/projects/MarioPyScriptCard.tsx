@@ -9,7 +9,7 @@ import {
   Tooltip,
   Chip,
   Link,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { GameController, GithubIcon } from "../../icons";
 
 const MarioPyScriptCard = () => {

@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardBody, CardFooter, Link, Tooltip } from "@nextui-org/react";
+import { Card, CardBody, CardFooter, Link, Tooltip } from "@heroui/react";
 import { DocumentIcon } from "../icons";
 import { useEffect, useState } from "react";
 

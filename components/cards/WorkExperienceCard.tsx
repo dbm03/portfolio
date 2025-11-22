@@ -7,7 +7,7 @@ import {
   Divider,
   Image,
   Link,
-} from '@nextui-org/react';
+} from "@heroui/react";
 import { NhostLogo } from '../icons';
 
 export default function WorkExperienceCard() {

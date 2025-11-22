@@ -9,7 +9,7 @@ import {
   Tooltip,
   Link,
   Chip,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { RightDownArrow } from "../../icons";
 import { useRouter } from "next/navigation";
 

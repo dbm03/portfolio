@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { Card, CardFooter, CardHeader } from "@nextui-org/react";
+import { Card, CardFooter, CardHeader } from "@heroui/react";
 import { StudentIcon } from "../icons";
 import type { StaticImport } from "next/dist/shared/lib/get-img-props";
 

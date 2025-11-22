@@ -1,5 +1,5 @@
 "use client";
-import { Card, Link } from "@nextui-org/react";
+import { Card, Link } from "@heroui/react";
 import { GithubIcon, InstagramIcon, LinkedinIcon } from "./icons";
 
 export const Footer: React.FC = () => {

@@ -9,7 +9,7 @@ import {
   Tooltip,
   Chip,
   Link,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { EyeIcon, GithubIcon } from "../../icons";
 
 const GreenJournalCard = () => {

@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardBody, CardFooter, Link, Tooltip } from "@nextui-org/react";
+import { Card, CardBody, CardFooter, Link, Tooltip } from "@heroui/react";
 import { InstagramIcon } from "../icons";
 
 const InstagramCard = () => {
