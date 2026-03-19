@@ -16,7 +16,7 @@ const TechStackCard = () => {
       </CardHeader>
 
       <CardBody className="flex gap-4 pt-0">
-        <div>
+        <div className="flex flex-col gap-1">
           <h2 className="leading-loose">Programming languages</h2>
           <div className="flex flex-wrap gap-1">
             <Chip
@@ -46,18 +46,9 @@ const TechStackCard = () => {
             >
               Python
             </Chip>
-            <Chip
-              variant="dot"
-              size="sm"
-              classNames={{
-                dot: 'bg-java',
-              }}
-            >
-              Java
-            </Chip>
           </div>
         </div>
-        <div>
+        <div className="flex flex-col gap-1">
           <h2 className="leading-loose">Front-end</h2>
           <div className="flex flex-wrap gap-1">
             <Chip
@@ -107,7 +98,7 @@ const TechStackCard = () => {
             </Chip>
           </div>
         </div>
-        <div>
+        <div className="flex flex-col gap-1">
           <h2 className="leading-loose">Back-end</h2>
           <div className="flex flex-wrap gap-1">
             <Chip
