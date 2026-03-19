@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { Card, CardBody, CardFooter, Link, Tooltip } from "@heroui/react";
-import { InstagramIcon } from "../icons";
+import { Card, CardBody, CardFooter, Link, Tooltip } from '@heroui/react';
+import { InstagramIcon } from '../icons';
 
 const InstagramCard = () => {
   return (
@@ -11,16 +11,16 @@ const InstagramCard = () => {
         as={Link}
         href="https://www.instagram.com/barrosodavid23/"
         target="_blank"
-        className="hover:opacity-90 bg-insta-gradient"
+        className="bg-insta-gradient hover:opacity-90"
         fullWidth
         classNames={{
-          base: "h-full",
+          base: 'h-full',
         }}
       >
-        <CardBody className="text-white flex justify-center pb-0 items-center">
+        <CardBody className="flex items-center justify-center pb-0 text-white">
           <InstagramIcon size={64} />
         </CardBody>
-        <CardFooter className="text-white bg-black/20 border-t-1 border-zinc-100/50 z-10 flex justify-center">
+        <CardFooter className="z-10 flex justify-center border-zinc-100/50 border-t-1 bg-black/20 text-white">
           <p className="text-small">@barrosodavid23</p>
         </CardFooter>
       </Card>

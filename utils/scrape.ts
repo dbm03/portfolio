@@ -1,6 +1,6 @@
-import { fromURL } from "cheerio";
+import { fromURL } from 'cheerio';
 
-import { Element, isText } from "domhandler";
+import { type Element, isText } from 'domhandler';
 
 export interface ParsedQuery {
   years: Array<number>;
@@ -8,7 +8,7 @@ export interface ParsedQuery {
 }
 
 type Level = 0 | 1 | 2 | 3 | 4;
-type Year = number | "lastYear";
+type Year = number | 'lastYear';
 
 interface Contribution {
   date: string;
@@ -38,10 +38,10 @@ export interface NestedResponse {
 
 const requestOptions = (username: string) =>
   ({
-    method: "GET",
+    method: 'GET',
     headers: {
       referer: `https://github.com/${username}`,
-      "x-requested-with": "XMLHttpRequest",
+      'x-requested-with': 'XMLHttpRequest',
     },
   }) as const;
 
@@ -53,10 +53,10 @@ async function scrapeYearLinks(username: string, query: ParsedQuery) {
     const url = `https://github.com/${username}?action=show&controller=profiles&tab=contributions&user_id=${username}`;
     const $ = await fromURL(url, { requestOptions: requestOptions(username) });
 
-    return $(".js-year-link")
+    return $('.js-year-link')
       .get()
       .map((a) => ({
-        year: parseInt($(a).text().trim()),
+        year: parseInt($(a).text().trim(), 10),
       }))
       .filter(
         (link) => query.years.length === 0 || query.years.includes(link.year),
@@ -74,36 +74,36 @@ async function scrapeContributionsForYear(
   username: string,
 ): Promise<Response | NestedResponse> {
   const url =
-    year === "lastYear"
+    year === 'lastYear'
       ? `https://github.com/users/${username}/contributions`
       : `https://github.com/users/${username}/contributions?tab=overview&from=${year}-12-01&to=${year}-12-31`;
 
   const $ = await fromURL(url, { requestOptions: requestOptions(username) });
 
-  const days = $(".js-calendar-graph-table .ContributionCalendar-day");
+  const days = $('.js-calendar-graph-table .ContributionCalendar-day');
   const sortedDays = days.get().sort((a, b) => {
-    const dateA = a.attribs["data-date"] ?? "";
-    const dateB = b.attribs["data-date"] ?? "";
+    const dateA = a.attribs['data-date'] ?? '';
+    const dateB = b.attribs['data-date'] ?? '';
 
-    return dateA.localeCompare(dateB, "en");
+    return dateA.localeCompare(dateB, 'en');
   });
 
-  const totalMatch = $(".js-yearly-contributions h2")
+  const totalMatch = $('.js-yearly-contributions h2')
     .text()
     .trim()
     .match(/^([0-9,]+)\s/);
 
   if (!totalMatch) {
-    throw Error("Unable to parse total contributions count.");
+    throw Error('Unable to parse total contributions count.');
   }
 
-  const total = parseInt(totalMatch[0].replace(/,/g, ""));
+  const total = parseInt(totalMatch[0].replace(/,/g, ''), 10);
 
   // Required for contribution count
-  const tooltipsByDayId = $(".js-calendar-graph tool-tip")
+  const tooltipsByDayId = $('.js-calendar-graph tool-tip')
     .toArray()
     .reduce<Record<string, Element>>((map, elem) => {
-      map[elem.attribs["for"]] = elem;
+      map[elem.attribs.for] = elem;
       return map;
     }, {});
 
@@ -125,17 +125,17 @@ async function scrapeContributionsForYear(
 
 const parseDay = (day: Element, tooltipsByDayId: Record<string, Element>) => {
   const attr = {
-    id: day.attribs["id"],
-    date: day.attribs["data-date"],
-    level: day.attribs["data-level"],
+    id: day.attribs.id,
+    date: day.attribs['data-date'],
+    level: day.attribs['data-level'],
   };
 
   if (!attr.date) {
-    throw Error("Unable to parse contribution date attribute.");
+    throw Error('Unable to parse contribution date attribute.');
   }
 
   if (!attr.level) {
-    throw Error("Unable to parse contribution level attribute.");
+    throw Error('Unable to parse contribution level attribute.');
   }
 
   let count = 0;
@@ -144,19 +144,19 @@ const parseDay = (day: Element, tooltipsByDayId: Record<string, Element>) => {
     if (text && isText(text)) {
       const countMatch = text.data.trim().match(/^\d+/);
       if (countMatch) {
-        count = parseInt(countMatch[0]);
+        count = parseInt(countMatch[0], 10);
       }
     }
   }
 
-  const level = parseInt(attr.level) as Level;
+  const level = parseInt(attr.level, 10) as Level;
 
-  if (isNaN(count)) {
-    throw Error("Unable to parse contribution count.");
+  if (Number.isNaN(count)) {
+    throw Error('Unable to parse contribution count.');
   }
 
-  if (isNaN(level)) {
-    throw Error("Unable to parse contribution level.");
+  if (Number.isNaN(level)) {
+    throw Error('Unable to parse contribution level.');
   }
 
   const contribution = {
@@ -166,7 +166,7 @@ const parseDay = (day: Element, tooltipsByDayId: Record<string, Element>) => {
   } satisfies Contribution;
 
   return {
-    date: attr.date.split("-").map((d: string) => parseInt(d)),
+    date: attr.date.split('-').map((d: string) => parseInt(d, 10)),
     contribution,
   };
 };
@@ -184,7 +184,7 @@ export async function scrapeGitHubContributions(
   );
 
   if (query.lastYear) {
-    contributionsForYear.push(scrapeContributionsForYear("lastYear", username));
+    contributionsForYear.push(scrapeContributionsForYear('lastYear', username));
   }
 
   return Promise.all(contributionsForYear).then((contributions) => {

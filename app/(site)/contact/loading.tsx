@@ -1,10 +1,10 @@
 export default function Loading() {
   return (
     <>
-      <div className="h-96 md:h-auto col-span-3 row-span-3 bg-content1 rounded-[var(--heroui-radius-large)] animate-skeleton-loader"></div>
-      <div className="hidden col-start-6 md:block aspect-square bg-content1 rounded-[var(--heroui-radius-large)] animate-skeleton-loader"></div>
-      <div className="hidden col-start-7 md:block aspect-square bg-content1 rounded-[var(--heroui-radius-large)] animate-skeleton-loader"></div>
-      <div className="h-48 md:h-auto md:hidden bg-content1 rounded-[var(--heroui-radius-large)] animate-skeleton-loader"></div>
+      <div className="col-span-3 row-span-3 h-96 animate-skeleton-loader rounded-[var(--heroui-radius-large)] bg-content1 md:h-auto"></div>
+      <div className="col-start-6 hidden aspect-square animate-skeleton-loader rounded-[var(--heroui-radius-large)] bg-content1 md:block"></div>
+      <div className="col-start-7 hidden aspect-square animate-skeleton-loader rounded-[var(--heroui-radius-large)] bg-content1 md:block"></div>
+      <div className="h-48 animate-skeleton-loader rounded-[var(--heroui-radius-large)] bg-content1 md:hidden md:h-auto"></div>
     </>
   );
 }

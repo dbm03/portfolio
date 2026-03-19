@@ -6,7 +6,7 @@ import { siteConfig } from '@/config/site';
 import '@/styles/globals.css';
 import { Analytics } from '@vercel/analytics/react';
 import clsx from 'clsx';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Toaster } from 'sonner';
 import { Providers } from '../providers';
@@ -71,9 +71,9 @@ export default function RootLayout({
         >
           <Toaster richColors theme={'system'} />{' '}
           {/* Component where toasts will be rendered */}
-          <div className="absolute top-0 z-[-2] h-screen w-screen max-w-full overflow-hidden bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] dark:bg-black dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+          <div className="absolute top-0 z-[-2] h-screen w-screen max-w-full overflow-hidden bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] bg-white dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] dark:bg-black"></div>
           <div className="flex min-h-screen flex-col items-center">
-            <header className="flex w-full max-w-5xl items-center justify-center px-4 pb-12 pt-6 md:justify-between lg:px-0">
+            <header className="flex w-full max-w-5xl items-center justify-center px-4 pt-6 pb-12 md:justify-between lg:px-0">
               <Link
                 href="/"
                 className="hidden w-16 text-4xl transition-opacity hover:opacity-80 md:block"

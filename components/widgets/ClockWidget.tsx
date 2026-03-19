@@ -35,10 +35,10 @@ const getTimeZoneDate = (timeZone: string): Date => {
     .replace(', ', 'T');
 
   // Include the milliseconds from the original timestamp
-  iso += '.' + date.getMilliseconds().toString().padStart(3, '0');
+  iso += `.${date.getMilliseconds().toString().padStart(3, '0')}`;
 
   // Lie to the Date object constructor that it's a UTC time.
-  const lie = new Date(iso + 'Z');
+  const lie = new Date(`${iso}Z`);
   return lie;
 };
 

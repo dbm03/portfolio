@@ -1,115 +1,113 @@
-"use client";
+'use client';
 
 import {
   Button,
   Card,
   CardFooter,
   CardHeader,
-  Image,
-  Tooltip,
-  Link,
   Chip,
-} from "@heroui/react";
-import { RightDownArrow } from "../../icons";
-import { useRouter } from "next/navigation";
+  Image,
+  Link,
+  Tooltip,
+} from '@heroui/react';
+import { useRouter } from 'next/navigation';
+import { RightDownArrow } from '../../icons';
 
 const LeagueWrappedCard = () => {
   const router = useRouter();
   return (
-    <>
-      <Card
-        onPress={() => router.push("/projects/league-wrapped")}
-        isFooterBlurred
-        isPressable
-        className="hover:opacity-90"
-        shadow="sm"
-        classNames={{
-          base: "bg-black/70",
-        }}
-      >
-        <CardHeader className="absolute z-10 top-1 flex-col !items-start">
-          <p className="font-bold uppercase text-tiny text-white/60">
-            Full Stack Web App
-          </p>
-          <h4 className="font-medium text-white text-large">League Wrapped</h4>
-        </CardHeader>
-        <Image
-          width={506}
-          height={380}
-          alt="Card background"
-          className="z-0 object-cover w-full h-full"
-          src="/leaguewrapped_cover.png"
-        />
-        <CardFooter className="absolute flex flex-col bottom-0 z-10 bg-black/70 border-t-1 border-default-600 dark:border-default-100">
-          <div className="w-full">
-            <p className="text-left text-tiny text-white/60">Tech Stack</p>
-          </div>
-          <div className="flex flex-1 w-full h-full">
-            <div className="flex max-w-full w-full overflow-x-scroll scrollbar-hide">
-              <div className="flex gap-2 items-end h-full">
-                <Tooltip content="Amazon Web Services" closeDelay={100}>
-                  <Chip
-                    variant="dot"
-                    size="sm"
-                    classNames={{
-                      base: "text-white",
-                      dot: "bg-aws",
-                    }}
-                  >
-                    AWS
-                  </Chip>
-                </Tooltip>
+    <Card
+      onPress={() => router.push('/projects/league-wrapped')}
+      isFooterBlurred
+      isPressable
+      className="hover:opacity-90"
+      shadow="sm"
+      classNames={{
+        base: 'bg-black/70',
+      }}
+    >
+      <CardHeader className="!items-start absolute top-1 z-10 flex-col">
+        <p className="font-bold text-tiny text-white/60 uppercase">
+          Full Stack Web App
+        </p>
+        <h4 className="font-medium text-large text-white">League Wrapped</h4>
+      </CardHeader>
+      <Image
+        width={506}
+        height={380}
+        alt="Card background"
+        className="z-0 h-full w-full object-cover"
+        src="/leaguewrapped_cover.png"
+      />
+      <CardFooter className="absolute bottom-0 z-10 flex flex-col border-default-600 border-t-1 bg-black/70 dark:border-default-100">
+        <div className="w-full">
+          <p className="text-left text-tiny text-white/60">Tech Stack</p>
+        </div>
+        <div className="flex h-full w-full flex-1">
+          <div className="scrollbar-hide flex w-full max-w-full overflow-x-scroll">
+            <div className="flex h-full items-end gap-2">
+              <Tooltip content="Amazon Web Services" closeDelay={100}>
                 <Chip
                   variant="dot"
                   size="sm"
                   classNames={{
-                    base: "text-white",
-                    dot: "bg-white",
+                    base: 'text-white',
+                    dot: 'bg-aws',
                   }}
                 >
-                  Next.js
+                  AWS
                 </Chip>
-                <Chip
-                  color="secondary"
-                  variant="dot"
-                  size="sm"
-                  classNames={{
-                    base: "text-white",
-                    dot: "bg-reactjs",
-                  }}
-                >
-                  React
-                </Chip>
-                <Chip
-                  color="primary"
-                  variant="dot"
-                  size="sm"
-                  classNames={{
-                    base: "text-white",
-                  }}
-                >
-                  Remotion
-                </Chip>
-              </div>
-            </div>
-            <Tooltip content="See more" closeDelay={100}>
-              <Button
-                isIconOnly
-                as={Link}
-                href="https://dotesports.com/league-of-legends/news/fan-creates-league-of-legends-wrapped-summarizing-your-ranked-season"
-                target="_blank"
-                color="default"
-                aria-label="Like"
-                radius="full"
+              </Tooltip>
+              <Chip
+                variant="dot"
                 size="sm"
+                classNames={{
+                  base: 'text-white',
+                  dot: 'bg-white',
+                }}
               >
-                <RightDownArrow />
-              </Button>
-            </Tooltip>
+                Next.js
+              </Chip>
+              <Chip
+                color="secondary"
+                variant="dot"
+                size="sm"
+                classNames={{
+                  base: 'text-white',
+                  dot: 'bg-reactjs',
+                }}
+              >
+                React
+              </Chip>
+              <Chip
+                color="primary"
+                variant="dot"
+                size="sm"
+                classNames={{
+                  base: 'text-white',
+                }}
+              >
+                Remotion
+              </Chip>
+            </div>
           </div>
-        </CardFooter>
-      </Card>
-    </>
+          <Tooltip content="See more" closeDelay={100}>
+            <Button
+              isIconOnly
+              as={Link}
+              href="https://dotesports.com/league-of-legends/news/fan-creates-league-of-legends-wrapped-summarizing-your-ranked-season"
+              target="_blank"
+              color="default"
+              aria-label="Like"
+              radius="full"
+              size="sm"
+            >
+              <RightDownArrow />
+            </Button>
+          </Tooltip>
+        </div>
+      </CardFooter>
+    </Card>
   );
 };
 

@@ -4,13 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write ."
   },
   "dependencies": {
-    "@heroui/react": "2.8.5",
-    "@heroui/theme": "2.4.23",
+    "@heroui/react": "2.8.10",
+    "@heroui/theme": "2.4.26",
     "@react-aria/ssr": "^3.9.6",
     "@react-aria/visually-hidden": "^3.8.17",
     "@vercel/analytics": "^1.2.2",
@@ -21,8 +23,8 @@
     "framer-motion": "^11.15.0",
     "intl-messageformat": "^10.5.0",
     "memory-cache": "^0.2.0",
-    "next": "^15.5.12",
-    "next-themes": "^0.2.1",
+    "next": "^16.1.7",
+    "next-themes": "^0.4.6",
     "postcss": "8.4.31",
     "postmark": "^4.0.7",
     "react": "19.2.1",
@@ -36,27 +38,23 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.4.8",
     "@react-types/shared": "^3.26.0",
     "@types/domhandler": "^2.4.5",
     "@types/memory-cache": "^0.2.6",
     "@types/node": "^20",
     "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9.39.1",
-    "eslint-config-next": "^16.0.3",
-    "eslint-config-prettier": "^10.1.8",
-    "prettier": "^3.4.2",
-    "prettier-plugin-organize-imports": "^4.1.0",
-    "prettier-plugin-tailwindcss": "^0.6.10"
+    "@types/react-dom": "^19"
   },
   "pnpm": {
     "overrides": {
       "@babel/runtime": "^7.26.10",
       "ajv": "^6.14.0",
-      "brace-expansion": "^2.0.2",
       "cross-spawn": "^7.0.5",
       "glob": "^10.5.0",
-      "minimatch": "^10.2.1"
+      "minimatch": "^10.2.3",
+      "flatted": "^3.4.0",
+      "undici": "^7.24.0"
     }
   }
 }

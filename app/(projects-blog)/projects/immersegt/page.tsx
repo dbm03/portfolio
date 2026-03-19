@@ -1,9 +1,9 @@
 // ImmerseGT 2024 Event Platform project explaining article
 
-import { IconArrowReturnLeft } from '@/components/icons';
-import ImmerseGTPhoto from '@/public/immersegt_card.png';
 import Image from 'next/image';
 import Link from 'next/link';
+import { IconArrowReturnLeft } from '@/components/icons';
+import ImmerseGTPhoto from '@/public/immersegt_card.png';
 
 const ImmerseGT = () => {
   return (
@@ -12,7 +12,7 @@ const ImmerseGT = () => {
         <ul className="flex flex-col">
           <li>
             <Link
-              className="flex max-w-fit items-center gap-1 px-2 py-1 text-lg text-default-500 transition-opacity hover:opacity-80"
+              className="flex max-w-fit items-center gap-1 px-2 py-1 text-default-500 text-lg transition-opacity hover:opacity-80"
               href="/projects"
             >
               <IconArrowReturnLeft size={24} />
@@ -54,7 +54,7 @@ const ImmerseGT = () => {
       </nav>
       <section className="flex max-w-[80ch] flex-col gap-4 px-2">
         <header id="immersegt">
-          <h1 className="text-xl font-semibold text-foreground">
+          <h1 className="font-semibold text-foreground text-xl">
             ImmerseGT 2024 Event Platform
           </h1>
         </header>
@@ -65,7 +65,7 @@ const ImmerseGT = () => {
             src={ImmerseGTPhoto}
             placeholder="blur"
           />
-          <figcaption className="py-2 text-white/60 text-small">
+          <figcaption className="py-2 text-small text-white/60">
             Screenshot of ImmerseGT event platform
           </figcaption>
         </figure>

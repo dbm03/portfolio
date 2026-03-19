@@ -1,12 +1,12 @@
 export default function Loading() {
   return (
     <>
-      <div className="h-96 bg-content1 rounded-[var(--heroui-radius-large)] animate-skeleton-loader"></div>
-      <div className="h-96 bg-content1 rounded-[var(--heroui-radius-large)] animate-skeleton-loader"></div>
-      <div className="h-96 bg-content1 rounded-[var(--heroui-radius-large)] animate-skeleton-loader"></div>
-      <div className="h-96 bg-content1 rounded-[var(--heroui-radius-large)] animate-skeleton-loader"></div>
-      <div className="h-96 bg-content1 rounded-[var(--heroui-radius-large)] animate-skeleton-loader"></div>
-      <div className="h-96 bg-content1 rounded-[var(--heroui-radius-large)] animate-skeleton-loader"></div>
+      <div className="h-96 animate-skeleton-loader rounded-[var(--heroui-radius-large)] bg-content1"></div>
+      <div className="h-96 animate-skeleton-loader rounded-[var(--heroui-radius-large)] bg-content1"></div>
+      <div className="h-96 animate-skeleton-loader rounded-[var(--heroui-radius-large)] bg-content1"></div>
+      <div className="h-96 animate-skeleton-loader rounded-[var(--heroui-radius-large)] bg-content1"></div>
+      <div className="h-96 animate-skeleton-loader rounded-[var(--heroui-radius-large)] bg-content1"></div>
+      <div className="h-96 animate-skeleton-loader rounded-[var(--heroui-radius-large)] bg-content1"></div>
     </>
   );
 }

@@ -1,6 +1,6 @@
-"use client";
-import { Card, Link } from "@heroui/react";
-import { GithubIcon, InstagramIcon, LinkedinIcon } from "./icons";
+'use client';
+import { Card, Link } from '@heroui/react';
+import { GithubIcon, InstagramIcon, LinkedinIcon } from './icons';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -11,17 +11,17 @@ export const Footer: React.FC = () => {
       shadow="sm"
       fullWidth
       classNames={{
-        base: "h-full",
+        base: 'h-full',
       }}
-      className="flex-grow max-w-5xl my-3 mb-6 flex flex-col items-center justify-center w-full p-5"
+      className="my-3 mb-6 flex w-full max-w-5xl flex-grow flex-col items-center justify-center p-5"
     >
-      <div className="md:grid md:grid-cols-2 gap-2 w-full ">
+      <div className="w-full gap-2 md:grid md:grid-cols-2">
         <div className="flex flex-col justify-between">
           <span className="text-default-600">David Barroso Murcia</span>
           <div className="flex flex-col gap-2 pb-4 md:pb-0">
             <Link
               href="/"
-              className="hidden w-16 text-black dark:text-white  text-4xl transition-opacity md:block hover:opacity-80"
+              className="hidden w-16 text-4xl text-black transition-opacity hover:opacity-80 md:block dark:text-white"
             >
               db
             </Link>
@@ -33,10 +33,10 @@ export const Footer: React.FC = () => {
         </div>
         <div className="flex justify-around gap-4">
           <div>
-            <h3 className="text-default-600 pb-2 font-semibold text-xl">
+            <h3 className="pb-2 font-semibold text-default-600 text-xl">
               Browse
             </h3>
-            <ul className="gap-2 flex flex-col">
+            <ul className="flex flex-col gap-2">
               <li>
                 <Link href="/" className="text-default-500 underline">
                   Home
@@ -60,14 +60,14 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
           <div>
-            <h3 className="text-default-600 pb-2 font-semibold text-xl">
+            <h3 className="pb-2 font-semibold text-default-600 text-xl">
               Socials
             </h3>
-            <ul className="gap-2 flex flex-col">
+            <ul className="flex flex-col gap-2">
               <li>
                 <Link
                   href="https://linkedin.com/in/davidbarrosomurcia/"
-                  className="text-default-500 gap-x-1 underline"
+                  className="gap-x-1 text-default-500 underline"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -78,7 +78,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="https://github.com/dbm03"
-                  className="text-default-500 gap-x-1 underline"
+                  className="gap-x-1 text-default-500 underline"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -88,7 +88,7 @@ export const Footer: React.FC = () => {
               <li>
                 <Link
                   href="https://instagram.com/barrosodavid23"
-                  className="text-default-500 gap-x-1 underline"
+                  className="gap-x-1 text-default-500 underline"
                   rel="noopener noreferrer"
                   target="_blank"
                 >

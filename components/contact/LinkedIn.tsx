@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { Card, CardBody, CardFooter, Link, Tooltip } from "@heroui/react";
-import { LinkedinIcon } from "../icons";
+import { Card, CardBody, CardFooter, Link, Tooltip } from '@heroui/react';
+import { LinkedinIcon } from '../icons';
 
 const LinkedinCard = () => {
   return (
@@ -14,13 +14,13 @@ const LinkedinCard = () => {
         className="hover:opacity-90"
         fullWidth
         classNames={{
-          base: "h-full bg-[#184ec4]",
+          base: 'h-full bg-[#184ec4]',
         }}
       >
-        <CardBody className="text-white flex justify-center pb-0 items-center">
+        <CardBody className="flex items-center justify-center pb-0 text-white">
           <LinkedinIcon size={64} />
         </CardBody>
-        <CardFooter className="text-white bg-black/20 border-t-1 border-zinc-100/30 z-10 flex justify-center">
+        <CardFooter className="z-10 flex justify-center border-zinc-100/30 border-t-1 bg-black/20 text-white">
           <p className="text-small">David B. M.</p>
         </CardFooter>
       </Card>

@@ -1,3 +1,5 @@
+'use client';
+
 import { Card, CardBody, CardHeader, Chip } from '@heroui/react';
 
 const TechStackCard = () => {
