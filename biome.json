@@ -3,7 +3,14 @@
   "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**", "!.next", "!out", "!build", "!next-env.d.ts"]
+    "includes": [
+      "**",
+      "!.next",
+      "!out",
+      "!build",
+      "!next-env.d.ts",
+      "!**/*.mdx"
+    ]
   },
   "formatter": {
     "enabled": true,

@@ -71,6 +71,7 @@ module.exports = {
   },
   darkMode: 'class',
   plugins: [
+    require('@tailwindcss/typography'),
     heroui({
       themes: {
         dark: {

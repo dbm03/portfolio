@@ -30,6 +30,7 @@ The app uses two Next.js route groups under `/app`:
 - **Home page grid layout**: CSS Grid with 11 columns × 9 rows on desktop, collapsing to flex column on mobile. Card components are placed across specific grid areas.
 - **Dynamic imports with `ssr: false`**: Used for widgets (ClockWidget, ContributionGraphWidget) and project cards to avoid hydration mismatches with dynamic/time-based data.
 - **Card-based components**: Reusable cards in `/components/cards/` represent grid items on the home page. Project-specific cards live in `/components/cards/projects/`.
+- **MDX project pages**: Project detail pages use `@next/mdx` with file-based routing. Each project lives at `app/(projects-blog)/projects/[slug]/page.mdx`. A shared layout at `app/(projects-blog)/projects/layout.tsx` provides back navigation and `prose` styling via `@tailwindcss/typography`. New project pages only need a `page.mdx` file with an `export const metadata` and markdown content. `mdx-components.tsx` at the project root maps `a` to `next/link` (internal) or `target="_blank"` (external), and `img` to `next/image`.
 - **API routes**: `app/(site)/submit-form/route.ts` (Postmark email) and `app/github-contributions/[username]/route.ts` (GitHub contribution scraper with 1-hour memory cache).
 
 ### Styling

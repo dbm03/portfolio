@@ -13,8 +13,13 @@
   "dependencies": {
     "@heroui/react": "2.8.10",
     "@heroui/theme": "2.4.26",
+    "@mdx-js/loader": "^3.1.1",
+    "@mdx-js/react": "^3.1.1",
+    "@next/mdx": "^16.2.0",
     "@react-aria/ssr": "^3.9.6",
     "@react-aria/visually-hidden": "^3.8.17",
+    "@tailwindcss/typography": "^0.5.19",
+    "@types/mdx": "^2.0.13",
     "@vercel/analytics": "^1.2.2",
     "autoprefixer": "10.4.15",
     "cheerio": "^1.2.0",
