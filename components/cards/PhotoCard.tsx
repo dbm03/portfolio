@@ -1,3 +1,5 @@
+'use client';
+
 import { Card, CardFooter } from "@heroui/react";
 import type {
   StaticImport,
