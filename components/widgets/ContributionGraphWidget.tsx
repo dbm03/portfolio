@@ -33,13 +33,25 @@ const ContributionGraphWidget = () => {
               href="https://github.com/dbm03"
               target="_blank"
               rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 whitespace-nowrap rounded-lg border border-default px-4 py-2 text-sm transition-opacity hover:opacity-80"
             >
-              <Button
-                className="m-0"
-                variant="ghost"
+              Visit my GitHub
+              <svg
+                aria-hidden="true"
+                fill="none"
+                height="1em"
+                shapeRendering="geometricPrecision"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.5"
+                viewBox="0 0 24 24"
+                width="1em"
               >
-                Visit my GitHub
-              </Button>
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+                <path d="M15 3h6v6" />
+                <path d="M10 14L21 3" />
+              </svg>
             </a>
           </div>
         </div>

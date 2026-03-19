@@ -7,10 +7,9 @@ export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <Card
-      className="flex-grow max-w-5xl my-3 mb-6 flex flex-col items-center justify-center w-full p-5 shadow-sm h-full"
-    >
-      <div className="md:grid md:grid-cols-2 gap-2 w-full ">
+    <footer className="flex-grow max-w-5xl my-3 mb-6 w-full">
+      <Card className="flex flex-col items-center justify-center w-full p-5 shadow-sm h-full">
+        <div className="md:grid md:grid-cols-2 gap-2 w-full ">
         <div className="flex flex-col justify-between">
           <span className="text-muted">David Barroso Murcia</span>
           <div className="flex flex-col gap-2 pb-4 md:pb-0">
@@ -91,6 +90,7 @@ export const Footer: React.FC = () => {
         </div>
         <div></div>
       </div>
-    </Card>
+      </Card>
+    </footer>
   );
 };

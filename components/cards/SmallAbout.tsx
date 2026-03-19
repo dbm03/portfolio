@@ -8,7 +8,7 @@ const SmallAboutCard = () => {
     <Card className="shadow-sm w-full h-full p-2">
       <Card.Header className="flex gap-3">
         <Avatar className="ring-2 ring-background" size="lg">
-          <Avatar.Image src="profile.webp" alt="David Barroso" />
+          <Avatar.Image src="/profile.webp" alt="David Barroso" />
           <Avatar.Fallback>DB</Avatar.Fallback>
         </Avatar>
 
