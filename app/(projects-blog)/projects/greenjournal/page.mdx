@@ -1,0 +1,66 @@
+export const metadata = {
+  title: 'GreenJournal - HackGT X',
+  description:
+    'An interactive carbon footprint dashboard built in under 36 hours at HackGT X, featuring a 3D animated globe, lifestyle metrics calculator, and AI-powered feedback.',
+};
+
+import Image from 'next/image';
+import heroImage from '@/public/greenjournal_card.png';
+
+# GreenJournal
+
+<Image
+  className="rounded-md"
+  alt="Screenshot of the GreenJournal dashboard"
+  src={heroImage}
+  placeholder="blur"
+/>
+
+## About
+
+GreenJournal is an interactive online dashboard that estimates your carbon footprint based on lifestyle inputs and visualizes its impact on an animated, low-poly 3D globe. It was built in **under 36 hours** as a team of four for [HackGT X: Journal of Memories](https://hackgt-x.devpost.com/) at Georgia Tech, submitted under the Sustain 2110 Advanced category.
+
+## What it does
+
+Users input various greenhouse gas indicator metrics (driving habits, energy usage, diet, etc.) and the app calculates an estimated carbon footprint in metric tons of GHG emissions per year. The dashboard features:
+
+- **Earth View**: An interactive, animated low-poly globe built in Blender, exported through Spline into Three.js, and rendered with React Three Fiber. User inputs dynamically affect the globe: continent colors shift, clouds change, and planes orbit based on your footprint.
+- **Carbon Footprint Calculator**: Based on research from the EPA, the calculator processes multiple data variables to estimate an individual's yearly emissions.
+- **History & Breakdown**: Track your footprint over time and see which lifestyle factors contribute most.
+- **Echo AI Chatbot**: Powered by GPT-3.5-Turbo, Echo provides personalized feedback and suggestions for reducing your carbon footprint.
+- **Journal Entries**: A notes panel for logging lifestyle changes and tracking progress.
+
+## My contributions
+
+I was primarily responsible for:
+
+- **React state management for the calculator**: Coordinating multi-variable inputs across the dashboard using React Hooks and local storage persistence, so users could return to their data without needing an account.
+- **Bento grid layout**: Building the CSS grid dashboard layout that organizes the globe, calculator, history, journal, and chatbot panels into a structured, responsive design.
+
+## How we built it
+
+The app is built with **Next.js 13**, **TypeScript**, **NextUI v2**, **Tailwind CSS**, and **Framer Motion**. The centerpiece 3D globe was modeled in Blender, composed into separate layers (continents, clouds, water, planes) so each could be animated independently, and rendered using React Three Fiber.
+
+All user inputs are stored in local storage, so no backend or accounts are required. The AI chatbot uses OpenAI's API with carefully tuned prompts to produce structured, carbon footprint-related feedback.
+
+## Challenges
+
+- **Dashboard layout**: We rebuilt the main page multiple times experimenting with CSS grid dimensions to get the panel arrangement right under time pressure.
+- **3D rendering**: Making the multi-layered globe refract light correctly, animate smoothly on value changes, and render performantly in the browser was a significant challenge with raw React Three Fiber.
+- **State consistency**: Keeping calculator variables in sync across all panels required careful React state architecture with local storage hydration on first load.
+- **AI output formatting**: Getting GPT-3.5-Turbo to consistently return structured JSON alongside readable feedback required extensive prompt engineering.
+
+## Tech stack
+
+- Next.js 13
+- React
+- TypeScript
+- NextUI v2
+- Tailwind CSS
+- Three.js / React Three Fiber
+- Framer Motion
+- OpenAI API (GPT-3.5-Turbo)
+
+---
+
+[View Live](https://hackgt-sustainability.vercel.app/) | [GitHub](https://github.com/dbm03/greenjournal) | [Devpost](https://devpost.com/software/greenjournal)

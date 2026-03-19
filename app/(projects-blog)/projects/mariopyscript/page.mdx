@@ -1,0 +1,109 @@
+export const metadata = {
+  title: 'Mario PyScript - Porting a Pyxel Game to the Browser',
+  description:
+    'How I ported a Super Mario Bros. clone from Pyxel to the browser by building a wrapper that replicates the Pyxel API using the Canvas Web API and PyScript.',
+};
+
+import Image from 'next/image';
+import heroImage from '@/public/mariopyscript_card.png';
+
+# Mario PyScript
+
+<Image
+  className="rounded-md"
+  alt="Screenshot of the Mario PyScript game running in the browser"
+  src={heroImage}
+  placeholder="blur"
+/>
+
+## About
+
+Mario PyScript started as the final project for my first-year programming course at UC3M: a Super Mario Bros. clone built with [Pyxel](https://github.com/kitao/pyxel), a retro game engine for Python. The game itself was my introduction to object-oriented programming, with 30 classes organized using inheritance and encapsulation.
+
+But what I want to talk about here is the **port to the browser**. After the course ended, I wanted to make the game playable by anyone without installing Python or Pyxel. Using [PyScript](https://pyscript.net/), which runs Python in the browser via WebAssembly, I ported the entire game to the web. The interesting part wasn't just getting it to run, but *how*: I built a wrapper module that replicates Pyxel's interface functions using the Canvas Web API, so the original game code could stay virtually unchanged.
+
+## The idea: swap the engine, keep the interface
+
+Pyxel provides a small set of functions for drawing sprites, clearing the screen, reading input, and running a game loop. The game code calls things like `pyxel.blt()` to draw a sprite, `pyxel.btn()` to check keyboard input, and `pyxel.cls()` to clear the screen.
+
+The key insight was that I didn't need to rewrite the game. I just needed to provide the same functions with the same signatures, backed by a different rendering system. So I created a `pyxel.py` module that the game imports instead of the real Pyxel library, and every function in it delegates to the Canvas Web API.
+
+## How the wrapper works
+
+### Drawing sprites with `blt()`
+
+Pyxel's `blt()` draws a region from a spritesheet. My wrapper maps this directly to `ctx.drawImage()` on a Canvas 2D context. The interesting bit is how sprite flipping works: Pyxel uses negative width/height values to flip sprites horizontally or vertically. In the wrapper, negative dimensions trigger `ctx.scale(-1, 1)` transformations, isolated with `ctx.save()`/`ctx.restore()` calls:
+
+```python
+def blt(x, y, image_bank, _x, _y, width, height, transparent_col=0):
+    if loading:
+        return
+    ctx.save()
+    if width < 0:
+        ctx.scale(-1, 1)
+        ctx.drawImage(imageBank[image_bank], _x, _y, -width, height,
+                     -x * _scale, y * _scale, width * _scale, height * _scale)
+    else:
+        ctx.drawImage(imageBank[image_bank], _x, _y, width, height,
+                     x * _scale, y * _scale, width * _scale, height * _scale)
+    ctx.restore()
+```
+
+This avoids duplicating sprite assets and keeps the same negative-dimension convention the game code already uses.
+
+### Input handling with `btn()`
+
+Pyxel uses a polling model: you call `pyxel.btn(KEY)` each frame to check if a key is held. The wrapper bridges JavaScript keyboard events into this model by maintaining a dictionary of key states, updated by `keydown`/`keyup` event listeners attached to the document:
+
+```python
+_pressedKeys = { KEY_LEFT: False, KEY_UP: False, ... }
+
+def _handle_input(e):
+    if e.type == "keydown":
+        _pressedKeys[e.keyCode] = True
+    elif e.type == "keyup":
+        _pressedKeys[e.keyCode] = False
+
+def btn(key):
+    return _pressedKeys[key]
+```
+
+The game code calls `pyxel.btn(pyxel.KEY_RIGHT)` exactly as before. It has no idea it's running in a browser.
+
+### Asset loading
+
+Pyxel loads assets from `.pyxres` resource files. In the browser, I load PNG spritesheets as HTML `<img>` elements and track a `loading` flag. All drawing functions short-circuit while assets are loading, and the game loop shows a "Loading..." screen until everything is ready.
+
+### The game loop
+
+The original Pyxel game loop runs via `pyxel.run(update, draw)`. In the browser, I replaced this with JavaScript's `setInterval` at ~33ms (30 FPS), using Pyodide's `create_proxy()` to make the Python callback callable from JS:
+
+```python
+proxy = create_proxy(self.game_loop)
+setInterval(proxy, 33)
+```
+
+### Pixel-perfect rendering
+
+Retro pixel art needs to stay crisp when scaled up. The wrapper disables image smoothing on the Canvas context (`imageSmoothingEnabled = False`), and the CSS adds vendor-prefixed `image-rendering: pixelated` rules to prevent the browser from blurring pixels.
+
+## What I learned
+
+This project was a great exercise in **abstraction and interface design**. By keeping the function signatures identical to Pyxel's, the entire game (30 classes, collision system, animations, level parsing) could run on a completely different rendering backend with no changes to the game logic. It showed me firsthand why programming against interfaces rather than implementations matters.
+
+It also gave me hands-on experience with the Canvas Web API, JavaScript-Python interop through Pyodide, and the quirks of running Python in WebAssembly.
+
+## Future improvements
+
+- **Font rasterization**: One noticeable regression from the port is text quality. Pyxel renders bitmap fonts natively, but in the PyScript version, text is drawn using `ctx.fillText()` with a monospace font. The result looks noticeably worse. Improving font rasterization to match the crisp pixel-art aesthetic of the rest of the game is an open challenge.
+
+## Tech stack
+
+- Python
+- PyScript / Pyodide (Python in WebAssembly)
+- Canvas Web API
+- JavaScript (event bridging and game loop scheduling)
+
+---
+
+[Play Now](https://dbm03.github.io/mariopyscript/) | [GitHub](https://github.com/dbm03/mariopyscript)

@@ -10,15 +10,15 @@ import {
   Link,
   Tooltip,
 } from '@heroui/react';
+import { useRouter } from 'next/navigation';
 import { EyeIcon, GithubIcon } from '../../icons';
 
 const GreenJournalCard = () => {
+  const router = useRouter();
   return (
     <Card
       isPressable
-      onPress={() =>
-        window.open('https://hackgt-sustainability.vercel.app/', '_blank')
-      }
+      onPress={() => router.push('/projects/greenjournal')}
       className="hover:opacity-90"
       shadow="sm"
       classNames={{
@@ -51,6 +51,7 @@ const GreenJournalCard = () => {
                 classNames={{
                   base: 'text-white whitespace-nowrap',
                   content: 'overflow-ellipsis overflow-hidden',
+                  dot: 'bg-white',
                 }}
               >
                 Next.js

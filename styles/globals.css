@@ -37,6 +37,23 @@
   box-sizing: border-box;
 }
 
+/* rehype-pretty-code: dual theme support */
+[data-rehype-pretty-code-figure] code[data-theme*=" "],
+[data-rehype-pretty-code-figure] code[data-theme*=" "] span {
+  color: var(--shiki-light);
+  background-color: var(--shiki-light-bg);
+}
+
+.dark [data-rehype-pretty-code-figure] code[data-theme*=" "],
+.dark [data-rehype-pretty-code-figure] code[data-theme*=" "] span {
+  color: var(--shiki-dark);
+  background-color: var(--shiki-dark-bg);
+}
+
+[data-rehype-pretty-code-figure] pre {
+  @apply rounded-lg border border-neutral-200 dark:border-neutral-800;
+}
+
 .noise-overlay {
   position: relative;
   overflow: hidden;

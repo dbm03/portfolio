@@ -9,8 +9,8 @@ Personal portfolio website for a full-stack developer, built with Next.js 16 (ap
 ## Commands
 
 ```bash
-pnpm dev        # Start development server
-pnpm build      # Production build (uses --webpack; Turbopack has SSR issues with HeroUI)
+pnpm dev        # Start development server (uses --webpack; Turbopack has issues with HeroUI SSR and rehype plugins)
+pnpm build      # Production build (uses --webpack)
 pnpm start      # Start production server
 pnpm lint       # Run Biome check (linting + formatting)
 pnpm lint:fix   # Auto-fix lint and format issues

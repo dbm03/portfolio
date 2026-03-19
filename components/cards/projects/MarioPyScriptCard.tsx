@@ -10,16 +10,16 @@ import {
   Link,
   Tooltip,
 } from '@heroui/react';
+import { useRouter } from 'next/navigation';
 import { GameController, GithubIcon } from '../../icons';
 
 const MarioPyScriptCard = () => {
+  const router = useRouter();
   return (
     <Card
       isFooterBlurred
       isPressable
-      onPress={() =>
-        window.open('https://dbm03.github.io/mariopyscript/', '_blank')
-      }
+      onPress={() => router.push('/projects/mariopyscript')}
       className="hover:opacity-90"
       shadow="sm"
       classNames={{
