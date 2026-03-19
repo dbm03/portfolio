@@ -59,7 +59,7 @@ export default function RootLayout({
       <head />
       <body
         className={clsx(
-          'box-border bg-transparent font-sans antialiased selection:bg-secondary-300',
+          'box-border bg-transparent font-sans antialiased selection:bg-accent-soft',
           fontSans.variable,
         )}
       >
@@ -86,7 +86,7 @@ export default function RootLayout({
               </nav>
               <div className="hidden w-16 items-center justify-end gap-3 md:flex">
                 <Link
-                  className="text-default-800 transition-opacity duration-100 hover:opacity-80 dark:text-default-500"
+                  className="text-default-foreground transition-opacity duration-100 hover:opacity-80 dark:text-muted"
                   href="https://github.com/dbm03/portfolio"
                   target="_blank"
                   rel="noopener noreferrer"

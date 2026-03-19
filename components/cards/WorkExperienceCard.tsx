@@ -2,28 +2,19 @@
 
 import {
   Card,
-  CardBody,
-  CardHeader,
-  Divider,
-  Image,
   Link,
+  Separator,
 } from "@heroui/react";
 import { NhostLogo } from '../icons';
 
 export default function WorkExperienceCard() {
   return (
     <>
-      <Card
-        shadow="sm"
-        fullWidth
-        classNames={{
-          base: 'max-h-full h-full p-2',
-        }}
-      >
-        <CardHeader className="flex flex-col items-start gap-3">
+      <Card className="shadow-sm w-full max-h-full h-full p-2">
+        <Card.Header className="flex flex-col items-start gap-3">
           <h1 className="pt-1 text-xl">Work Experience</h1>
-        </CardHeader>
-        <CardBody className="flex flex-col justify-between gap-4 lg:flex-row">
+        </Card.Header>
+        <Card.Content className="flex flex-col justify-between gap-4 lg:flex-row">
           <div className="flex flex-col justify-between gap-2">
             <div className="flex items-center gap-2">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-nhost">
@@ -33,7 +24,7 @@ export default function WorkExperienceCard() {
                 <Link
                   href="https://nhost.io"
                   className="text-lg text-foreground underline"
-                  referrerPolicy="no-referrer"
+                  rel="noopener noreferrer"
                   target="_blank"
                 >
                   Nhost
@@ -45,16 +36,16 @@ export default function WorkExperienceCard() {
                 <p className="text-lg lg:whitespace-nowrap">
                   Frontend Software Engineer
                 </p>
-                <p className="text-small text-default-500">
+                <p className="text-sm text-muted">
                   (10/2024 - Present)
                 </p>
               </div>
-              <Divider />
+              <Separator />
               <div>
                 <p className="text-lg lg:whitespace-nowrap">
                   Frontend Development Intern{' '}
                 </p>
-                <p className="text-small text-default-500">
+                <p className="text-sm text-muted">
                   (05/2024 - 09/2024)
                 </p>
               </div>
@@ -62,8 +53,8 @@ export default function WorkExperienceCard() {
             <div>
               <Link
                 href="https://nhost.io"
-                className="text-small text-default-500 underline"
-                referrerPolicy="no-referrer"
+                className="text-sm text-muted underline"
+                rel="noopener noreferrer"
                 target="_blank"
               >
                 nhost.io
@@ -71,12 +62,13 @@ export default function WorkExperienceCard() {
             </div>
           </div>
           <div className="flex min-w-full max-w-lg justify-center rounded-md md:min-w-0">
-            <Image
+            <img
               alt="Nhost Landing page Screenshot"
               src="/nhost-screenshot.png"
+              className="rounded-lg"
             />
           </div>
-        </CardBody>
+        </Card.Content>
       </Card>
     </>
   );

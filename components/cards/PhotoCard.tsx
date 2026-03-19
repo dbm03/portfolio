@@ -1,4 +1,4 @@
-import { Card, CardFooter } from "@heroui/react";
+import { Card } from "@heroui/react";
 import type {
   StaticImport,
   StaticImageData,
@@ -14,13 +14,7 @@ interface PhotoCardProps {
 
 const PhotoCard = ({ src, alt, title, style }: PhotoCardProps) => {
   return (
-    <Card
-      shadow="sm"
-      fullWidth
-      classNames={{
-        base: "h-full group",
-      }}
-    >
+    <Card className="shadow-sm w-full h-full group">
       <Image
         src={src}
         alt={alt}
@@ -29,17 +23,17 @@ const PhotoCard = ({ src, alt, title, style }: PhotoCardProps) => {
         placeholder="blur"
       />
 
-      <CardFooter className="absolute bottom-0 z-10">
+      <Card.Footer className="absolute bottom-0 z-10">
         <div className="flex flex-col gap-1 justify-between h-full pb-4 px-2">
           <div
-            className="px-2 py-1 text-center max-w-fit text-small text-white rounded-full bg-black/10 backdrop-blur-lg
+            className="px-2 py-1 text-center max-w-fit text-sm text-white rounded-full bg-black/10 backdrop-blur-lg
                     group-hover:opacity-50 opacity-100 transition-opacity
                     "
           >
             {title}
           </div>
         </div>
-      </CardFooter>
+      </Card.Footer>
     </Card>
   );
 };

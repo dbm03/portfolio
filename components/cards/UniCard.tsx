@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { Card, CardFooter, CardHeader } from "@heroui/react";
+import { Card } from "@heroui/react";
 import { StudentIcon } from "../icons";
 import type { StaticImport } from "next/dist/shared/lib/get-img-props";
 
@@ -26,18 +26,12 @@ const UniCard = ({
   imageHeight,
 }: UniCardProps) => (
   <>
-    <Card
-      shadow="sm"
-      fullWidth
-      classNames={{
-        base: "min-h-[284px] h-full bg-black",
-      }}
-    >
-      <CardHeader className="absolute z-10 px-5 top-1 flex-col !items-start">
+    <Card className="shadow-sm w-full min-h-[284px] h-full bg-black">
+      <Card.Header className="absolute z-10 px-5 top-1 flex-col !items-start">
         <div className="bg-background rounded-full w-8 h-8 flex justify-center items-center">
           <StudentIcon size={20} />
         </div>
-      </CardHeader>
+      </Card.Header>
       <Image
         width={imageWidth}
         height={imageHeight}
@@ -46,16 +40,16 @@ const UniCard = ({
         src={backgroundImage}
         placeholder="blur"
       />
-      <CardFooter className="absolute bottom-0 z-10">
+      <Card.Footer className="absolute bottom-0 z-10">
         <div className="flex flex-col gap-1 justify-between h-full pb-4 px-2">
-          <div className="px-2 py-1 text-center max-w-fit text-small rounded-full bg-background">
+          <div className="px-2 py-1 text-center max-w-fit text-sm rounded-full bg-background">
             {timestamp}
           </div>
           <h3 className="text-white">{title}</h3>
           <h2 className="text-white text-balance text-xl font-bold">{name}</h2>
           <h3 className="text-white">{studies}</h3>
         </div>
-      </CardFooter>
+      </Card.Footer>
     </Card>
   </>
 );

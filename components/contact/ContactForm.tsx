@@ -3,13 +3,13 @@
 import {
   Button,
   Card,
-  CardBody,
-  CardHeader,
-  Divider,
-  Input,
+  Separator,
   Spinner,
-  Textarea,
-  Snippet,
+  TextField,
+  TextArea,
+  Label,
+  Input,
+  FieldError,
 } from "@heroui/react";
 import { useMemo, useState } from "react";
 import { MailLogo } from "../icons";
@@ -41,7 +41,6 @@ const ContactForm = () => {
   );
 
   const handleSubmit = async () => {
-    // send email details to next.js endpoint /api/submit-form
     setSending(true);
     try {
       await fetch("/api/submit-form", {
@@ -70,51 +69,48 @@ const ContactForm = () => {
     isEmailInvalid || email === "" || message === "" || sending;
 
   return (
-    <Card
-      shadow="sm"
-      fullWidth
-      classNames={{
-        base: "h-full",
-      }}
-    >
-      <CardHeader className="flex gap-3 justify-between p-4">
+    <Card className="shadow-sm w-full h-full">
+      <Card.Header className="flex gap-3 justify-between p-4">
         <div className="flex flex-col">
-          <p className="text-md">Contact me</p>
-          <p className="text-small text-default-500">Fill out this form...</p>
+          <Card.Title>Contact me</Card.Title>
+          <Card.Description>Fill out this form...</Card.Description>
         </div>
-      </CardHeader>
-      <Divider />
-      <CardBody className="p-4">
+      </Card.Header>
+      <Separator />
+      <Card.Content className="p-4">
         <form className="flex flex-col gap-4">
-          <Input
+          <TextField
             isRequired
-            label="Email"
-            placeholder="Enter your email"
-            type="email"
-            value={email}
             isInvalid={debouncedEmailInvalid}
-            color={debouncedEmailInvalid ? "danger" : "default"}
-            errorMessage={
-              debouncedEmailInvalid ? "Please enter a valid email" : ""
-            }
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <Input
-            label="Subject"
-            placeholder="Enter a subject"
-            type="text"
-            value={subject}
-            onChange={(e) => setSubject(e.target.value)}
-          />
-          <Textarea
-            label="Message"
-            placeholder="Enter your message"
-            minRows={7}
-            maxRows={7}
-            isRequired
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          />
+            name="email"
+            type="email"
+          >
+            <Label>Email</Label>
+            <Input
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <FieldError>
+              {debouncedEmailInvalid ? "Please enter a valid email" : ""}
+            </FieldError>
+          </TextField>
+          <TextField name="subject" type="text">
+            <Label>Subject</Label>
+            <Input
+              placeholder="Enter a subject"
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
+            />
+          </TextField>
+          <TextField isRequired name="message">
+            <Label>Message</Label>
+            <TextArea
+              placeholder="Enter your message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
+          </TextField>
           <div
             className={`flex justify-end gap-2 ${
               buttonDisabled ? "cursor-not-allowed" : "cursor-pointer"
@@ -122,42 +118,29 @@ const ContactForm = () => {
           >
             <Button
               isDisabled={buttonDisabled}
-              fullWidth
-              color="primary"
-              endContent={
-                sending ? <Spinner color="default" size="sm" /> : <MailLogo />
-              }
+              className="w-full"
+              variant="primary"
               onPress={handleSubmit}
             >
               Send
+              {sending ? <Spinner color="current" size="sm" /> : <MailLogo />}
             </Button>
           </div>
-          <Divider />
+          <Separator />
           <div>
-            <p className="text-small text-default-500">
+            <p className="text-sm text-muted">
               ... or you can email me directly at
             </p>
-            <Snippet
-              hideSymbol
-              variant="bordered"
-              color="default"
-              size="md"
-              classNames={{
-                base: "border-0 pl-0",
-              }}
-            >
-              <a href="mailto:contact@davidbarroso.dev">
-                contact@davidbarroso.dev
-              </a>
-            </Snippet>
+            <div className="flex items-center gap-2 px-0 py-1.5">
+              <pre className="text-sm font-mono m-0">
+                <a href="mailto:contact@davidbarroso.dev">
+                  contact@davidbarroso.dev
+                </a>
+              </pre>
+            </div>
           </div>
         </form>
-      </CardBody>
-
-      {/* <CardFooter className="flex flex-col flex-start items-start">
-       
-       
-      </CardFooter>  */}
+      </Card.Content>
     </Card>
   );
 };

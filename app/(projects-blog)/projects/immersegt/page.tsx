@@ -12,7 +12,7 @@ const ImmerseGT = () => {
         <ul className="flex flex-col">
           <li>
             <Link
-              className="flex max-w-fit items-center gap-1 px-2 py-1 text-lg text-default-500 transition-opacity hover:opacity-80"
+              className="flex max-w-fit items-center gap-1 px-2 py-1 text-lg text-muted transition-opacity hover:opacity-80"
               href="/projects"
             >
               <IconArrowReturnLeft size={24} />
@@ -25,7 +25,7 @@ const ImmerseGT = () => {
         <ul className="flex flex-col gap-1">
           <li>
             <Link
-              className="flex items-center gap-1 text-default-500 underline transition-opacity hover:opacity-80"
+              className="flex items-center gap-1 text-muted underline transition-opacity hover:opacity-80"
               href="/projects"
             >
               <span>Projects</span>
@@ -36,7 +36,7 @@ const ImmerseGT = () => {
 
           <li>
             <Link
-              className="text-default-500 transition-opacity hover:opacity-80"
+              className="text-muted transition-opacity hover:opacity-80"
               href="#immersegt"
             >
               ImmerseGT
@@ -44,7 +44,7 @@ const ImmerseGT = () => {
           </li>
           <li>
             <Link
-              className="text-default-500 transition-opacity hover:opacity-80"
+              className="text-muted transition-opacity hover:opacity-80"
               href="#about"
             >
               About
@@ -65,24 +65,24 @@ const ImmerseGT = () => {
             src={ImmerseGTPhoto}
             placeholder="blur"
           />
-          <figcaption className="py-2 text-white/60 text-small">
+          <figcaption className="py-2 text-white/60 text-sm">
             Screenshot of ImmerseGT event platform
           </figcaption>
         </figure>
         <article id="about" className="flex flex-col gap-2">
           <h2 className="text-xl">About</h2>
-          <p className="text-pretty text-medium">
+          <p className="text-pretty text-base">
             This project is currently in progress with an estimated completion
             date of March 1st. The 2024 ImmerseGT hackathon will be held in
             April.
           </p>
-          <p className="text-pretty text-medium">
+          <p className="text-pretty text-base">
             ImmerseGT is a hackathon hosted by the GTXR club and Startup
             Exchange at Georgia Tech. Participants can enter into various XR /
             virtual reality-based categories for a chance to win up to $20,000
             in prizes.
           </p>
-          <p className="text-pretty text-medium">
+          <p className="text-pretty text-base">
             The hackathon was first held in 2023, and the organizers were
             looking to have a virtual platform developed to better run the
             hackathon in 2024. The goal was for the new platform to help

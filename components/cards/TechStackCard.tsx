@@ -1,152 +1,55 @@
-import { Card, CardBody, CardHeader, Chip } from '@heroui/react';
+import { Card, Chip } from '@heroui/react';
+
+const DotChip = ({
+  dotColor,
+  children,
+}: {
+  dotColor: string;
+  children: React.ReactNode;
+}) => (
+  <Chip size="sm" className="gap-1.5">
+    <span className={`inline-block h-2 w-2 rounded-full ${dotColor}`} />
+    {children}
+  </Chip>
+);
 
 const TechStackCard = () => {
   return (
-    <Card
-      shadow="sm"
-      fullWidth
-      classNames={{
-        base: 'h-full p-2',
-      }}
-    >
-      <CardHeader>
+    <Card className="shadow-sm w-full h-full p-2">
+      <Card.Header>
         <h1 className="pt-1 text-xl">Tech Stack</h1>
-      </CardHeader>
+      </Card.Header>
 
-      <CardBody className="flex gap-4 pt-0">
+      <Card.Content className="flex gap-4 pt-0">
         <div>
           <h2 className="leading-loose">Programming languages</h2>
           <div className="flex flex-wrap gap-1">
-            <Chip
-              variant="dot"
-              size="sm"
-              classNames={{
-                dot: 'bg-typescript',
-              }}
-            >
-              TypeScript
-            </Chip>
-            <Chip
-              variant="dot"
-              size="sm"
-              classNames={{
-                dot: 'bg-javascript',
-              }}
-            >
-              JavaScript
-            </Chip>
-            <Chip
-              variant="dot"
-              size="sm"
-              classNames={{
-                dot: 'bg-python',
-              }}
-            >
-              Python
-            </Chip>
-            <Chip
-              variant="dot"
-              size="sm"
-              classNames={{
-                dot: 'bg-java',
-              }}
-            >
-              Java
-            </Chip>
+            <DotChip dotColor="bg-typescript">TypeScript</DotChip>
+            <DotChip dotColor="bg-javascript">JavaScript</DotChip>
+            <DotChip dotColor="bg-python">Python</DotChip>
+            <DotChip dotColor="bg-java">Java</DotChip>
           </div>
         </div>
         <div>
           <h2 className="leading-loose">Front-end</h2>
           <div className="flex flex-wrap gap-1">
-            <Chip
-              variant="dot"
-              size="sm"
-              classNames={{
-                dot: 'bg-reactjs',
-              }}
-            >
-              React
-            </Chip>
-            <Chip
-              variant="dot"
-              size="sm"
-              classNames={{
-                dot: 'bg-black dark:bg-white',
-              }}
-            >
-              Next.js
-            </Chip>
-            <Chip
-              variant="dot"
-              size="sm"
-              classNames={{
-                dot: 'bg-reactjs',
-              }}
-            >
-              React Native
-            </Chip>
-            <Chip
-              variant="dot"
-              size="sm"
-              classNames={{
-                dot: 'bg-html',
-              }}
-            >
-              HTML
-            </Chip>
-            <Chip
-              variant="dot"
-              size="sm"
-              classNames={{
-                dot: 'bg-css',
-              }}
-            >
-              CSS
-            </Chip>
+            <DotChip dotColor="bg-reactjs">React</DotChip>
+            <DotChip dotColor="bg-black dark:bg-white">Next.js</DotChip>
+            <DotChip dotColor="bg-reactjs">React Native</DotChip>
+            <DotChip dotColor="bg-html">HTML</DotChip>
+            <DotChip dotColor="bg-css">CSS</DotChip>
           </div>
         </div>
         <div>
           <h2 className="leading-loose">Back-end</h2>
           <div className="flex flex-wrap gap-1">
-            <Chip
-              variant="dot"
-              size="sm"
-              classNames={{
-                dot: 'bg-nodejs',
-              }}
-            >
-              Node.js
-            </Chip>
-            <Chip
-              variant="dot"
-              size="sm"
-              classNames={{
-                dot: 'bg-docker',
-              }}
-            >
-              Docker
-            </Chip>
-            <Chip
-              variant="dot"
-              size="sm"
-              classNames={{
-                dot: 'bg-firebase',
-              }}
-            >
-              SQL
-            </Chip>
-            <Chip
-              variant="dot"
-              size="sm"
-              classNames={{
-                dot: 'bg-aws',
-              }}
-            >
-              AWS
-            </Chip>
+            <DotChip dotColor="bg-nodejs">Node.js</DotChip>
+            <DotChip dotColor="bg-docker">Docker</DotChip>
+            <DotChip dotColor="bg-firebase">SQL</DotChip>
+            <DotChip dotColor="bg-aws">AWS</DotChip>
           </div>
         </div>
-      </CardBody>
+      </Card.Content>
     </Card>
   );
 };

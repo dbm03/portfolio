@@ -3,12 +3,8 @@
 import {
   Button,
   Card,
-  CardFooter,
-  CardHeader,
-  Image,
-  Tooltip,
   Chip,
-  Link,
+  Tooltip,
 } from "@heroui/react";
 import { EyeIcon, GithubIcon } from "../../icons";
 
@@ -16,102 +12,86 @@ const GreenJournalCard = () => {
   return (
     <>
       <Card
-        isPressable
-        onPress={() =>
+        className="hover:opacity-90 shadow-sm bg-black/70 cursor-pointer"
+        onClick={() =>
           window.open("https://hackgt-sustainability.vercel.app/", "_blank")
         }
-        className="hover:opacity-90"
-        shadow="sm"
-        classNames={{
-          base: "bg-black/70",
-        }}
       >
-        <CardHeader className="absolute z-10 top-1 flex-col !items-start">
-          <p className="font-bold uppercase text-tiny text-white/60">
+        <Card.Header className="absolute z-10 top-1 flex-col !items-start">
+          <p className="font-bold uppercase text-xs text-white/60">
             Hackathon Project
           </p>
-          <h4 className="font-medium text-white text-large">Green Journal</h4>
-        </CardHeader>
-        <Image
+          <h4 className="font-medium text-white text-lg">Green Journal</h4>
+        </Card.Header>
+        <img
           alt="Card background"
           width={506}
           height={380}
           className="z-0 object-cover w-full h-full"
           src="/greenjournal_card.png"
         />
-        <CardFooter className="absolute flex flex-col bottom-0 z-10 bg-black/70 border-t-1 border-default-600 dark:border-default-100">
+        <Card.Footer className="absolute flex flex-col bottom-0 z-10 bg-black/70 border-t border-default-foreground/20 dark:border-default/40">
           <div className="w-full">
-            <p className="text-left text-tiny text-white/60">Tech Stack</p>
+            <p className="text-left text-xs text-white/60">Tech Stack</p>
           </div>
           <div className="flex flex-1 w-full h-full">
             <div className="flex max-w-full w-full overflow-x-scroll scrollbar-hide">
               <div className="flex gap-2 items-end h-full">
-                <Chip
-                  variant="dot"
-                  size="sm"
-                  classNames={{
-                    base: "text-white whitespace-nowrap",
-                    content: "overflow-ellipsis overflow-hidden",
-                  }}
-                >
+                <Chip size="sm" className="text-white whitespace-nowrap gap-1.5">
                   Next.js
                 </Chip>
-                <Chip
-                  color="warning"
-                  variant="dot"
-                  size="sm"
-                  classNames={{
-                    base: "text-white whitespace-nowrap",
-                    content: "overflow-ellipsis overflow-hidden",
-                  }}
-                >
+                <Chip size="sm" className="text-white whitespace-nowrap gap-1.5">
+                  <span className="inline-block h-2 w-2 rounded-full bg-warning" />
                   Three.js
                 </Chip>
-                <Chip
-                  color="primary"
-                  variant="dot"
-                  size="sm"
-                  classNames={{
-                    base: "text-white whitespace-nowrap",
-                    content: "overflow-ellipsis overflow-hidden",
-                  }}
-                >
+                <Chip size="sm" className="text-white whitespace-nowrap gap-1.5">
+                  <span className="inline-block h-2 w-2 rounded-full bg-accent" />
                   OpenAI API
                 </Chip>
               </div>
             </div>
             <div className="flex justify-end pl-2 gap-2">
-              <Tooltip content="See on GitHub" closeDelay={100}>
-                <Button
-                  isIconOnly
-                  href="https://github.com/dbm03/greenjournal"
-                  target="_blank"
-                  as={Link}
-                  color="default"
-                  aria-label="Like"
-                  radius="full"
-                  size="sm"
-                >
-                  <GithubIcon />
-                </Button>
+              <Tooltip delay={0} closeDelay={100}>
+                <Tooltip.Trigger>
+                  <a
+                    href="https://github.com/dbm03/greenjournal"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button
+                      isIconOnly
+                      aria-label="Like"
+                      className="rounded-full"
+                      size="sm"
+                    >
+                      <GithubIcon />
+                    </Button>
+                  </a>
+                </Tooltip.Trigger>
+                <Tooltip.Content>See on GitHub</Tooltip.Content>
               </Tooltip>
-              <Tooltip content="View Live" closeDelay={100}>
-                <Button
-                  isIconOnly
-                  as={Link}
-                  href="https://hackgt-sustainability.vercel.app/"
-                  target="_blank"
-                  color="default"
-                  aria-label="See more"
-                  radius="full"
-                  size="sm"
-                >
-                  <EyeIcon />
-                </Button>
+              <Tooltip delay={0} closeDelay={100}>
+                <Tooltip.Trigger>
+                  <a
+                    href="https://hackgt-sustainability.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button
+                      isIconOnly
+                      aria-label="See more"
+                      className="rounded-full"
+                      size="sm"
+                    >
+                      <EyeIcon />
+                    </Button>
+                  </a>
+                </Tooltip.Trigger>
+                <Tooltip.Content>View Live</Tooltip.Content>
               </Tooltip>
             </div>
           </div>
-        </CardFooter>
+        </Card.Footer>
       </Card>
     </>
   );

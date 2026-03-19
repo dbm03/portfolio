@@ -1,35 +1,33 @@
 'use client';
 
-import { Avatar, Card, CardBody, CardHeader, Link } from '@heroui/react';
+import { Avatar, Card, Link } from '@heroui/react';
+import NextLink from 'next/link';
 
 const SmallAboutCard = () => {
   return (
-    <Card
-      shadow="sm"
-      fullWidth
-      classNames={{
-        base: 'h-full p-2',
-      }}
-    >
-      <CardHeader className="flex gap-3">
-        <Avatar isBordered src="profile.webp" size="lg" />
+    <Card className="shadow-sm w-full h-full p-2">
+      <Card.Header className="flex gap-3">
+        <Avatar className="ring-2 ring-background" size="lg">
+          <Avatar.Image src="profile.webp" alt="David Barroso" />
+          <Avatar.Fallback>DB</Avatar.Fallback>
+        </Avatar>
 
         <div className="flex flex-col">
           <p className="text-xl">David Barroso</p>
-          <p className="text-default-500 text-small">
+          <p className="text-muted text-sm">
             Frotend Software Engineer @{' '}
             <Link
               href="https://nhost.io"
-              className="text-default-500 underline text-small"
-              referrerPolicy="no-referrer"
+              className="text-muted underline text-sm"
+              rel="noopener noreferrer"
               target="_blank"
             >
               Nhost
             </Link>
           </p>
         </div>
-      </CardHeader>
-      <CardBody className="flex gap-2">
+      </Card.Header>
+      <Card.Content className="flex gap-2">
         <p className="text-pretty">
           Software engineer and Computer Science graduate from UC3M. Previously
           exchange student in Canada at UWaterloo and in the US at Georgia Tech.
@@ -37,27 +35,27 @@ const SmallAboutCard = () => {
         <p className="text-pretty">
           Passionate about front-end engineering, AI, user-experience, and{' '}
           <span>
-            <Link className="text-foreground underline" href="/photos">
+            <NextLink className="text-foreground underline" href="/photos">
               photography
-            </Link>
+            </NextLink>
           </span>
           .
         </p>
         <p className="text-pretty">
           Feel free to explore{' '}
           <span>
-            <Link className="text-foreground underline" href="/projects">
+            <NextLink className="text-foreground underline" href="/projects">
               my projects
-            </Link>
+            </NextLink>
           </span>{' '}
           and{' '}
           <span>
-            <Link className="text-forground underline" href="/contact">
+            <NextLink className="text-foreground underline" href="/contact">
               get in touch!
-            </Link>
+            </NextLink>
           </span>
         </p>
-      </CardBody>
+      </Card.Content>
     </Card>
   );
 };

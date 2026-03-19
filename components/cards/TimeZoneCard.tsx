@@ -9,13 +9,7 @@ const ClockWidget = dynamic(() => import("@/components/widgets/ClockWidget"), {
 
 const TimeZoneCard = () => {
   return (
-    <Card
-      shadow="sm"
-      fullWidth
-      classNames={{
-        base: "flex flex-row py-4 justify-evenly items-center h-full",
-      }}
-    >
+    <Card className="shadow-sm w-full flex flex-row py-4 justify-evenly items-center h-full">
       <ClockWidget clockTimezone="Europe/Madrid" text={"Madrid"} />
       <ClockWidget clockTimezone="America/Toronto" text={"Waterloo, ON"} />
     </Card>

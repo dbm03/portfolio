@@ -105,8 +105,8 @@ const ClockWidget = ({ clockTimezone, text }: ClockWidgetProps) => {
       />
       <div className="flex flex-col gap-1 pt-2 text-center leading-tight">
         <p>{text}</p>
-        <p className="text-default-500">{dayText}</p>
-        <p className="text-default-500">{diffHours}</p>
+        <p className="text-muted">{dayText}</p>
+        <p className="text-muted">{diffHours}</p>
       </div>
     </div>
   );

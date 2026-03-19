@@ -21,24 +21,26 @@ const ContributionGraphWidget = () => {
             <a
               href="https://github.com/dbm03"
               target="_blank"
-              className="flex h-12 w-12 items-center justify-center rounded-md bg-default-800 text-white transition-opacity hover:opacity-80 dark:bg-black"
+              rel="noopener noreferrer"
+              className="flex h-12 w-12 items-center justify-center rounded-md bg-default-foreground text-white transition-opacity hover:opacity-80 dark:bg-black"
               aria-label="My GitHub profile"
             >
               <GithubIcon size={32} />
             </a>
           </div>
           <div className="pb-7">
-            <Button
-              className="m-0"
-              as={Link}
+            <a
               href="https://github.com/dbm03"
-              showAnchorIcon
               target="_blank"
-              color="default"
-              variant="ghost"
+              rel="noopener noreferrer"
             >
-              Visit my GitHub
-            </Button>
+              <Button
+                className="m-0"
+                variant="ghost"
+              >
+                Visit my GitHub
+              </Button>
+            </a>
           </div>
         </div>
         <div className="flex items-center justify-center">

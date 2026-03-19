@@ -10,14 +10,7 @@ const ContributionGraphWidget = dynamic(
 
 export default function ContributionGraphCard() {
   return (
-    <Card
-      as={'article'}
-      shadow="sm"
-      fullWidth
-      classNames={{
-        base: 'h-full',
-      }}
-    >
+    <Card className="shadow-sm w-full h-full">
       <ContributionGraphWidget />
     </Card>
   );

@@ -1,9 +1,64 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "@heroui/styles";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --breakpoint-xs: 470px;
+
+  --color-nhost: #0052cc;
+  --color-reactjs: #61dbfb;
+  --color-nextjs: #000000;
+  --color-aws: #ff9900;
+  --color-python: #306998;
+  --color-typescript: #007acc;
+  --color-javascript: #f7df1e;
+  --color-css: #214ce5;
+  --color-supabase: #3ecf8e;
+  --color-nodejs: #417e38;
+  --color-docker: #1d63ed;
+  --color-firebase: #ffca28;
+  --color-java: #ed2025;
+  --color-c: #5d6cbf;
+  --color-html: #e44d26;
+
+  --animate-thunderstrike: thunderstrike 7s ease-out 2s infinite;
+  --animate-skeleton-loader: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@utility bg-insta-gradient {
+  background-image: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+}
+
+@keyframes thunderstrike {
+  0% {
+    opacity: 0;
+  }
+  92% {
+    opacity: 0;
+  }
+  93% {
+    opacity: 0.6;
+  }
+  94% {
+    opacity: 0.2;
+  }
+  96% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 
 .react-clock__face {
-  /* border: 2px solid #ccc !important; */
   border: none !important;
   background-color: #1f1f1f !important;
 }
