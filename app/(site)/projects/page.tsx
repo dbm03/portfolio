@@ -1,34 +1,34 @@
-"use client";
+'use client';
 
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic';
 
 const ImmerseGTCard = dynamic(
-  () => import("@/components/cards/projects/ImmerseGTCard"),
+  () => import('@/components/cards/projects/ImmerseGTCard'),
   { ssr: false },
 );
 
 const GreenJournalCard = dynamic(
-  () => import("@/components/cards/projects/GreenJournalCard"),
+  () => import('@/components/cards/projects/GreenJournalCard'),
   { ssr: false },
 );
 
 const LeagueWrappedCard = dynamic(
-  () => import("@/components/cards/projects/LeagueWrappedCard"),
+  () => import('@/components/cards/projects/LeagueWrappedCard'),
   { ssr: false },
 );
 
 const MusicPortfolioCard = dynamic(
-  () => import("@/components/cards/projects/MusicPortfolioCard"),
+  () => import('@/components/cards/projects/MusicPortfolioCard'),
   { ssr: false },
 );
 
 const MarioPyScriptCard = dynamic(
-  () => import("@/components/cards/projects/MarioPyScriptCard"),
+  () => import('@/components/cards/projects/MarioPyScriptCard'),
   { ssr: false },
 );
 
 const F1DeepDiveCard = dynamic(
-  () => import("@/components/cards/projects/F1DeepDiveCard"),
+  () => import('@/components/cards/projects/F1DeepDiveCard'),
   { ssr: false },
 );
 

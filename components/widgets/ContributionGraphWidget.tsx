@@ -1,7 +1,7 @@
 'use client';
-import { Button, Link } from "@heroui/react";
+import { Button, Link } from '@heroui/react';
 import { useTheme } from 'next-themes';
-import { type ThemeInput } from 'react-activity-calendar';
+import type { ThemeInput } from 'react-activity-calendar';
 import GitHubCalendar from 'react-github-calendar';
 import { GithubIcon } from '../icons';
 
@@ -23,6 +23,7 @@ const ContributionGraphWidget = () => {
               target="_blank"
               className="flex h-12 w-12 items-center justify-center rounded-md bg-default-800 text-white transition-opacity hover:opacity-80 dark:bg-black"
               aria-label="My GitHub profile"
+              rel="noopener"
             >
               <GithubIcon size={32} />
             </a>

@@ -12,7 +12,9 @@ Personal portfolio website for a full-stack developer, built with Next.js 16 (ap
 pnpm dev        # Start development server
 pnpm build      # Production build (uses --webpack; Turbopack has SSR issues with HeroUI)
 pnpm start      # Start production server
-pnpm lint       # Run ESLint (uses eslint CLI directly; `next lint` was removed in Next.js 16)
+pnpm lint       # Run Biome check (linting + formatting)
+pnpm lint:fix   # Auto-fix lint and format issues
+pnpm format     # Format all files with Biome
 ```
 
 ## Architecture
@@ -36,7 +38,7 @@ The app uses two Next.js route groups under `/app`:
 - Dark/light mode via `next-themes` (class-based)
 - Tailwind Variants (`primitives.ts`) for title/subtitle component patterns
 - Custom fonts loaded locally in `/app/fonts/` — Inter (sans) and FiraCode (mono)
-- Prettier with `prettier-plugin-tailwindcss` for class sorting and `prettier-plugin-organize-imports` for import ordering
+- Biome for linting, formatting, and import organization (`biome.json`); Tailwind class sorting via `useSortedClasses` nursery rule
 
 ### Path Alias
 

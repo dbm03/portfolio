@@ -5,7 +5,7 @@ import { useCallback, useEffect, useRef } from 'react';
 export type UseTimeoutFnReturn = [() => boolean | null, () => void, () => void];
 
 export default function useTimeoutFn(
-  fn: Function,
+  fn: (...args: unknown[]) => void,
   ms: number = 0,
 ): UseTimeoutFnReturn {
   const ready = useRef<boolean | null>(false);
@@ -39,7 +39,7 @@ export default function useTimeoutFn(
     set();
 
     return clear;
-  }, [ms]);
+  }, [clear, set]);
 
   return [isReady, clear, set];
 }

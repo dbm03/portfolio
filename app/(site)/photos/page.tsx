@@ -1,10 +1,10 @@
-import PhotoCard from "@/components/cards/PhotoCard";
-import Colorado from "@/public/colorado.jpg";
-import Boston from "@/public/boston.jpeg";
-import Atlanta from "@/public/atl.jpeg";
-import Moher from "@/public/moher.jpeg";
-import Madrid from "@/public/mad.jpeg";
-import Temple from "@/public/temple.jpg";
+import PhotoCard from '@/components/cards/PhotoCard';
+import Atlanta from '@/public/atl.jpeg';
+import Boston from '@/public/boston.jpeg';
+import Colorado from '@/public/colorado.jpg';
+import Madrid from '@/public/mad.jpeg';
+import Moher from '@/public/moher.jpeg';
+import Temple from '@/public/temple.jpg';
 
 export default function PhotosPage() {
   return (
@@ -15,7 +15,7 @@ export default function PhotosPage() {
           alt="Colorado Grand Canyon mountains"
           title="Grand Canyon, AZ"
           style={{
-            objectFit: "cover",
+            objectFit: 'cover',
           }}
         />
       </div>
@@ -25,7 +25,7 @@ export default function PhotosPage() {
           alt="Atlanta skyline"
           title="Atlanta, GA"
           style={{
-            objectFit: "contain",
+            objectFit: 'contain',
           }}
         />
       </div>
@@ -35,7 +35,7 @@ export default function PhotosPage() {
           alt="Cliffs of Moher"
           title="Cliffs of Moher, Ireland"
           style={{
-            objectFit: "cover",
+            objectFit: 'cover',
           }}
         />
       </div>
@@ -45,8 +45,8 @@ export default function PhotosPage() {
           alt="Boston skyline, long exposure"
           title="Boston, MA"
           style={{
-            objectFit: "cover",
-            objectPosition: "63% 50%",
+            objectFit: 'cover',
+            objectPosition: '63% 50%',
           }}
         />
       </div>
@@ -56,7 +56,7 @@ export default function PhotosPage() {
           alt="Madrid street view"
           title="Madrid, Spain"
           style={{
-            objectFit: "cover",
+            objectFit: 'cover',
           }}
         />
       </div>
@@ -66,7 +66,7 @@ export default function PhotosPage() {
           alt="Templo de Debod, Madrid"
           title="Madrid, Spain"
           style={{
-            objectFit: "cover",
+            objectFit: 'cover',
           }}
         />
       </div>

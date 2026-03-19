@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { Card, CardBody, CardFooter, Link, Tooltip } from "@heroui/react";
-import { GithubIcon } from "../icons";
+import { Card, CardBody, CardFooter, Link, Tooltip } from '@heroui/react';
+import { GithubIcon } from '../icons';
 
 const GithubCard = () => {
   return (
@@ -11,16 +11,16 @@ const GithubCard = () => {
         as={Link}
         href="https://github.com/dbm03"
         target="_blank"
-        className="hover:opacity-90 bg-zinc-800"
+        className="bg-zinc-800 hover:opacity-90"
         fullWidth
         classNames={{
-          base: "h-full",
+          base: 'h-full',
         }}
       >
-        <CardBody className="flex text-white items-center justify-center pb-0">
+        <CardBody className="flex items-center justify-center pb-0 text-white">
           <GithubIcon size={64} />
         </CardBody>
-        <CardFooter className="text-white bg-black/20 border-t border-zinc-500/50 z-10 flex justify-center">
+        <CardFooter className="z-10 flex justify-center border-zinc-500/50 border-t bg-black/20 text-white">
           <p className="text-small">@dbm03</p>
         </CardFooter>
       </Card>

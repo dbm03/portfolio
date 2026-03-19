@@ -20,7 +20,7 @@ const SmallAboutCard = () => {
             Frotend Software Engineer @{' '}
             <Link
               href="https://nhost.io"
-              className="text-default-500 underline text-small"
+              className="text-default-500 text-small underline"
               referrerPolicy="no-referrer"
               target="_blank"
             >

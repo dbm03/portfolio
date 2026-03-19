@@ -1,12 +1,12 @@
-import { NextRequest, NextResponse } from "next/server";
-import cache from "memory-cache";
+import cache from 'memory-cache';
+import { type NextRequest, NextResponse } from 'next/server';
 import {
-  ParsedQuery,
+  type ParsedQuery,
   scrapeGitHubContributions,
   UserNotFoundError,
-} from "@/utils/scrape";
+} from '@/utils/scrape';
 
-export const dynamic = "force-static";
+export const dynamic = 'force-static';
 
 export async function GET(
   req: NextRequest,
@@ -15,13 +15,15 @@ export async function GET(
   const username = (await params).username;
   const { searchParams } = new URL(req.url);
 
-  const y = searchParams.getAll("y");
+  const y = searchParams.getAll('y');
 
   const years =
     y?.length > 0
-      ? y.filter((year) => year === "last" || /^\d+$/.test(year))
+      ? y.filter((year) => year === 'last' || /^\d+$/.test(year))
       : [];
-  if (years.some((year) => year !== "last" && isNaN(parseInt(year)))) {
+  if (
+    years.some((year) => year !== 'last' && Number.isNaN(parseInt(year, 10)))
+  ) {
     return NextResponse.json(
       { error: "Query parameter 'y' must be an integer or 'last'" },
       { status: 400 },
@@ -30,9 +32,9 @@ export async function GET(
 
   const query: ParsedQuery = {
     years: years
-      .filter((year) => year !== "last")
-      .map((year) => parseInt(year)),
-    lastYear: years.includes("last"),
+      .filter((year) => year !== 'last')
+      .map((year) => parseInt(year, 10)),
+    lastYear: years.includes('last'),
   };
 
   const key = `${username}-${JSON.stringify(query)}`;

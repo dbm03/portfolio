@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write ."
   },
   "dependencies": {
     "@heroui/react": "2.8.10",
@@ -36,18 +38,13 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.4.8",
     "@react-types/shared": "^3.26.0",
     "@types/domhandler": "^2.4.5",
     "@types/memory-cache": "^0.2.6",
     "@types/node": "^20",
     "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9.39.1",
-    "eslint-config-next": "^16.0.3",
-    "eslint-config-prettier": "^10.1.8",
-    "prettier": "^3.4.2",
-    "prettier-plugin-organize-imports": "^4.1.0",
-    "prettier-plugin-tailwindcss": "^0.6.10"
+    "@types/react-dom": "^19"
   },
   "pnpm": {
     "overrides": {

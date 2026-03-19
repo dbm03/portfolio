@@ -1,9 +1,10 @@
-"use client";
+'use client';
 
-import { Card } from "@heroui/react";
-import "react-clock/dist/Clock.css";
-import dynamic from "next/dynamic";
-const ClockWidget = dynamic(() => import("@/components/widgets/ClockWidget"), {
+import { Card } from '@heroui/react';
+import 'react-clock/dist/Clock.css';
+import dynamic from 'next/dynamic';
+
+const ClockWidget = dynamic(() => import('@/components/widgets/ClockWidget'), {
   ssr: false,
 });
 
@@ -13,11 +14,11 @@ const TimeZoneCard = () => {
       shadow="sm"
       fullWidth
       classNames={{
-        base: "flex flex-row py-4 justify-evenly items-center h-full",
+        base: 'flex flex-row py-4 justify-evenly items-center h-full',
       }}
     >
-      <ClockWidget clockTimezone="Europe/Madrid" text={"Madrid"} />
-      <ClockWidget clockTimezone="America/Toronto" text={"Waterloo, ON"} />
+      <ClockWidget clockTimezone="Europe/Madrid" text={'Madrid'} />
+      <ClockWidget clockTimezone="America/Toronto" text={'Waterloo, ON'} />
     </Card>
   );
 };

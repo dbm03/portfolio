@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   Button,
@@ -7,24 +7,24 @@ import {
   CardHeader,
   Divider,
   Input,
+  Snippet,
   Spinner,
   Textarea,
-  Snippet,
-} from "@heroui/react";
-import { useMemo, useState } from "react";
-import { MailLogo } from "../icons";
-import useDebounce from "@/hooks/useDebounce";
-import { toast } from "sonner";
+} from '@heroui/react';
+import { useMemo, useState } from 'react';
+import { toast } from 'sonner';
+import useDebounce from '@/hooks/useDebounce';
+import { MailLogo } from '../icons';
 
 const validateEmail = (mail: string) => {
-  if (mail === "") return false;
+  if (mail === '') return false;
   return !mail.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
 };
 
 const ContactForm = () => {
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
 
   const [sending, setSending] = useState(false);
 
@@ -44,43 +44,43 @@ const ContactForm = () => {
     // send email details to next.js endpoint /api/submit-form
     setSending(true);
     try {
-      await fetch("/api/submit-form", {
-        method: "POST",
+      await fetch('/api/submit-form', {
+        method: 'POST',
         body: JSON.stringify({
           email,
           subject,
           message,
         }),
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
       });
-      setEmail("");
-      setSubject("");
-      setMessage("");
-      toast.success("Email sent successfully");
+      setEmail('');
+      setSubject('');
+      setMessage('');
+      toast.success('Email sent successfully');
     } catch {
-      toast.error("Error sending email");
+      toast.error('Error sending email');
     } finally {
       setSending(false);
     }
   };
 
   const buttonDisabled =
-    isEmailInvalid || email === "" || message === "" || sending;
+    isEmailInvalid || email === '' || message === '' || sending;
 
   return (
     <Card
       shadow="sm"
       fullWidth
       classNames={{
-        base: "h-full",
+        base: 'h-full',
       }}
     >
-      <CardHeader className="flex gap-3 justify-between p-4">
+      <CardHeader className="flex justify-between gap-3 p-4">
         <div className="flex flex-col">
           <p className="text-md">Contact me</p>
-          <p className="text-small text-default-500">Fill out this form...</p>
+          <p className="text-default-500 text-small">Fill out this form...</p>
         </div>
       </CardHeader>
       <Divider />
@@ -93,9 +93,9 @@ const ContactForm = () => {
             type="email"
             value={email}
             isInvalid={debouncedEmailInvalid}
-            color={debouncedEmailInvalid ? "danger" : "default"}
+            color={debouncedEmailInvalid ? 'danger' : 'default'}
             errorMessage={
-              debouncedEmailInvalid ? "Please enter a valid email" : ""
+              debouncedEmailInvalid ? 'Please enter a valid email' : ''
             }
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -117,7 +117,7 @@ const ContactForm = () => {
           />
           <div
             className={`flex justify-end gap-2 ${
-              buttonDisabled ? "cursor-not-allowed" : "cursor-pointer"
+              buttonDisabled ? 'cursor-not-allowed' : 'cursor-pointer'
             }`}
           >
             <Button
@@ -134,7 +134,7 @@ const ContactForm = () => {
           </div>
           <Divider />
           <div>
-            <p className="text-small text-default-500">
+            <p className="text-default-500 text-small">
               ... or you can email me directly at
             </p>
             <Snippet
@@ -143,7 +143,7 @@ const ContactForm = () => {
               color="default"
               size="md"
               classNames={{
-                base: "border-0 pl-0",
+                base: 'border-0 pl-0',
               }}
             >
               <a href="mailto:contact@davidbarroso.dev">
