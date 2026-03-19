@@ -36,3 +36,20 @@
 * {
   box-sizing: border-box;
 }
+
+.noise-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.noise-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/noise.webp");
+  background-size: cover;
+  mix-blend-mode: overlay;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 1;
+}

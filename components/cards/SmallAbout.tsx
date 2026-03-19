@@ -17,7 +17,7 @@ const SmallAboutCard = () => {
         <div className="flex flex-col">
           <p className="text-xl">David Barroso</p>
           <p className="text-default-500 text-small">
-            Frotend Software Engineer @{' '}
+            Software Engineer @{' '}
             <Link
               href="https://nhost.io"
               className="text-default-500 text-small underline"

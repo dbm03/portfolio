@@ -22,10 +22,10 @@ export default function WorkExperienceCard() {
       <CardHeader className="flex flex-col items-start gap-3">
         <h1 className="pt-1 text-xl">Work Experience</h1>
       </CardHeader>
-      <CardBody className="flex flex-col justify-between gap-4 lg:flex-row">
-        <div className="flex flex-col justify-between gap-2">
+      <CardBody className="flex flex-col justify-between gap-8 lg:flex-row">
+        <div className="flex flex-col justify-between gap-4">
           <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-nhost">
+            <div className="flex size-8 items-center justify-center rounded-full bg-nhost">
               <NhostLogo size={18} />
             </div>
             <p>
@@ -39,17 +39,15 @@ export default function WorkExperienceCard() {
               </Link>
             </p>
           </div>
-          <div className="flex flex-1 flex-col gap-3">
+          <div className="flex flex-1 flex-col gap-4">
             <div>
-              <p className="text-lg lg:whitespace-nowrap">
-                Frontend Software Engineer
-              </p>
+              <p className="text-lg lg:whitespace-nowrap">Software Engineer</p>
               <p className="text-default-500 text-small">(10/2024 - Present)</p>
             </div>
             <Divider />
             <div>
               <p className="text-lg lg:whitespace-nowrap">
-                Frontend Development Intern{' '}
+                Frontend Development Intern
               </p>
               <p className="text-default-500 text-small">(05/2024 - 09/2024)</p>
             </div>
