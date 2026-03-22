@@ -10,13 +10,15 @@ import {
   Link,
   Tooltip,
 } from '@heroui/react';
+import { useRouter } from 'next/navigation';
 import { EyeIcon } from '../../icons';
 
 const F1DeepDiveCard = () => {
+  const router = useRouter();
   return (
     <Card
       isPressable
-      onPress={() => window.open('https://f1deepdive.streamlit.app/', '_blank')}
+      onPress={() => router.push('/projects/f1deepdive')}
       className="hover:opacity-90"
       shadow="sm"
       classNames={{

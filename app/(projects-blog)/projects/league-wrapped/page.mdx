@@ -1,0 +1,80 @@
+export const metadata = {
+  title: 'League Wrapped',
+  description:
+    'A web app that generates personalized video recaps of your ranked League of Legends season using React, Remotion, and AWS Lambda.',
+};
+
+import Image from 'next/image';
+import heroImage from '@/public/leaguewrapped_cover.png';
+
+# League Wrapped
+
+<Image
+  className="rounded-md"
+  alt="Screenshot of the League Wrapped application"
+  src={heroImage}
+  placeholder="blur"
+/>
+
+[Visit League Wrapped](https://leaguewrapped.vercel.app/)
+
+## About
+
+League Wrapped generates a personalized video summary of your ranked season in League of Legends, inspired by Spotify Wrapped. You enter your summoner name, pick your region, and the app produces a video recapping your final rank, win rate, total hours played, server and world ranking, and who you duo'd with the most. It also contextualizes your gaming time with ironic comparisons: how many books you could have read, how many movies you could have watched, or how many kilometers you could have walked instead.
+
+Spotify had turned year-end stats into a cultural event, and the League community, which already obsesses over stats and improvement, had nothing like it. Riot Games didn't offer a video recap at the time, so I built one.
+
+## Generating video with React
+
+The core technical choice was [Remotion](https://remotion.dev/), a library that lets you create video programmatically using React components. Instead of stitching together frames with ffmpeg scripts, you write JSX. Each "frame" of the video is a React render at a specific point in time, and Remotion handles the composition.
+
+When a user enters their summoner name and region, the app fetches their ranked stats from a third-party data provider, transforms them into props, and passes them into a Remotion `<Composition>`. Each section of the video (rank reveal, time played, duo partner stats) is its own React component.
+
+```tsx
+<Composition
+  id="LeagueWrapped"
+  component={WrappedVideo}
+  durationInFrames={durationInFrames}
+  fps={fps}
+  width={width}
+  height={height}
+  defaultProps={playerData}
+/>
+```
+
+This made iteration very fast. Tweaking animation timing on the rank badge reveal or the layout of the "hours played" comparison screen was just changing React code and seeing the result instantly in Remotion's preview player. No re-encoding, no render waits during development.
+
+## Rendering to MP4 with AWS Lambda
+
+The app initially played the video in the browser using Remotion's `<Player>` component. But users wanted to download their videos to share on social media. Playing a video in the browser is one thing; exporting it as an MP4 is another.
+
+Remotion supports server-side rendering through [`@remotion/lambda`](https://www.remotion.dev/lambda), which spins up AWS Lambda functions to render frames in parallel and stitch them into a final file. When a user clicks "Render," the app triggers a Lambda function that receives the player's data, renders all frames using headless Chromium, encodes them into an MP4 with ffmpeg, and returns a download URL.
+
+This worked well at small scale. The problem was that I had sized the infrastructure for a handful of users.
+
+## What happens when 2,000 people render videos on day one
+
+I posted League Wrapped on Reddit and in Riot Games' Discord server, expecting modest interest. Instead, it got picked up by esports media. Dot Esports and [Esports.gg](https://esports.gg/news/league-of-legends/league-wrapped-fans-created-a-video-summary-of-your-ranked-season/) wrote articles about it, driving a wave of traffic. Over 2,000 videos were rendered on the first day.
+
+The Lambda infrastructure actually scaled well without any manual intervention. The problem was cost. Remotion's Lambda renderer writes individual frame chunks to S3, then reads them back to stitch the final MP4, which is also uploaded to S3 for the user to download. With thousands of renders, the S3 upload and download costs added up fast. I was paying out of pocket, and the bill climbed quickly. I eventually had to remove the render button and keep only the in-browser playback. It was a tough call since sharing was the feature people loved most, but it was unsustainable as a solo developer without monetization.
+
+## What I learned
+
+**S3 costs sneak up on you.** Lambda compute wasn't the bottleneck. The real cost driver was S3: thousands of renders meant millions of chunk uploads, stitched file writes, and user downloads. At scale, storage and transfer costs can easily outpace compute.
+
+**Side projects can surprise you.** I built League Wrapped expecting to share it with friends and maybe a few more people. I never anticipated that a Reddit post and a couple of media articles would drive thousands of concurrent users. It changed how I think about infrastructure decisions, even for projects that start small.
+
+**Solo projects teach you everything.** Being responsible for every layer (concept, design, frontend, backend, infrastructure, marketing) means you learn where the seams are between disciplines. Design decisions affect infrastructure costs, marketing success affects scaling requirements, and scaling constraints feed back into product decisions.
+
+## Tech stack
+
+- Next.js
+- React
+- TypeScript
+- Remotion (programmatic video generation)
+- AWS Lambda (`@remotion/lambda` for server-side rendering)
+- Vercel (hosting)
+
+---
+
+[Visit League Wrapped](https://leaguewrapped.vercel.app/)

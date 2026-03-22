@@ -58,7 +58,7 @@ export default function RootLayout({
       <head />
       <body
         className={clsx(
-          'box-border scroll-smooth bg-transparent font-sans antialiased selection:bg-secondary-300',
+          'box-border scroll-smooth bg-neutral-50 font-sans antialiased selection:bg-secondary-300 dark:bg-neutral-950',
           fontSans.variable,
         )}
       >
@@ -71,7 +71,7 @@ export default function RootLayout({
         >
           <Toaster richColors theme={'system'} />{' '}
           {/* Component where toasts will be rendered */}
-          <div className="absolute top-0 z-[-2] h-screen w-screen max-w-full overflow-hidden bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] bg-white dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] dark:bg-black"></div>
+          <div className="pointer-events-none absolute top-0 z-0 h-screen w-screen max-w-full overflow-hidden bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
           <div className="flex min-h-screen flex-col items-center">
             <header className="flex w-full max-w-5xl items-center justify-center px-4 pt-6 pb-12 md:justify-between lg:px-0">
               <Link
@@ -80,7 +80,6 @@ export default function RootLayout({
               >
                 db
               </Link>
-              <div className="h-[52px]"></div>
               <div className="hidden w-16 items-center justify-end gap-3 md:flex">
                 <Link
                   className="text-default-800 transition-opacity duration-100 hover:opacity-80 dark:text-default-500"

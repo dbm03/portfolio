@@ -95,8 +95,7 @@ const LeagueWrappedCard = () => {
             <Button
               isIconOnly
               as={Link}
-              href="https://dotesports.com/league-of-legends/news/fan-creates-league-of-legends-wrapped-summarizing-your-ranked-season"
-              target="_blank"
+              href="/projects/league-wrapped"
               color="default"
               aria-label="Like"
               radius="full"

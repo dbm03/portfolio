@@ -10,15 +10,15 @@ import {
   Link,
   Tooltip,
 } from '@heroui/react';
+import { useRouter } from 'next/navigation';
 import { EyeIcon } from '../../icons';
 
 const MusicPortfolioCard = () => {
+  const router = useRouter();
   return (
     <Card
       isPressable
-      onPress={() =>
-        window.open('https://luisbarrososaxofonista.netlify.app/', '_blank')
-      }
+      onPress={() => router.push('/projects/musicportfolio')}
       isFooterBlurred
       className="hover:opacity-90"
       shadow="sm"
@@ -74,7 +74,7 @@ const MusicPortfolioCard = () => {
             <Button
               isIconOnly
               as={Link}
-              href="https://luisbarrososaxofonista.netlify.app/"
+              href="https://luisbarrososaxofonista.com/"
               target="_blank"
               color="default"
               aria-label="See more"

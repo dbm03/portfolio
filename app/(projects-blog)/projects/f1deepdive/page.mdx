@@ -1,0 +1,76 @@
+export const metadata = {
+  title: 'F1 Deep Dive - Predicting Formula 1 Performance with Machine Learning',
+  description:
+    'A machine learning project analyzing Formula 1 data with unsupervised weather clustering, overtaking probability prediction, and neural network season standings forecasting.',
+};
+
+import Image from 'next/image';
+import heroImage from '@/public/f1deepdive_card.png';
+import dashboardImage from '@/public/f1deepdive/dashboard.png';
+
+# F1 Deep Dive
+
+<Image
+  className="rounded-md"
+  alt="Screenshot of the F1 Deep Dive Streamlit dashboard"
+  src={heroImage}
+  placeholder="blur"
+/>
+
+[View Live](https://f1deepdive.streamlit.app/) | [GitHub](https://github.com/dbm03/f1_deepdive)
+
+## About
+
+F1 Deep Dive was my final group project for CS4641 (Machine Learning) at Georgia Tech. The goal was to apply a range of ML techniques to Formula 1 racing data and try to answer a deceptively simple question: **what determines race performance?**
+
+We started from the Ergast F1 Database (15 CSV files covering circuits, drivers, lap times, pit stops, and more), cleaned and enriched it with weather API data, and built four analyses on top of it:
+
+- **Weather clustering** (PCA + K-means / GMM / DBSCAN) to discover distinct weather patterns across race weekends
+- **Lap time modeling** (linear regression per circuit) to measure weather's effect on lap times
+- **Overtaking prediction** (Naive Bayes) to classify whether a driver would overtake or be overtaken in upcoming laps
+- **Season standings forecasting** (PyTorch neural network with 39+ features) to predict final championship positions
+
+Everything is presented through an interactive [Streamlit dashboard](https://f1deepdive.streamlit.app/) that lets you explore the data and results yourself.
+
+## What I built
+
+My focus was the Streamlit dashboard: the data visualizations, interactive components, and the presentation layer.
+
+### Interactive K-means cluster explorer
+
+An interactive 3D scatter plot of race weather conditions in PCA-reduced space, with a **slider to change K** (number of clusters, 4 to 8) and see the clusters rearrange in real time. The widget pre-computes assignments for each K, loads them into a single Plotly figure, and toggles trace visibility through Plotly's slider API. This made it easy to visually justify our choice of K=5.
+
+<video className="rounded-md" playsInline loop autoPlay muted src="/f1deepdive/kmeans.mp4" />
+
+*Sliding K from 4 to 8 to compare cluster assignments in PCA-reduced weather space*
+
+### Custom driver selector component
+
+For driver-specific results (overtaking probabilities, season predictions), Streamlit's built-in selectbox felt too plain. I built a **custom Streamlit component** with a React frontend and Python backend. It renders driver cards with portraits and country flags, and sends the selection back to Streamlit so downstream visualizations update accordingly.
+
+<video className="rounded-md" playsInline loop autoPlay muted src="/f1deepdive/drivers.mp4" />
+
+*Custom Streamlit component for selecting a driver and updating visualizations*
+
+### Dashboard and data visualizations
+
+I also built the rest of the dashboard: data exploration charts, linear regression plots, neural network training curves, and the overall layout.
+
+<Image className="rounded-md" alt="Data visualizations in the Streamlit dashboard" src={dashboardImage} placeholder="blur" />
+
+*Data exploration charts in the Streamlit dashboard*
+
+## Tech stack
+
+- Python
+- Streamlit
+- React (custom Streamlit component)
+- PyTorch
+- Scikit-learn
+- Pandas / NumPy
+- Plotly / Matplotlib / Seaborn
+
+---
+
+[View Live](https://f1deepdive.streamlit.app/) | [GitHub](https://github.com/dbm03/f1_deepdive)
+

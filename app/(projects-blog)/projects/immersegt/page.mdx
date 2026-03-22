@@ -1,7 +1,7 @@
 export const metadata = {
   title: 'ImmerseGT 2024 Event Platform',
   description:
-    'A virtual platform for the ImmerseGT hackathon at Georgia Tech, helping participants register, form teams, view schedules, and submit projects.',
+    'A full-stack event platform for the ImmerseGT hackathon at Georgia Tech, featuring a multi-step application form, team formation tools, and Supabase-powered backend.',
 };
 
 import Image from 'next/image';
@@ -16,14 +16,74 @@ import heroImage from '@/public/immersegt_card.png';
   placeholder="blur"
 />
 
+[View Live (2024)](https://immersegt.vercel.app/) | [Current Site](https://www.immersegt.org/) | [GitHub](https://github.com/immersegt/immersegt)
+
 ## About
 
-This project is currently in progress with an estimated completion date of March 1st. The 2024 ImmerseGT hackathon will be held in April.
+[ImmerseGT](https://www.immersegt.org/) is an XR-focused hackathon hosted annually at Georgia Tech by [GTXR](https://www.gtxr.club/), a student organization dedicated to advancing extended reality technology, and sponsored by [Startup Exchange](https://www.startup.exchange/) Georgia Tech. Participants compete across categories like Augmented Reality, Virtual Reality, and Mixed Reality for up to $20,000 in prizes.
 
-ImmerseGT is a hackathon hosted by the GTXR club and Startup Exchange at Georgia Tech. Participants can enter into various XR / virtual reality-based categories for a chance to win up to $20,000 in prizes.
+The hackathon first ran in 2023, and for its second year the organizers wanted a dedicated web platform to replace scattered tools and external forms. The goal was to build a one-stop shop where participants could register, fill out a detailed application, discover and join teams, view the event schedule, and submit their final projects.
 
-The hackathon was first held in 2023, and the organizers were looking to have a virtual platform developed to better run the hackathon in 2024. The goal was for the new platform to help participants register for the hackathon, form teams, see the event schedule, submit projects, and more as a one stop shop for the hackathon.
+I joined the platform team to build out the application system and team formation features using Next.js and Supabase.
+
+## What it does
+
+The platform covers the full participant lifecycle for the hackathon:
+
+- **User authentication**: Sign up with email/password, Google, or Discord via Supabase Auth.
+- **Multi-step application form**: A 7-step stepper that collects contact info, demographics, education, skills and experience, team preferences, [MLH](https://mlh.io/) compliance questions, and optional portfolio links.
+- **Team formation**: Browse existing teams, create your own, invite participants by searching their name, and manage join requests.
+- **Team recommendation**: A tool that suggests teams matching your applicant profile based on skills and interests.
+- **Event schedule**: View workshops, sessions, and event details pulled from the database.
+- **Project submission**: Teams submit their final project with a title, description, Devpost link, difficulty level, and competition category.
+
+## My contributions
+
+I was primarily responsible for the **application form** and the **team formation system**.
+
+### Application form
+
+The application is a multi-step form built with Mantine's `Stepper` component and `useForm` hook. Each step has its own validation logic so users get immediate feedback before moving forward. The form collects:
+
+- **Contact info**: Name, email, phone number.
+- **Education**: Level of study, university, major, and graduation year, with conditional fields that adapt based on whether the applicant is a student, high schooler, or working professional.
+- **Skills and experience**: Programming languages (from a predefined list of 18 options), XR experience level, and hackathon experience level.
+- **Team preferences**: Teamwork style (solo, with friends, looking for a team), preferred roles (Project Manager, XR Developer, 3D Artist, Frontend/Backend Developer, UI/UX Designer, and more), commitment level, and personal goals for the event.
+
+On submission, the form data is stored directly in a Supabase `users` table as a JSON column, keeping the schema flexible for future iterations.
+
+### Team formation
+
+The team formation page is split into two main views:
+
+**Team discovery** lets participants browse all registered teams in a card-based layout. Each card shows the team name, description, current members, and whether you have already joined. A sidebar offers tools to create a new team or get team recommendations based on your profile. Teams are fetched from a Supabase `teams` table that stores the member list as an array of user IDs.
+
+**Team management** appears once you are on a team. It includes:
+- A team overview with name and description (editable by members).
+- An invite system where you can search for registered participants and send them a team invite.
+- A join request inbox with active/denied/all filters and pagination.
+- A team declaration step that locks in your roster before the hackathon starts.
+- A project submission form for the final deliverable.
+
+All team operations (create, edit, join, leave, declare) go through Supabase queries. When a member leaves, the platform checks if they were the last member and automatically deletes the team if so.
+
+## How we built it
+
+The frontend is built with **Next.js** (App Router) and **TypeScript**, using **Mantine** as the component library for forms, modals, steppers, notifications, and layout primitives. Global state for the current user, their team, and the team list is managed with **Redux Toolkit** via dedicated feature slices (`userSlice`, `teamSlice`, `teamListSlice`, `eventSlice`).
+
+The backend is entirely **Supabase**: Auth handles user sessions with email/password, Google, and Discord providers; a PostgreSQL database stores users, teams, join requests, and events; and the client SDK handles all CRUD operations from the frontend.
+
+Styling uses a combination of CSS modules and global stylesheets with custom class overrides for Mantine components.
+
+## Tech stack
+
+- Next.js (App Router)
+- React
+- TypeScript
+- Mantine UI
+- Redux Toolkit
+- Supabase (Auth + PostgreSQL)
 
 ---
 
-[View Live](https://immersegt.org/)
+[View Live (2024)](https://immersegt.vercel.app/) | [Current Site](https://www.immersegt.org/) | [GitHub](https://github.com/immersegt/immersegt)

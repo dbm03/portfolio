@@ -1,0 +1,56 @@
+export const metadata = {
+  title: 'Musician Portfolio',
+  description:
+    'A business website built for a professional saxophonist, featuring a video hero, photo gallery, client reviews, and direct booking contact.',
+};
+
+import Image from 'next/image';
+import heroImage from '@/public/musicportfolio_card.png';
+
+# Musician Portfolio
+
+<Image
+  className="rounded-md"
+  alt="Screenshot of the musician portfolio website"
+  src={heroImage}
+  placeholder="blur"
+/>
+
+[View Live](https://luisbarrososaxofonista.com/) | [GitHub](https://github.com/dbm03/saxoluis)
+
+## About
+
+My dad is a professional saxophone player based in Spain. He performs at weddings, corporate events, and private parties, bringing live music to liven up the occasion. He needed a website that could showcase his work, build trust with potential clients, and make it easy to get in touch.
+
+I built this site for him as a single-page portfolio focused on conversion: show the music, show the reviews, make contact effortless.
+
+## What it does
+
+The site is structured as a series of full-width sections that guide visitors from first impression to contact:
+
+- **Video hero**: A full-screen background video of a live performance with a prominent "Contact Me" CTA.
+- **Photo & video gallery**: A CSS Grid layout with responsive image sizing, a lightbox modal for full-size viewing, and embedded YouTube videos of performances.
+- **Client reviews**: Testimonial cards from past event clients with star ratings and expandable text, animated into view on scroll using Intersection Observer.
+- **Bio**: Professional background, training, and experience.
+- **Contact**: Phone number, WhatsApp link, and social media profiles (Instagram, YouTube, Facebook) for direct booking.
+
+## How I built it
+
+The site is built with **Next.js 12** (Pages Router) and **Tailwind CSS**. The entire page is composed from section components (`Hero`, `Gallery`, `Reviews`, `Bio`, `Contact`) rendered in sequence on the index page.
+
+A few details worth noting:
+
+- The mobile navigation uses a custom `useDelayUnmount` hook that keeps the drawer in the DOM for 500ms after closing, allowing the slide-out animation to complete before unmounting.
+- Gallery images and review cards use `react-intersection-observer` to trigger fade-in and scale animations only when scrolled into view.
+- The site is fully in Spanish, matching the target audience.
+
+## Tech stack
+
+- Next.js 12 (Pages Router)
+- React
+- Tailwind CSS
+- react-intersection-observer
+
+---
+
+[View Live](https://luisbarrososaxofonista.com/) | [GitHub](https://github.com/dbm03/saxoluis)
